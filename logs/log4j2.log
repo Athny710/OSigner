@@ -1,0 +1,1227 @@
+20-06-2023 15:56:36.775 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 16:52:27.837 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:07:58.881 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:07:59.181 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:08:04.240 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Se obtuvo el crl desde el servidor
+20-06-2023 17:16:48.892 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:16:49.210 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:16:54.281 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Se obtuvo el crl desde el servidor
+20-06-2023 17:17:24.543 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:17:24.896 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:17:29.927 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Se obtuvo el crl desde el servidor
+20-06-2023 17:18:25.906 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:18:26.253 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:18:31.825 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Se obtuvo el crl desde el servidor
+20-06-2023 17:19:13.591 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:19:13.922 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:19:18.228 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Se obtuvo el crl desde el servidor
+20-06-2023 17:19:28.560 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:19:28.861 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:19:32.774 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Se obtuvo el crl desde el servidor
+20-06-2023 17:20:20.212 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:20:20.506 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:20:21.500 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+20-06-2023 17:20:21.504 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Se obtuvo el crl desde el servidor
+20-06-2023 17:23:06.917 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:23:07.242 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:23:11.107 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Se obtuvo el crl desde el servidor
+20-06-2023 17:25:20.298 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:25:20.602 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:25:21.653 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+20-06-2023 17:25:21.656 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 17:25:25.320 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 17:25:42.344 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:25:42.622 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:25:43.936 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+20-06-2023 17:25:43.942 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 17:25:47.335 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 17:26:14.654 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:26:14.954 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - Iniciando la configuración de la aplicación
+20-06-2023 17:26:18.835 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 17:26:20.267 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 17:29:47.544 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:29:47.891 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+20-06-2023 17:29:52.065 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 17:29:53.138 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 17:57:09.264 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:57:09.612 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+20-06-2023 17:57:14.043 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 17:57:15.343 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 17:57:25.243 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:57:25.573 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+20-06-2023 17:57:29.618 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 17:57:30.932 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 17:57:43.070 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:57:43.437 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+20-06-2023 17:57:48.097 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 17:57:48.977 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 17:58:13.035 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 17:58:13.338 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+20-06-2023 17:58:17.167 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 17:58:18.495 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 18:01:12.893 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 18:01:13.219 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+20-06-2023 18:01:17.420 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 18:01:18.434 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+20-06-2023 18:03:41.641 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+20-06-2023 18:03:41.984 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+20-06-2023 18:03:45.813 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+20-06-2023 18:03:47.444 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+21-06-2023 09:42:14.481 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+21-06-2023 09:42:14.848 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+21-06-2023 09:42:18.803 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+21-06-2023 09:42:20.114 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+21-06-2023 15:16:50.943 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+21-06-2023 15:16:51.387 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+21-06-2023 15:16:55.482 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+21-06-2023 15:16:56.782 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+21-06-2023 15:22:08.657 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+21-06-2023 15:22:08.961 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+21-06-2023 15:22:12.927 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+21-06-2023 15:22:14.489 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+21-06-2023 16:04:14.388 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+21-06-2023 16:04:14.695 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+21-06-2023 16:04:18.459 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+21-06-2023 16:04:20.266 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+21-06-2023 16:06:55.232 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+21-06-2023 16:06:55.531 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+21-06-2023 16:06:59.363 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+21-06-2023 16:07:00.984 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:46:41.355 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 11:46:41.751 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 11:46:45.816 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 11:46:47.169 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:47:22.631 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 11:47:22.952 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 11:47:26.922 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 11:47:28.230 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:50:01.834 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 11:50:02.126 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 11:50:02.918 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+26-06-2023 11:50:02.932 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 11:50:06.643 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:50:35.334 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 11:50:35.649 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 11:50:39.537 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 11:50:40.740 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:50:52.313 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 11:50:53.569 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 11:50:59.024 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 11:50:59.026 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:52:10.792 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 11:52:11.110 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 11:52:15.041 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 11:52:16.309 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:52:16.458 ERROR org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController - Error cargando interfaz de usuario
+javafx.fxml.LoadException: No controller specified.
+/C:/Users/71489974/Documents/Proyectos/OSigner/target/classes/org/oefa/gob/pe/osigner/view/Platform.fxml:39
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2710)
+	at javafx.fxml/javafx.fxml.FXMLLoader$Element.getControllerMethodHandle(FXMLLoader.java:568)
+	at javafx.fxml/javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:610)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:781)
+	at javafx.fxml/javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2961)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2646)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.getParent(AppFX.java:34)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.showUserInterface(PlatformLoaderController.java:35)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager.setConfigurationFinished(ConfigurationTaskManager.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask.succeeded(MaterialConfigurationTask.java:31)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:726)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$1(Task.java:1437)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+26-06-2023 11:53:24.677 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 11:53:24.976 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 11:53:28.872 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 11:53:30.480 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:53:30.620 ERROR org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController - Error cargando interfaz de usuario
+javafx.fxml.LoadException: Error resolving onAction='#onConfirm', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/71489974/Documents/Proyectos/OSigner/target/classes/org/oefa/gob/pe/osigner/view/Platform.fxml:39
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2710)
+	at javafx.fxml/javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:621)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:781)
+	at javafx.fxml/javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2961)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2646)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.getParent(AppFX.java:34)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.showUserInterface(PlatformLoaderController.java:35)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager.setConfigurationFinished(ConfigurationTaskManager.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask.succeeded(MaterialConfigurationTask.java:31)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:726)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$1(Task.java:1437)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+26-06-2023 11:53:58.912 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 11:53:59.210 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 11:54:03.010 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 11:54:04.275 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 11:54:34.016 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cerrando aplicación
+26-06-2023 14:32:06.784 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-06-2023 14:32:07.200 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-06-2023 14:32:11.132 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-06-2023 14:32:12.518 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-06-2023 14:32:22.939 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cerrando aplicación
+27-06-2023 15:10:55.534 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 15:10:56.006 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 15:10:57.447 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 15:10:57.470 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+27-06-2023 15:11:00.710 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:03:48.618 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:03:48.938 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:03:53.032 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+27-06-2023 16:03:54.422 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:04:12.462 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:04:12.794 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:04:16.664 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+27-06-2023 16:04:17.981 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:04:54.883 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:04:55.183 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:04:59.137 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:05:00.766 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:05:54.842 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:05:55.237 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:05:59.301 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:06:24.628 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:07:39.568 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:07:39.949 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:07:44.127 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:07:48.624 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:08:09.453 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:08:09.820 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:08:13.898 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:08:15.312 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:08:39.615 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:08:39.965 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:08:44.023 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:08:50.042 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:09:16.370 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:09:16.738 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:09:20.755 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:09:31.079 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:12:10.526 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:12:10.839 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:12:14.751 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:12:16.324 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:13:24.971 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:13:25.286 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:13:29.168 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:13:30.813 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:13:45.353 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:13:45.684 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:13:49.595 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:13:51.129 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:19:40.579 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:19:40.889 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:19:44.714 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:19:46.297 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:28:24.723 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:28:25.034 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:28:29.002 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:28:30.507 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 16:30:01.461 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 16:30:01.776 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 16:30:02.469 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:30:02.473 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 16:30:06.741 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 17:55:58.824 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 17:55:59.156 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 17:56:02.998 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 17:56:04.926 ERROR org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - Error configurando MaterialFX en la aplicación
+java.lang.NullPointerException: Cannot invoke "javafx.scene.Scene.getStylesheets()" because "scene" is null
+	at MaterialFX@11.16.1/io.github.palexdev.materialfx.css.themes.MFXThemeManager.addOn(MFXThemeManager.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask.call(MaterialConfigurationTask.java:23)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask.call(MaterialConfigurationTask.java:11)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 17:57:14.734 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 17:57:15.057 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 17:57:18.909 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 17:57:20.576 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 17:57:41.396 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 17:57:41.743 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 17:57:45.705 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 17:57:47.583 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 17:58:54.141 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 17:58:54.471 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 17:58:58.344 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 17:59:00.082 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+27-06-2023 17:59:00.175 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 17:59:29.286 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 17:59:29.619 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 17:59:33.543 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 17:59:35.113 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+27-06-2023 17:59:35.114 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+27-06-2023 17:59:35.200 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 18:02:11.142 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 18:02:11.515 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 18:02:15.390 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 18:02:15.391 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+27-06-2023 18:02:17.093 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+27-06-2023 18:02:17.094 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+27-06-2023 18:02:17.187 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 18:03:23.814 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 18:03:24.132 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 18:03:29.050 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+27-06-2023 18:03:29.058 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 18:03:29.060 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+27-06-2023 18:03:29.285 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+27-06-2023 18:03:29.285 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+27-06-2023 18:04:20.880 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+27-06-2023 18:04:21.221 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+27-06-2023 18:04:26.297 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+27-06-2023 18:04:26.299 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+27-06-2023 18:04:26.523 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+27-06-2023 18:04:26.524 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+27-06-2023 18:04:26.525 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:20:06.887 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:20:07.265 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:20:08.015 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:20:12.210 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:20:12.212 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:20:12.448 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:20:12.449 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:20:12.451 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:21:21.350 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:21:21.729 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:21:23.506 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:21:23.510 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:21:23.512 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:21:27.263 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:21:27.264 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:21:27.357 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:28:15.159 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:28:15.486 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:28:19.276 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:28:19.279 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:28:20.878 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:28:20.879 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:28:20.972 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:31:16.646 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:31:16.960 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:31:20.904 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:31:20.905 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:31:22.638 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:31:22.639 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:31:22.740 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:32:55.098 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:32:55.415 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:32:59.227 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:32:59.229 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:33:01.249 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:33:01.250 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:33:01.338 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:33:47.946 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:33:48.272 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:33:52.117 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:33:52.119 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:33:53.750 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:33:53.751 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:33:53.847 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:34:28.105 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:34:28.422 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:34:32.202 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:34:32.205 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:34:33.813 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:34:33.814 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:34:33.914 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:35:12.592 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:35:12.898 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:35:13.633 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:35:13.640 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:35:13.642 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:35:17.630 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:35:17.630 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:35:17.735 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:39:31.601 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:39:31.644 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:39:32.075 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.NullPointerException: Cannot invoke "javafx.scene.Scene.getWindow()" because "parentScene" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:52)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showErrorMessaggeNotification(NotificationFX.java:10)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:40)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:39:32.077 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/java.util.Collections$UnmodifiableList.get(Collections.java:1347)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:23)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:40:24.635 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:40:24.948 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:40:25.828 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:40:25.834 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:40:25.836 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:40:29.809 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:40:29.810 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:40:29.902 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:43:29.876 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:43:30.202 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:43:34.145 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:43:34.148 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:43:35.660 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:43:35.660 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:43:35.755 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:44:19.639 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:44:19.986 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:44:23.905 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:44:23.908 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:44:25.361 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:44:25.362 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:44:25.545 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:48:14.668 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:48:14.978 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:48:18.909 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:48:18.912 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:48:20.420 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:48:20.421 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:48:20.559 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 09:49:21.962 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 09:49:22.268 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 09:49:26.035 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: gaaaa
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 09:49:26.039 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 09:49:27.561 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 09:49:27.561 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 09:49:27.563 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 10:01:19.577 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 10:01:19.912 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 10:01:21.028 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 10:01:21.032 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 10:01:21.036 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 10:01:24.800 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 10:01:24.801 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 10:01:24.899 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 12:46:31.818 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 12:46:32.144 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 12:46:36.054 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 12:46:36.057 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 12:46:37.601 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 12:46:37.602 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 12:46:37.829 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 12:49:22.049 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 12:49:22.361 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 12:49:26.228 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 12:49:26.231 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 12:49:27.742 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 12:49:27.742 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 12:49:27.984 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 12:52:38.129 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 12:52:38.468 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 12:52:42.302 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 12:52:42.303 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 12:52:44.154 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 12:52:44.154 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 12:52:44.334 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 12:54:17.002 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 12:54:17.330 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 12:54:21.120 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 12:54:21.123 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 12:54:22.730 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 12:54:22.731 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 12:54:22.906 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 12:54:41.091 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 12:54:41.417 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 12:54:45.208 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 12:54:45.211 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 12:54:46.751 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 12:54:46.752 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 12:54:46.802 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 12:56:43.254 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 12:56:43.565 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 12:56:44.924 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 12:56:44.928 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 12:56:44.931 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 12:56:48.349 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 12:56:48.349 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 12:56:48.535 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 12:57:17.987 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 12:57:18.385 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 12:57:22.564 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 12:57:22.566 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 12:57:23.938 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 12:57:23.939 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 12:58:07.891 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 13:00:15.931 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 13:00:16.308 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 13:00:17.259 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 13:00:17.263 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 13:00:17.264 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 13:00:21.409 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 13:00:21.410 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 13:00:35.046 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 13:01:17.759 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 13:01:18.068 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 13:01:19.409 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 13:01:19.415 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 13:01:19.417 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 13:01:22.868 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 13:01:22.869 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 13:01:23.050 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 13:02:04.847 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 13:02:05.158 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 13:02:09.009 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 13:02:09.012 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 13:02:10.798 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 13:02:10.799 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 13:02:10.973 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:24:13.530 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 14:24:14.006 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 14:24:18.001 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 14:24:18.009 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 14:24:19.445 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 14:24:19.446 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 14:24:19.662 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:28:21.376 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 14:28:21.727 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 14:28:25.733 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 14:28:25.736 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 14:28:27.200 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 14:28:27.201 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 14:28:27.316 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:31:20.896 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 14:31:21.226 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 14:31:25.244 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 14:31:25.246 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 14:31:26.883 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 14:31:26.884 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 14:31:26.992 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:34:25.947 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 14:34:26.291 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 14:34:30.448 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 14:34:30.450 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 14:34:32.126 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 14:34:32.126 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 14:34:32.251 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:47:32.550 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 14:47:32.899 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 14:47:36.823 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 14:47:36.825 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 14:47:38.479 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 14:47:38.479 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 14:47:38.578 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:47:41.268 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando todos los certificados
+28-06-2023 14:55:39.120 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 14:55:39.437 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 14:55:43.355 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 14:55:43.359 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 14:55:44.921 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 14:55:44.922 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 14:55:45.035 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:55:47.732 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando todos los certificados
+28-06-2023 14:57:32.592 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 14:57:32.934 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 14:57:36.813 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 14:57:36.815 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 14:57:38.794 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 14:57:38.794 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 14:57:38.905 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:57:41.539 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando todos los certificados
+28-06-2023 14:59:23.353 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 14:59:23.708 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 14:59:27.568 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 14:59:27.570 INFO org.oefa.gob.pe.osigner.core.AppFX - >>>>>>>>
+28-06-2023 14:59:29.692 INFO org.oefa.gob.pe.osigner.core.AppFX - MOStrando notificacion
+28-06-2023 14:59:29.692 INFO org.oefa.gob.pe.osigner.core.AppFX - =============
+28-06-2023 14:59:29.807 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 14:59:36.426 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando todos los certificados
+28-06-2023 14:59:44.531 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cerrando aplicación
+28-06-2023 15:17:14.757 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 15:17:15.113 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 15:17:19.099 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 15:17:20.999 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 15:17:26.051 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando todos los certificados
+28-06-2023 15:17:29.180 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cerrando aplicación
+28-06-2023 15:18:45.154 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 15:18:45.470 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 15:18:49.354 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 15:18:51.018 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 15:19:08.267 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando todos los certificados
+28-06-2023 15:19:16.771 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cerrando aplicación
+28-06-2023 15:22:44.138 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 15:22:44.471 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 15:22:48.354 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-06-2023 15:22:49.644 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 15:23:10.987 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 15:23:11.327 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 15:23:15.155 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 15:23:16.904 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 15:27:38.010 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 15:27:38.335 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 15:27:42.268 ERROR org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - Error obteniendo certificados
+java.lang.Exception: No se puede descargar el certificado
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 15:27:44.103 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 15:43:51.678 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 15:43:51.993 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 15:43:55.939 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-06-2023 15:43:57.362 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 17:03:07.185 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 17:03:07.543 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 17:03:11.453 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-06-2023 17:03:12.778 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 17:05:16.649 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 17:05:16.973 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 17:05:18.126 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:401)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:169)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+28-06-2023 17:05:18.136 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-06-2023 17:05:21.909 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 17:05:22.153 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+28-06-2023 17:05:22.155 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
+28-06-2023 17:05:25.158 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Se obtuvo información del proceso de firma
+28-06-2023 17:07:45.201 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 17:07:45.560 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 17:07:49.588 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-06-2023 17:07:50.947 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 17:07:51.238 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+28-06-2023 17:07:51.240 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
+28-06-2023 17:07:54.242 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Se obtuvo información del proceso de firma
+28-06-2023 17:08:29.782 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cerrando aplicación
+28-06-2023 17:09:20.643 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 17:09:20.998 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 17:09:24.877 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-06-2023 17:09:26.290 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 17:09:26.541 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+28-06-2023 17:09:26.544 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
+28-06-2023 17:09:29.548 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Se obtuvo información del proceso de firma
+28-06-2023 17:11:40.663 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cerrando aplicación
+28-06-2023 17:20:54.711 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-06-2023 17:20:55.030 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-06-2023 17:20:58.876 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-06-2023 17:21:00.200 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-06-2023 17:21:00.449 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+28-06-2023 17:21:00.451 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
+28-06-2023 17:21:03.454 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Se obtuvo información del proceso de firma
+28-06-2023 17:21:36.423 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cerrando aplicación

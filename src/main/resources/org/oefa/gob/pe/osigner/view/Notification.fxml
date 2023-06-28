@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="173.0" prefWidth="320.0" styleClass="background-white" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oefa.gob.pe.osigner.infra.input.adapter.NotificationController">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="43.0" minHeight="43.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <MFXScrollPane hbarPolicy="NEVER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+               <content>
+                  <Label fx:id="textLabel" maxWidth="280.0" styleClass="active-text" textAlignment="JUSTIFY" wrapText="true" />
+               </content>
+               <padding>
+                  <Insets left="13.0" right="13.0" top="8.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="13.0" />
+               </GridPane.margin>
+            </MFXScrollPane>
+            <Label fx:id="titleLabel" styleClass="active-text" text="Error">
+               <GridPane.margin>
+                  <Insets left="13.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <MFXButton id="secondary-button" fx:id="notificationConfirmButton" minHeight="30.0" prefHeight="30.0" prefWidth="80.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets right="13.0" />
+               </GridPane.margin>
+            </MFXButton>
+            <MFXButton id="secondary-button" fx:id="notificationCancelButton" layoutX="237.0" layoutY="140.0" minHeight="30.0" prefHeight="30.0" prefWidth="80.0" text="Cancelar" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets right="98.0" />
+               </GridPane.margin>
+            </MFXButton>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,74 @@
+
+*{
+    -fx-white: #FFFFFF;
+    -fx-green: #8CC048;
+    -fx-blue: #006496;
+
+
+    -fx-black-25: #111318;
+    -fx-blue-5: #395F980D;
+
+    -fx-text-primary: #191C20;
+    -fx-text-secondary: #76777A;
+    -fx-shadow: #20252980;
+}
+
+/**************************************************
+ * CONTAINERS
+**************************************************/
+
+.background-container {
+    -fx-background-color: -fx-white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, -fx-shadow, 15, 0, 0, 0);
+    -fx-background-insets: 10;
+}
+.background-white{
+    -fx-background-color: -fx-white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+.background-blue{
+    -fx-background-color: -fx-blue-5;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+
+/**************************************************
+ * BUTTON
+**************************************************/
+#primary-button{
+    -fx-background-color: -fx-blue;
+    -fx-text-fill: -fx-white;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+#secondary-button{
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-blue;
+    -fx-text-fill: -fx-blue;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+.link-button{
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-blue;
+    -fx-cursor: hand;
+}
+.icon-button{
+    -fx-cursor: hand;
+}
+
+/**************************************************
+ * TEXT
+**************************************************/
+.active-text{
+    -fx-text-fill:  -fx-text-primary;
+}
+.inactive-text{
+    -fx-text-fill: -fx-text-secondary;
+}
