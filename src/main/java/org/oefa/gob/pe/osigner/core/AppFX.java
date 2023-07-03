@@ -2,6 +2,7 @@ package org.oefa.gob.pe.osigner.core;
 
 import io.github.palexdev.materialfx.css.themes.MFXThemeManager;
 import io.github.palexdev.materialfx.css.themes.Themes;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,6 +14,9 @@ import org.oefa.gob.pe.osigner.MainApplication;
 import org.oefa.gob.pe.osigner.application.PlatformLoaderService;
 import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 import org.oefa.gob.pe.osigner.util.LogUtil;
+import org.oefa.gob.pe.osigner.util.TaskUtil;
+
+import java.time.Duration;
 
 public class AppFX {
 
@@ -67,6 +71,22 @@ public class AppFX {
 
         ApplicationModel.CURRENT_SCENE = scene;
         return scene;
+
+    }
+
+
+    public static void closeApplication(){
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                Thread.sleep(3000);
+                AnimationFX.closeApplication(ApplicationModel.CURRENT_STAGE);
+                Thread.sleep(400);
+                System.exit(1);
+                return null;
+            }
+        };
+        TaskUtil.executeTask(task);
 
     }
 }

@@ -11,17 +11,20 @@ public class SignTaskManager {
     public static void initializeSignProccess(PlatformModel platformModel){
         StepComponent.STEP_LIST = platformModel.getSteps();
         CertificateComponent.CERT_COMBOBOX = platformModel.getCertificateComboBox();
+
         startSignProccess();
+
+    }
+
+    public static void completeSignProccess(){
+
+
     }
 
     private static void startSignProccess(){
         LogUtil.setInfo("Iniciando con el proceso de firma", SignTaskManager.class.getName());
         SignInformationTask signInformationTask = new SignInformationTask();
         TaskUtil.executeTask(signInformationTask);
-    }
-
-    private static void completeSignProccess(){
-
     }
 
 }

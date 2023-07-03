@@ -1,14 +1,10 @@
 package org.oefa.gob.pe.osigner.task.platform;
 
-import io.github.palexdev.materialfx.enums.NotificationPos;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
-import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.application.PlatformService;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
-import org.oefa.gob.pe.osigner.core.component.CertificateComponent;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
-import org.oefa.gob.pe.osigner.util.CertificateUtil;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 
 public class SignInformationTask extends Task<Void> {
@@ -29,13 +25,12 @@ public class SignInformationTask extends Task<Void> {
             @Override public void run() {
                 //CertificateComponent.loadCertificates(CertificateUtil.getUserCertificateList(AppConfiguration.DNI_CLIENT));
                 StepComponent.showStepCompleted(0);
-                PlatformService.signInformationDownloaded();
+                PlatformService.disableButtons(false);
 
             }
         });
 
     }
-
 
     @Override
     protected void failed() {
@@ -45,7 +40,7 @@ public class SignInformationTask extends Task<Void> {
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
-
+        StepComponent.showStepError(0);
         NotificationFX.showSignInformationErrorNotification(errorMessage);
 
     }

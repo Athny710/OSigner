@@ -67,16 +67,19 @@ public class PlatformController implements Initializable {
 
     @FXML
     void onCancel(ActionEvent event) {
-        PlatformService.closeApplication();
+        PlatformService.showErrorAndClose();
+
     }
 
     @FXML
     void onConfirm(ActionEvent event) {
+        PlatformService.completeSignProccess();
 
     }
 
     @FXML
     void onUpdate(ActionEvent event) {
+        PlatformService.reloadCertificates();
 
     }
 

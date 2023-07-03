@@ -3,10 +3,15 @@
     -fx-white: #FFFFFF;
     -fx-green: #8CC048;
     -fx-blue: #006496;
+    -fx-gray: #DEE3EA;
 
 
     -fx-black-25: #111318;
-    -fx-blue-5: #395F980D;
+    -fx-blue-8: #00649614;
+    -fx-blue-5: #0064960d;
+    -fx-blue-3: #00649608;
+    -fx-green-5: #4cb0510d;
+    -fx-red-5: #ba1a1a0d;
 
     -fx-text-primary: #191C20;
     -fx-text-secondary: #76777A;
@@ -31,8 +36,12 @@
 }
 .background-blue{
     -fx-background-color: -fx-blue-5;
-    -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
+}
+.background-green{
+    -fx-background-color: -fx-green-5;
+}
+.background-red{
+    -fx-background-color: -fx-red-5;
 }
 
 
@@ -71,4 +80,28 @@
 }
 .inactive-text{
     -fx-text-fill: -fx-text-secondary;
+}
+
+
+/**************************************************
+ * INPUT
+**************************************************/
+.input {
+    -fx-border-color: -fx-gray;
+}
+.input:focus-within{
+    -fx-border-color: -fx-blue;
+}
+
+.select-input{
+    -mfx-main: -fx-blue;
+}
+.select-input:hover {
+    -fx-background-color: -fx-blue-3;
+}
+.mfx-combo-box-cell:hover {
+    -fx-background-color: -fx-blue-5;
+}
+.mfx-combo-box-cell:selected {
+    -fx-background-color: -fx-blue-8;
 }

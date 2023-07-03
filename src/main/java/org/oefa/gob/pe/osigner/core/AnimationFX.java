@@ -1,68 +1,80 @@
 package org.oefa.gob.pe.osigner.core;
 
 import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.oefa.gob.pe.osigner.application.PlatformLoaderService;
+import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 
 public class AnimationFX {
 
-    private static double X_CENTER;
-    private static double Y_CENTER;
-
-
     public static void displayStage(Stage stage){
-        calculateCenter();
+        stage.getScene().getRoot().setScaleX(0);
+        stage.getScene().getRoot().setScaleY(0);
 
-        Animation transition = new Transition() {
-            {
-                setCycleDuration(Duration.millis(400));
-                setInterpolator(Interpolator.EASE_BOTH);
-            }
-            @Override
-            protected void interpolate(double frac) {
-                stage.setHeight(380*frac);
-                stage.setWidth(320*frac);
-                stage.setX(X_CENTER - 160);
-                stage.setY(Y_CENTER - 190);
-            }
-        };
-        transition.play();
+        KeyValue kv_width = new KeyValue(stage.getScene().getRoot().scaleXProperty(), 1,Interpolator.EASE_BOTH);
+        KeyValue kv_height = new KeyValue(stage.getScene().getRoot().scaleYProperty(), 1, Interpolator.EASE_BOTH);
+        KeyFrame kf = new KeyFrame(Duration.millis(200), kv_width, kv_height);
+
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
 
     }
 
-    public static void displayPlatformView(Parent currentParent){
+    public static void closeApplication(Stage stage){
+        Platform.runLater(() -> {
+            PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().remove(1);
+        });
+
+        KeyValue kv_width = new KeyValue(stage.getScene().getRoot().scaleXProperty(), 0,Interpolator.EASE_BOTH);
+        KeyValue kv_height = new KeyValue(stage.getScene().getRoot().scaleYProperty(), 0, Interpolator.EASE_BOTH);
+        KeyFrame kf = new KeyFrame(Duration.millis(400), kv_width, kv_height);
+
         Timeline timeline = new Timeline();
-        KeyValue kv = new KeyValue(currentParent.translateYProperty(), -currentParent.getScene().getHeight(), Interpolator.EASE_BOTH);
-        KeyFrame kf = new KeyFrame(Duration.seconds(1.0), kv);
         timeline.getKeyFrames().add(kf);
         timeline.play();
+
+    }
+
+    public static void displayPlatformView(Parent parentToAnimate){
+        KeyValue kv = new KeyValue(parentToAnimate.translateYProperty(), -parentToAnimate.getScene().getHeight(), Interpolator.EASE_BOTH);
+        KeyFrame kf = new KeyFrame(Duration.seconds(0.7), kv);
+
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
+
     }
 
     public static void displayNotification(Stage stage){
-        Animation transition = new Transition() {
-            {
-                setCycleDuration(Duration.millis(300));
-                setInterpolator(Interpolator.EASE_BOTH);
-            }
-            @Override
-            protected void interpolate(double frac) {
-                stage.setHeight(173*frac);
-                stage.setWidth(320*frac);
-                stage.setX(2*X_CENTER - stage.getWidth() - 10);
-                stage.setY(2*Y_CENTER - stage.getHeight() - 10);
-            }
-        };
-        transition.play();
+        stage.getScene().getRoot().setTranslateY(stage.getHeight());
+        stage.setX(Screen.getPrimary().getVisualBounds().getWidth() - stage.getWidth() - 10);
+        stage.setY(Screen.getPrimary().getVisualBounds().getHeight() - stage.getHeight() - 10);
+
+        KeyValue kv_height = new KeyValue(stage.getScene().getRoot().translateYProperty(), 0, Interpolator.EASE_BOTH);
+        KeyFrame kf = new KeyFrame(Duration.millis(400), kv_height);
+
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
 
     }
 
-    private static void calculateCenter(){
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        X_CENTER = screenBounds.getWidth()/2;
-        Y_CENTER = screenBounds.getHeight()/2;
+    public static void displayEndView(Parent parentToAnimate){
+        parentToAnimate.setTranslateY(360);
+
+        KeyValue kv = new KeyValue(parentToAnimate.translateYProperty(), 0, Interpolator.EASE_BOTH);
+        KeyFrame kf = new KeyFrame(Duration.seconds(0.7), kv);
+
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
 
     }
+
 }

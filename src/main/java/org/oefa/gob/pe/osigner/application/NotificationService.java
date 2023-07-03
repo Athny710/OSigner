@@ -30,9 +30,10 @@ public class NotificationService {
         NOTIFICATION_MODEL.getTitleLabel().setText("Error");
         NOTIFICATION_MODEL.getTextLabel().setText(message + "\nNo es posible continuar con el proceso de firma.");
 
-        NOTIFICATION_MODEL.getConfirmButton().setText("Confirmar");
+        NOTIFICATION_MODEL.getConfirmButton().setText("Aceptar");
         NOTIFICATION_MODEL.getConfirmButton().setOnAction(e -> {
-            Platform.exit();
+            ApplicationModel.NOTIFICATION_STAGE.close();
+            PlatformService.showErrorAndClose();
         });
 
         NOTIFICATION_MODEL.getCancelButton().setVisible(false);
