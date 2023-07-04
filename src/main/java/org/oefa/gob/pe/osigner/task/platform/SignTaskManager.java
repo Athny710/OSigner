@@ -6,6 +6,11 @@ import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 import org.oefa.gob.pe.osigner.util.TaskUtil;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class SignTaskManager {
 
     public static void initializeSignProccess(PlatformModel platformModel){
@@ -23,8 +28,14 @@ public class SignTaskManager {
 
     private static void startSignProccess(){
         LogUtil.setInfo("Iniciando con el proceso de firma", SignTaskManager.class.getName());
+
         SignInformationTask signInformationTask = new SignInformationTask();
-        TaskUtil.executeTask(signInformationTask);
+        DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
+
+        TaskUtil.executeTasksOnSerial(
+                List.of(signInformationTask, downloadFilesTask)
+        );
+
     }
 
 }
