@@ -2,36 +2,43 @@ package org.oefa.gob.pe.osigner.core;
 
 import javafx.application.Application;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+import org.oefa.gob.pe.osigner.commons.AppType;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 import org.oefa.gob.pe.osigner.util.StringUtil;
-
 import java.util.ArrayList;
 
 public class RouterFX {
 
-    private static final String FIRMA_KEY = AppConfiguration.getKey("FIRMA_KEY");
-    private static final String VERIFICA_KEY = AppConfiguration.getKey("VERIFICA_KEY");
-
-
-    public static void intializeApp(Application.Parameters parameters){
+    public static void intializeApp(Application.Parameters parameters) {
         try {
             ArrayList<String> params = StringUtil.getParametersFromUrl(parameters.getRaw().get(0));
             String key = params.get(0);
 
-            if(key.equals(FIRMA_KEY)){
-                AppConfiguration.ID_CLIENT = params.get(1);
-                AppConfiguration.ID_GROUP = params.get(2);
-                initSignAppByPlatform();
-
-            }else if(key.equals(VERIFICA_KEY)){
-                initVerificaAppByPlatform();
-
-            }else {
-                initFullAppByUser();
-
+            if (params.size() == 1) {
+                AppConfiguration.APP_TYPE = AppType.FULL_SIGN;
+                initFullApp();
+            }
+            if (params.size() == 2) {
+                AppConfiguration.APP_TYPE = AppType.SIMPLE_SIGN;
+                AppConfiguration.ID_CLIENT = params.get(0);
+                AppConfiguration.ID_GROUP = params.get(1);
+                initSimpleSignProcessByPlatform();
             }
 
-        } catch (Exception e){
+            if (params.size() == 3) {
+                if (key.equals(AppConfiguration.getKey("FIRMA_MASIVA_KEY"))) {
+                    AppConfiguration.APP_TYPE = AppType.MASSIVE_SIGN;
+                    AppConfiguration.ID_CLIENT = params.get(1);
+                    AppConfiguration.ID_GROUP = params.get(2);
+                    initMassiveSignProcessByPlatform();
+
+                } else if (key.equals(AppConfiguration.getKey("VERIFICA_KEY"))) {
+                    AppConfiguration.APP_TYPE = AppType.VERIFY_SIGN;
+
+                }
+            }
+
+        } catch (Exception e) {
             LogUtil.setError(
                     "Error obteniendo parámetros de ejecución para iniciar la aplicación",
                     AppConfiguration.class.getName(),
@@ -39,20 +46,23 @@ public class RouterFX {
             );
 
         }
+
     }
 
-    private static void initSignAppByPlatform() throws Exception {
+
+    private static void initMassiveSignProcessByPlatform() throws Exception {
         AppFX.showPlatformLoader();
 
     }
 
 
-    private static void initVerificaAppByPlatform(){
+    private static void initSimpleSignProcessByPlatform() throws Exception {
+        AppFX.showPlatformLoader();
 
     }
 
 
-    private static void initFullAppByUser(){
+    private static void initFullApp(){
 
     }
 

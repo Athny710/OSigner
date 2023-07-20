@@ -1,12 +1,12 @@
 package org.oefa.gob.pe.osigner.domain.ws;
 
-import org.oefa.gob.pe.osigner.domain.SignConfigurationModel;
+import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 
 public class ResponseProcesoFirma {
 
     private boolean status;
     private String message;
-    private SignConfigurationModel signConfigurationModel;
+    private GrupoProcesoFirma gpf;
 
     public boolean isStatus() {
         return status;
@@ -24,11 +24,11 @@ public class ResponseProcesoFirma {
         this.message = message;
     }
 
-    public SignConfigurationModel getSignConfigurationModel() {
-        return signConfigurationModel;
+    public GrupoProcesoFirma getGpf() {
+        return gpf;
     }
 
-    public void setSignConfigurationModel(SignConfigurationModel signConfigurationModel) {
-        this.signConfigurationModel = signConfigurationModel;
+    public void setGpf(GrupoProcesoFirma gpf) {
+        this.gpf = gpf;
     }
 }

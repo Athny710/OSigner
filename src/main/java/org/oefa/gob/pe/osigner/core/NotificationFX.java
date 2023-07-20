@@ -9,6 +9,9 @@ public class NotificationFX {
         NotificationService.showCrlError(errorMessage);
 
     }
+    public static void showMaterialFxErrorNotification(String errorMessage){
+
+    }
 
     public static void showSignInformationErrorNotification(String errorMessage){
         AppFX.showNotificationError();

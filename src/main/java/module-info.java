@@ -19,4 +19,5 @@ module org.oefa.gob.pe.osigner {
     exports org.oefa.gob.pe.osigner.infra.input.adapter;
 
     opens org.oefa.gob.pe.osigner.domain.ws to com.google.gson;
+    opens org.oefa.gob.pe.osigner.domain to com.google.gson;
 }

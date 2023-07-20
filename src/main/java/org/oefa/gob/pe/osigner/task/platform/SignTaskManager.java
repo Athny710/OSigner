@@ -28,13 +28,9 @@ public class SignTaskManager {
 
     private static void startSignProccess(){
         LogUtil.setInfo("Iniciando con el proceso de firma", SignTaskManager.class.getName());
-
-        SignInformationTask signInformationTask = new SignInformationTask();
         DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
 
-        TaskUtil.executeTasksOnSerial(
-                List.of(signInformationTask, downloadFilesTask)
-        );
+        TaskUtil.executeTask(downloadFilesTask);
 
     }
 

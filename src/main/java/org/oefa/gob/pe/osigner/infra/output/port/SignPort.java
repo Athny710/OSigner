@@ -1,8 +1,8 @@
 package org.oefa.gob.pe.osigner.infra.output.port;
 
-import org.oefa.gob.pe.osigner.domain.SignConfigurationModel;
+import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 
 public interface SignPort {
 
-    SignConfigurationModel signFiles(SignConfigurationModel signConfigurationModel) throws Exception;
+    SignConfiguration signFiles(SignConfiguration signConfiguration) throws Exception;
 }

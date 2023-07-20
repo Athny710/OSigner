@@ -1,18 +1,16 @@
-package org.oefa.gob.pe.osigner.task.platform;
+package org.oefa.gob.pe.osigner.task.configuration;
 
 import javafx.concurrent.Task;
 import org.oefa.gob.pe.osigner.application.RestService;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
-import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 
-public class SignInformationTask extends Task<Void> {
+public class SignProcessConfigurationTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
-        LogUtil.setInfo("Obteniendo información de firma", this.getClass().getName());
-        SignConfiguration.createInstance(
+        SignConfiguration.createInstace(
                 RestService.getSignConfigurationModel()
         );
         return null;
@@ -21,21 +19,23 @@ public class SignInformationTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("Se obtuvo información del proceso de firma", this.getClass().getName());
+        LogUtil.setInfo("[CONFIGURACION] Se obtuvo la configuración del proceso de firma", this.getClass().getName());
         super.succeeded();
+        ConfigurationTaskManager.setConfigurationFinished();
 
     }
+
 
     @Override
     protected void failed() {
         super.failed();
         String errorMessage = LogUtil.setError(
-        "Error obteniendo el proceso de firma",
+                "Error obteniendo obteniendo la configuración del proceso de firma",
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
-        StepComponent.showStepError(0);
-        NotificationFX.showSignInformationErrorNotification(errorMessage);
+
+        NotificationFX.showCrlErrorNotification(errorMessage);
 
     }
 }

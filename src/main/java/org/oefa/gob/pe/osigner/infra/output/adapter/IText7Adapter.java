@@ -1,25 +1,15 @@
 package org.oefa.gob.pe.osigner.infra.output.adapter;
 
-import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.StampingProperties;
-import com.itextpdf.signatures.*;
-import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
-import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.domain.FileModel;
-import org.oefa.gob.pe.osigner.domain.SignConfigurationModel;
+import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.infra.output.port.SignPort;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class IText7Adapter implements SignPort {
 
     @Override
-    public SignConfigurationModel signFiles(SignConfigurationModel signConfigurationModel) throws Exception {
+    public SignConfiguration signFiles(SignConfiguration signConfiguration) throws Exception {
         /*
         ArrayList<FileModel> fileList = new ArrayList<>();
 
@@ -100,7 +90,7 @@ public class IText7Adapter implements SignPort {
         return null;
     }
 
-    private SignConfigurationModel addLTV(ArrayList<FileModel> fileList) throws Exception{
+    private SignConfiguration addLTV(ArrayList<FileModel> fileList) throws Exception{
         return null;
     }
 }

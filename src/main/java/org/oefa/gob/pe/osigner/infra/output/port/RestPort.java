@@ -1,13 +1,13 @@
 package org.oefa.gob.pe.osigner.infra.output.port;
 
 import org.oefa.gob.pe.osigner.domain.FileModel;
-import org.oefa.gob.pe.osigner.domain.SignConfigurationModel;
+import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 
 import java.util.ArrayList;
 
 public interface RestPort {
 
-    SignConfigurationModel getSignConfiguration() throws Exception;
+    SignConfiguration getSimpleSignConfiguration() throws Exception;
 
     void uploadFilesSigned(ArrayList<FileModel> fileList) throws Exception;
 

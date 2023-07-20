@@ -16,7 +16,6 @@ import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 import org.oefa.gob.pe.osigner.util.TaskUtil;
 
-import java.time.Duration;
 
 public class AppFX {
 
@@ -36,6 +35,7 @@ public class AppFX {
         AnimationFX.displayStage(stage);
 
     }
+
 
     public static void showNotificationError() {
         try {
@@ -57,11 +57,13 @@ public class AppFX {
 
     }
 
+
     public static Parent getParent(String fxmlResource) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource(fxmlResource));
         return fxmlLoader.load();
 
     }
+
 
     public static Scene loadScene(String fxmlResource) throws Exception{
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource(fxmlResource));

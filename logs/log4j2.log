@@ -2172,3 +2172,168 @@ java.lang.Exception: Error descargando archivos
 02-07-2023 19:55:34.964 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
 02-07-2023 19:55:34.966 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
 02-07-2023 19:55:37.968 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Se obtuvo información del proceso de firma
+16-07-2023 10:43:30.931 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+16-07-2023 10:44:25.882 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+16-07-2023 10:44:26.135 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+16-07-2023 10:44:30.705 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+16-07-2023 10:44:31.723 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+16-07-2023 10:44:32.107 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+16-07-2023 10:44:32.112 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
+16-07-2023 10:44:32.402 ERROR org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Error obteniendo el proceso de firma
+com.google.gson.JsonIOException: Failed making field 'org.oefa.gob.pe.osigner.domain.SignConfiguration#selloTiempoPass' accessible; either change its visibility or write a custom TypeAdapter for its declaring type
+	at com.google.gson@2.9.1/com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:23)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:203)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:112)
+	at com.google.gson@2.9.1/com.google.gson.Gson.getAdapter(Gson.java:531)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.createBoundField(ReflectiveTypeAdapterFactory.java:137)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:211)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:112)
+	at com.google.gson@2.9.1/com.google.gson.Gson.getAdapter(Gson.java:531)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:1057)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:1016)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:959)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:927)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSignConfiguration(WSSFDAdapter.java:36)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfigurationModel(RestService.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignInformationTask.call(SignInformationTask.java:19)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignInformationTask.call(SignInformationTask.java:13)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String org.oefa.gob.pe.osigner.domain.SignConfiguration.selloTiempoPass accessible: module org.oefa.gob.pe.osigner does not "opens org.oefa.gob.pe.osigner.domain" to module com.google.gson
+	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:387)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:363)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:311)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:181)
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:175)
+	at com.google.gson@2.9.1/com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:20)
+	... 22 more
+
+16-07-2023 10:44:32.481 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Se obtuvo información del proceso de firma
+16-07-2023 10:45:07.045 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+16-07-2023 10:45:07.240 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+16-07-2023 10:45:11.191 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+16-07-2023 10:45:12.342 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+16-07-2023 10:45:12.661 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+16-07-2023 10:45:12.665 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
+16-07-2023 10:45:12.967 ERROR org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Error obteniendo el proceso de firma
+com.google.gson.JsonIOException: Failed making field 'org.oefa.gob.pe.osigner.domain.SignConfiguration#selloTiempoPass' accessible; either change its visibility or write a custom TypeAdapter for its declaring type
+	at com.google.gson@2.9.1/com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:23)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:203)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:112)
+	at com.google.gson@2.9.1/com.google.gson.Gson.getAdapter(Gson.java:531)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.createBoundField(ReflectiveTypeAdapterFactory.java:137)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:211)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:112)
+	at com.google.gson@2.9.1/com.google.gson.Gson.getAdapter(Gson.java:531)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:1057)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:1016)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:959)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:927)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSignConfiguration(WSSFDAdapter.java:36)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfigurationModel(RestService.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignInformationTask.call(SignInformationTask.java:19)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignInformationTask.call(SignInformationTask.java:13)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String org.oefa.gob.pe.osigner.domain.SignConfiguration.selloTiempoPass accessible: module org.oefa.gob.pe.osigner does not "opens org.oefa.gob.pe.osigner.domain" to module com.google.gson
+	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:387)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:363)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:311)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:181)
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:175)
+	at com.google.gson@2.9.1/com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:20)
+	... 22 more
+
+16-07-2023 10:45:13.069 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Se obtuvo información del proceso de firma
+16-07-2023 10:45:32.297 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+16-07-2023 10:45:32.479 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+16-07-2023 10:45:36.393 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+16-07-2023 10:45:37.282 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+16-07-2023 10:45:37.518 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+16-07-2023 10:45:37.520 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
+16-07-2023 10:45:37.670 ERROR org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Error obteniendo el proceso de firma
+com.google.gson.JsonIOException: Failed making field 'org.oefa.gob.pe.osigner.domain.SignConfiguration#selloTiempoPass' accessible; either change its visibility or write a custom TypeAdapter for its declaring type
+	at com.google.gson@2.9.1/com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:23)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:203)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:112)
+	at com.google.gson@2.9.1/com.google.gson.Gson.getAdapter(Gson.java:531)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.createBoundField(ReflectiveTypeAdapterFactory.java:137)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:211)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:112)
+	at com.google.gson@2.9.1/com.google.gson.Gson.getAdapter(Gson.java:531)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:1057)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:1016)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:959)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:927)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSignConfiguration(WSSFDAdapter.java:36)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfigurationModel(RestService.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignInformationTask.call(SignInformationTask.java:19)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignInformationTask.call(SignInformationTask.java:13)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String org.oefa.gob.pe.osigner.domain.SignConfiguration.selloTiempoPass accessible: module org.oefa.gob.pe.osigner does not "opens org.oefa.gob.pe.osigner.domain" to module com.google.gson
+	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:387)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:363)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:311)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:181)
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:175)
+	at com.google.gson@2.9.1/com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:20)
+	... 22 more
+
+16-07-2023 10:45:37.850 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Se obtuvo información del proceso de firma
+16-07-2023 10:46:08.426 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+16-07-2023 10:46:08.610 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+16-07-2023 10:46:12.342 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+16-07-2023 10:46:13.493 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+16-07-2023 10:46:13.715 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+16-07-2023 10:46:13.718 INFO org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Obteniendo información de firma
+16-07-2023 10:46:13.872 ERROR org.oefa.gob.pe.osigner.task.platform.SignInformationTask - Error obteniendo el proceso de firma
+com.google.gson.JsonIOException: Failed making field 'org.oefa.gob.pe.osigner.domain.SignConfiguration#selloTiempoPass' accessible; either change its visibility or write a custom TypeAdapter for its declaring type
+	at com.google.gson@2.9.1/com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:23)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:203)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:112)
+	at com.google.gson@2.9.1/com.google.gson.Gson.getAdapter(Gson.java:531)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.createBoundField(ReflectiveTypeAdapterFactory.java:137)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:211)
+	at com.google.gson@2.9.1/com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:112)
+	at com.google.gson@2.9.1/com.google.gson.Gson.getAdapter(Gson.java:531)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:1057)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:1016)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:959)
+	at com.google.gson@2.9.1/com.google.gson.Gson.fromJson(Gson.java:927)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSignConfiguration(WSSFDAdapter.java:36)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfigurationModel(RestService.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignInformationTask.call(SignInformationTask.java:19)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignInformationTask.call(SignInformationTask.java:13)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String org.oefa.gob.pe.osigner.domain.SignConfiguration.selloTiempoPass accessible: module org.oefa.gob.pe.osigner does not "opens org.oefa.gob.pe.osigner.domain" to module com.google.gson
+	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:387)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:363)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:311)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:181)
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:175)
+	at com.google.gson@2.9.1/com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:20)
+	... 22 more
+
+16-07-2023 10:46:14.140 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Se obtuvo información del proceso de firma

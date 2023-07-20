@@ -11,6 +11,7 @@ public class MainApplication extends Application {
     public void start(Stage stage) {
         ApplicationModel.NOTIFICATION_STAGE = new Stage();
         ApplicationModel.CURRENT_STAGE = stage;
+
         RouterFX.intializeApp(getParameters());
 
     }
