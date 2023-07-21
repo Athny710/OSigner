@@ -19,13 +19,14 @@ public class FileModel {
     private Float width;
     private int page;
 
-    public FileModel(String name, Float positionX, Float positionY, Float height, Float width, int page){
+    public FileModel(String name, Float positionX, Float positionY, Float height, Float width, int page, byte[] bytes){
         this.name = name;
         this.positionX = positionX;
         this.positionY = positionY;
         this.height = height;
         this.width = width;
         this.page = page;
+        this.bytes = bytes;
     }
 
     public Float getPositionX() {

@@ -1,24 +1,37 @@
 package org.oefa.gob.pe.osigner.application;
 
+import javafx.collections.FXCollections;
 import javafx.scene.Parent;
 import org.oefa.gob.pe.osigner.core.AnimationFX;
 import org.oefa.gob.pe.osigner.core.AppFX;
+import org.oefa.gob.pe.osigner.domain.CertificateModel;
+import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
 import org.oefa.gob.pe.osigner.task.platform.SignTaskManager;
+import org.oefa.gob.pe.osigner.util.CertificateUtil;
 import org.oefa.gob.pe.osigner.util.LogUtil;
+
+import java.util.List;
 
 public class PlatformService {
 
     public static PlatformModel PLATFORM_MODEL;
 
     public static void initializeSignProccess(){
+        loadAllCertificates();
         SignTaskManager.initializeSignProccess(PLATFORM_MODEL);
 
     }
 
-    public static void completeSignProccess(){
-        SignTaskManager.completeSignProccess();
-        disableButtons(true);
+    public static void completeSignProccess(String certificateAlias){
+        try {
+            SignTaskManager.completeSignProccess(
+                    CertificateUtil.getCertificateToSignByAlias(certificateAlias)
+            );
+            disableButtons(true);
+        }catch (Exception e){
+
+        }
 
     }
 
@@ -27,7 +40,13 @@ public class PlatformService {
     }
 
     public static void loadAllCertificates(){
-        LogUtil.setInfo("Cargando todos los certificados", PlatformService.class.getName());
+        LogUtil.setInfo("Cargando los certificados", PlatformService.class.getName());
+        List<String> certificateListByUserDNI = CertificateUtil.getUserCertificateList(SignConfiguration.getInstance().getSignProcessConfiguration().getUserDNI());
+        List<String> list = certificateListByUserDNI.size() == 0 ? List.of("No se encontraron certificados") : certificateListByUserDNI;
+
+        PLATFORM_MODEL.getCertificateComboBox().getItems().clear();
+        PLATFORM_MODEL.getCertificateComboBox().setItems(FXCollections.observableArrayList(list));
+
     }
 
     public static void disableButtons(boolean disable){

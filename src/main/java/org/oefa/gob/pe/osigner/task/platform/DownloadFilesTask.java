@@ -16,6 +16,7 @@ public class DownloadFilesTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        Thread.sleep(1000);
         if(AppConfiguration.APP_TYPE.equals(AppType.SIMPLE_SIGN)){
             for(FileModel fileToSave : SignConfiguration.getInstance().getFilesToSign()){
                 fileToSave.setLocation(
@@ -56,7 +57,7 @@ public class DownloadFilesTask extends Task<Void> {
     protected void failed() {
         super.failed();
         String errorMessage = LogUtil.setError(
-                "Error obteniendo el proceso de firma",
+                "Error descargando los archivos de firma",
                 this.getClass().getName(),
                 (Exception) super.getException()
         );

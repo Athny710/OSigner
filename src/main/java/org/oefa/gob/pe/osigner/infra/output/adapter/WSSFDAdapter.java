@@ -7,9 +7,11 @@ import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.SignProcessModel;
-import org.oefa.gob.pe.osigner.domain.ws.GrupoProcesoFirma;
-import org.oefa.gob.pe.osigner.domain.ws.ResponseProcesoFirma;
+import org.oefa.gob.pe.osigner.domain.ws.*;
 import org.oefa.gob.pe.osigner.infra.output.port.RestPort;
+import org.oefa.gob.pe.osigner.util.MapperUtil;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -19,10 +21,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.security.Key;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -32,6 +31,10 @@ public class WSSFDAdapter implements RestPort {
     private final RestTemplate REST_TEMPLATE = new RestTemplate();
     private final Gson GSON = new Gson();
 
+    @Override
+    public SignConfiguration getMassiveSignConfiguration() throws Exception{
+        return null;
+    }
 
     @Override
     public SignConfiguration getSimpleSignConfiguration() throws Exception {
@@ -47,19 +50,53 @@ public class WSSFDAdapter implements RestPort {
             throw new Exception(responseWSEntity.getMessage());
 
         GrupoProcesoFirma gpf = responseWSEntity.getGpf();
+        SimpleSignatureResponse simpleSignatureResponse = MapperUtil.mapPropertiesToSimpleSignatureResponse(
+                this.loadPropertiesFromByte(gpf.getBytesConf()),
+                gpf
+        );
+        simpleSignatureResponse.setImagenFirma(
+                this.getSignatureImage(simpleSignatureResponse.getProceso(), simpleSignatureResponse.getUsuarioId(), simpleSignatureResponse.getTipoFirma())
+        );
+        simpleSignatureResponse.setSelloTiempoPass(
+                this.decryptTsaPassword(simpleSignatureResponse.getSelloTiempoPass())
+        );
 
-        SignConfiguration configuration = this.getSignConfigurationFromProperties(gpf.getBytesConf(), gpf.getFechaRegistro());
-
-
-
-
-
-        return signConfiguration;
+        return MapperUtil.mapSimpleSignatureResponseToSignConfiguration(simpleSignatureResponse);
 
     }
 
     @Override
-    public void uploadFilesSigned(ArrayList<FileModel> fileList) throws Exception {
+    public void uploadFilesSimpleSign(List<FileModel> fileList) throws Exception {
+        String url = URL_SERVER + "uploadGrupoFirmado/";
+
+        ArrayList<byte[]> fileSignedBytes = fileList.stream().
+                map(FileModel::getBytes).
+                collect(Collectors.toCollection(ArrayList::new));
+
+        ArrayList<String> fileSignedNames = fileList.stream().
+                map(FileModel::getName).
+                collect(Collectors.toCollection(ArrayList::new));
+
+        GrupoFirmado grupoFirmado = new GrupoFirmado(
+                Integer.parseInt(AppConfiguration.ID_GROUP),
+                fileSignedNames,
+                fileSignedBytes
+        );
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json");
+        headers.add("Accept", "application/json");
+
+        HttpEntity<GrupoFirmado> requestEntity = new HttpEntity<>(grupoFirmado, headers);
+        ResponseEntity<String> response = REST_TEMPLATE.exchange(url, HttpMethod.PUT, requestEntity, String.class);
+
+        if(!response.getStatusCode().is2xxSuccessful())
+            throw new Exception("Error conectando al servicio: " + url);
+
+    }
+
+    @Override
+    public void uploadFilesMassiveSign(SignConfiguration signConfiguration) throws Exception {
 
     }
 
@@ -74,61 +111,21 @@ public class WSSFDAdapter implements RestPort {
 
     }
 
-    private SignConfiguration getSignConfigurationFromProperties(byte[] confBytes, String fechaRegistro) throws Exception{
-        Properties p = this.loadUserConfigurationProperties(confBytes);
+    private byte[] getSignatureImage(String processId,  String userId, Integer signatureType) throws Exception{
+        String url = URL_SERVER + "devolverImage/" + processId + "/" + userId + "/" + signatureType;
 
-        SignProcessModel signProcess = new SignProcessModel();
-        signProcess.setClientUUID(AppConfiguration.ID_CLIENT);
-        signProcess.setUserRole(p.getProperty("cargo"));
-        signProcess.setUserDNI(p.getProperty("DNI"));
-        signProcess.setLocation(p.getProperty("locacion"));
-        signProcess.setReason(p.getProperty("motivo"));
-        signProcess.setFechaCreacion(fechaRegistro);
-        signProcess.setUrlTsa(
-                p.getProperty("sellotiempo").equals("1") ? p.getProperty("urlTsa") : ""
-        );
-        signProcess.setUserTsa(
-                p.getProperty("sellotiempo").equals("1") ? p.getProperty("usuariotsa") : ""
-        );
-        signProcess.setPassTsa(
-                decryptTsaPassword(
-                    p.getProperty("sellotiempo").equals("1") ? p.getProperty("clavetsa") : ""
-                )
-        );
-        signProcess.setProceso(p.getProperty("proceso_id"));
-        signProcess.setSignatureType(Integer.parseInt(p.getProperty("firmado.visado")));
+        ResponseEntity<String> response =  REST_TEMPLATE.getForEntity(url, String.class);
+        if(!response.getStatusCode().is2xxSuccessful())
+            throw new Exception("Error conectando al servicio: " + url);
 
-        if(p.getProperty("firmavisible").equals("true")){
-            if(p.getProperty("firmado.visado").equals("1")){
-                signProcess.setSignatureStyle(2);
-            }else{
-                signProcess.setSignatureStyle(1);
-            }
-        }else{
-            signProcess.setSignatureStyle(0);
-        }
+        SignatureImage signatureImage = GSON.fromJson(response.getBody(), SignatureImage.class);
+        if(signatureImage.getEstado() == 0)
+            return null;
 
-        List<FileModel> fileList = new ArrayList<>();
-        List<Float> listX = Arrays.stream(p.getProperty("x").split(Pattern.quote(">"))).map(Float::parseFloat).toList();
-        List<Float> listY = Arrays.stream(p.getProperty("y").split(Pattern.quote(">"))).map(Float::parseFloat).toList();
-        List<Float> listHeight = Arrays.stream(p.getProperty("alto").split(Pattern.quote(">"))).map(Float::parseFloat).toList();
-        List<Float> listWidth = Arrays.stream(p.getProperty("ancho").split(Pattern.quote(">"))).map(Float::parseFloat).toList();
-        List<Integer> listPage = Arrays.stream(p.getProperty("pagina").split(Pattern.quote(">"))).map(Integer::parseInt).toList();
-        List<String> listNames = Arrays.stream(p.getProperty("nombrePdf").split(Pattern.quote(">"))).toList();
-        for(int i=0; i < listNames.size(); i++){
-            FileModel fileModel = new FileModel(
-                    listNames.get(i),
-                    listX.get(i),
-                    listY.get(i),
-                    listHeight.get(i),
-                    listWidth.get(i),
-                    listPage.get(i)
-            );
-            fileList.add(fileModel);
-        }
+        return signatureImage.getImage();
 
-        return new SignConfiguration(signProcess, fileList);
     }
+
 
     private String decryptTsaPassword(String encryptedPassword) throws Exception{
         if (encryptedPassword == null || encryptedPassword.length() == 0)
@@ -144,7 +141,7 @@ public class WSSFDAdapter implements RestPort {
     }
 
 
-    private Properties loadUserConfigurationProperties(byte[] propertiesBytes) throws Exception{
+    private Properties loadPropertiesFromByte(byte[] propertiesBytes) throws Exception{
         Properties properties = new Properties();
         InputStream input = new ByteArrayInputStream(propertiesBytes);
         properties.load(input);

@@ -2,6 +2,7 @@ package org.oefa.gob.pe.osigner.task.platform;
 
 import org.oefa.gob.pe.osigner.core.component.CertificateComponent;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
+import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 import org.oefa.gob.pe.osigner.util.TaskUtil;
@@ -21,8 +22,12 @@ public class SignTaskManager {
 
     }
 
-    public static void completeSignProccess(){
+    public static void completeSignProccess(CertificateModel certificateModel){
+        LogUtil.setInfo("Completando el proceso de firma", SignTaskManager.class.getName());
+        SignFilesTask signFilesTask = new SignFilesTask(certificateModel);
+        UploadFilesTask uploadFilesTask = new UploadFilesTask();
 
+        TaskUtil.executeTasksOnSerial(List.of(signFilesTask, uploadFilesTask));
 
     }
 

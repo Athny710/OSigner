@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class PlatformController implements Initializable {
 
-    //@FXML
+    @FXML
     private MFXComboBox<String> certificateComboBox;
 
     @FXML
@@ -73,7 +73,7 @@ public class PlatformController implements Initializable {
 
     @FXML
     void onConfirm(ActionEvent event) {
-        PlatformService.completeSignProccess();
+        PlatformService.completeSignProccess(certificateComboBox.getValue());
 
     }
 

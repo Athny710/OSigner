@@ -94,7 +94,7 @@
                   </ImageView>
                </children>
             </GridPane>
-            <MFXComboBox editable="false" floatingText="Certificado" focusTraversable="false" prefHeight="45.0" prefWidth="274.0" >
+            <MFXComboBox fx:id="certificateComboBox" editable="false" floatingText="Certificado" focusTraversable="false" prefHeight="45.0" prefWidth="274.0" >
                <styleClass>
                   <String fx:value="input" />
                   <String fx:value="select-input" />

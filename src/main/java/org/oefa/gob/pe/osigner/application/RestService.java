@@ -12,18 +12,21 @@ public class RestService {
 
     private static final WSSFDAdapter WSSFD_ADAPTER = new WSSFDAdapter();
 
-    public static SignConfiguration getSignConfigurationModel() throws Exception{
-        SignConfiguration signConfiguration;
-
+    public static void getSignConfiguration() throws Exception{
         if(AppConfiguration.APP_TYPE.equals(AppType.SIMPLE_SIGN)){
-
+            SignConfiguration.createInstace(WSSFD_ADAPTER.getSimpleSignConfiguration());
+        }else {
+            SignConfiguration.createInstace(WSSFD_ADAPTER.getMassiveSignConfiguration());
         }
-        return WSSFD_ADAPTER.getSignConfiguration();
 
     }
 
-    public static void uploadFilesSigned(ArrayList<FileModel> signedFiles) throws Exception{
-        WSSFD_ADAPTER.uploadFilesSigned(signedFiles);
+    public static void uploadFilesSigned(SignConfiguration signConfiguration) throws Exception{
+        if(AppConfiguration.APP_TYPE.equals(AppType.SIMPLE_SIGN)){
+            WSSFD_ADAPTER.uploadFilesSimpleSign(signConfiguration.getFilesToSign());
+        }else{
+            WSSFD_ADAPTER.uploadFilesMassiveSign(signConfiguration);
+        }
 
     }
 

@@ -11,7 +11,7 @@ public class MaterialConfigurationTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
-        Thread.sleep(400);
+        Thread.sleep(500);
         MFXThemeManager.addOn(ApplicationModel.CURRENT_STAGE.getScene(), Themes.DEFAULT, Themes.LEGACY);
 
         return null;

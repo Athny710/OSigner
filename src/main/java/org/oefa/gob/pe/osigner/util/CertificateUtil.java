@@ -155,7 +155,9 @@ public class CertificateUtil {
         Rdn rdn = ln.getRdns().stream().filter(r -> r.getType().equalsIgnoreCase(tagserie[0])).findFirst().orElseThrow();
         String value = rdn.getValue().toString();
 
-        return value.contains("DNI") ? value.split(":")[1] : value;
+        String separator = value.contains("DNI") ? ":" : "-";
+
+        return value.split(separator)[1];
 
     }
 

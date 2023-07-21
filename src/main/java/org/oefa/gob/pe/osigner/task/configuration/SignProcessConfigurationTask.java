@@ -10,9 +10,8 @@ public class SignProcessConfigurationTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
-        SignConfiguration.createInstace(
-                RestService.getSignConfigurationModel()
-        );
+        LogUtil.setInfo("Obteniendo información de firma", this.getClass().getName());
+        RestService.getSignConfiguration();
         return null;
 
     }

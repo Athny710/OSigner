@@ -1,5 +1,6 @@
 package org.oefa.gob.pe.osigner.domain;
 
+import java.io.File;
 import java.util.List;
 
 public class SignConfiguration {
@@ -14,14 +15,17 @@ public class SignConfiguration {
         this.signProcessConfiguration = signProcessModel;
         this.filesToSign = filesToSign;
     }
-    private SignConfiguration(SignConfiguration signConfiguration){
+
+    public static void createInstace(SignConfiguration signConfiguration){
+        instance = signConfiguration;
 
     }
-    public static SignConfiguration createInstace(SignProcessModel signProcessModel, List<FileModel> filesToSign){
-        instance = new SignConfiguration(signProcessModel, filesToSign);
 
-        return instance;
+    public static void updateInstance(List<FileModel> filesToSign){
+        instance.filesToSign = filesToSign;
+
     }
+
     public static SignConfiguration getInstance(){
         return instance;
 
@@ -31,15 +35,9 @@ public class SignConfiguration {
         return signProcessConfiguration;
     }
 
-    public void setSignProcessConfiguration(SignProcessModel signProcessConfiguration) {
-        this.signProcessConfiguration = signProcessConfiguration;
-    }
 
     public List<FileModel> getFilesToSign() {
         return filesToSign;
     }
 
-    public void setFilesToSign(List<FileModel> filesToSign) {
-        this.filesToSign = filesToSign;
-    }
 }

@@ -18,48 +18,51 @@ public class SignProcessModel {
     private String urlTsa;
     private String userTsa;
     private String passTsa;
-    private String proceso;
+
+    private boolean timeStamp;
+    private boolean ltv;
 
     private int signatureType;
     private int signatureStyle;
     private int signaturePositionType;
     private int signatureRelativePosition;
-    /*
-    private int positionX;
-    private int positionY;
-    private int page;
-    private int fontSize;
-    private int height;
-    private int width;
-
-     */
 
     private byte[] signatureImage;
     private String glosaText;
+    private String glosaUrl;
 
 
-    public String getProceso() {
-        return proceso;
-    }
-
-    public void setProceso(String proceso) {
-        this.proceso = proceso;
-    }
-
-    public String getUserDNI() {
-        return userDNI;
-    }
-
-    public void setUserDNI(String userDNI) {
+    public SignProcessModel(String userDNI, String userRole, String location, String reason, String fechaCreacion, boolean timeStamp, boolean ltv, String urlTsa, String userTsa, String passTsa, int signatureType, int signatureStyle, byte[] singatureImage){
         this.userDNI = userDNI;
+        this.userRole = userRole;
+        this.location = location;
+        this.reason = reason;
+        this.fechaCreacion = fechaCreacion;
+        this.timeStamp = timeStamp;
+        this.ltv = ltv;
+        this.urlTsa = urlTsa;
+        this.userTsa = userTsa;
+        this.passTsa = passTsa;
+        this.signatureType = signatureType;
+        this.signatureStyle = signatureStyle;
+        this.signatureImage = singatureImage;
+
     }
 
-    public String getGlosaText() {
-        return glosaText;
+    public boolean isTimeStamp() {
+        return timeStamp;
     }
 
-    public void setGlosaText(String glosaText) {
-        this.glosaText = glosaText;
+    public void setTimeStamp(boolean timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public boolean isLtv() {
+        return ltv;
+    }
+
+    public void setLtv(boolean ltv) {
+        this.ltv = ltv;
     }
 
     public Long getId() {
@@ -84,6 +87,14 @@ public class SignProcessModel {
 
     public void setUsernameSSFD(String usernameSSFD) {
         this.usernameSSFD = usernameSSFD;
+    }
+
+    public String getUserDNI() {
+        return userDNI;
+    }
+
+    public void setUserDNI(String userDNI) {
+        this.userDNI = userDNI;
     }
 
     public String getUserRole() {
@@ -190,20 +201,35 @@ public class SignProcessModel {
         this.signaturePositionType = signaturePositionType;
     }
 
-    public byte[] getSignatureImage() {
-        return signatureImage;
-    }
-
     public int getSignatureRelativePosition() {
         return signatureRelativePosition;
     }
-
 
     public void setSignatureRelativePosition(int signatureRelativePosition) {
         this.signatureRelativePosition = signatureRelativePosition;
     }
 
+    public byte[] getSignatureImage() {
+        return signatureImage;
+    }
+
     public void setSignatureImage(byte[] signatureImage) {
         this.signatureImage = signatureImage;
+    }
+
+    public String getGlosaText() {
+        return glosaText;
+    }
+
+    public void setGlosaText(String glosaText) {
+        this.glosaText = glosaText;
+    }
+
+    public String getGlosaUrl() {
+        return glosaUrl;
+    }
+
+    public void setGlosaUrl(String glosaUrl) {
+        this.glosaUrl = glosaUrl;
     }
 }
