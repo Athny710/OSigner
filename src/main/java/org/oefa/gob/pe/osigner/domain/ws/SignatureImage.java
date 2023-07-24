@@ -2,15 +2,15 @@ package org.oefa.gob.pe.osigner.domain.ws;
 
 public class SignatureImage {
 
-    private byte[] image;
+    private byte[] imagen;
     private Integer estado;
 
-    public byte[] getImage() {
-        return image;
+    public byte[] getImagen() {
+        return imagen;
     }
 
-    public void setImage(byte[] image) {
-        this.image = image;
+    public void setImagen(byte[] imagen) {
+        this.imagen= imagen;
     }
 
     public Integer getEstado() {

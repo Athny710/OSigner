@@ -2,6 +2,7 @@ package org.oefa.gob.pe.osigner.task.platform;
 
 import javafx.application.Platform;
 import javafx.concurrent.Task;
+import org.oefa.gob.pe.osigner.application.PlatformService;
 import org.oefa.gob.pe.osigner.application.RestService;
 import org.oefa.gob.pe.osigner.application.SignService;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
@@ -22,12 +23,12 @@ public class UploadFilesTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("Se firmaron los archivos exitosamente", this.getClass().getName());
+        LogUtil.setInfo("Se subieron los archivos firmados exitosamente", this.getClass().getName());
         super.succeeded();
 
         Platform.runLater(() -> {
-            StepComponent.showStepCompleted(1);
-
+            StepComponent.showStepCompleted(3);
+            PlatformService.showSuccessAndClose();
         });
 
     }
@@ -41,7 +42,7 @@ public class UploadFilesTask extends Task<Void> {
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
-        StepComponent.showStepError(1);
+        StepComponent.showStepError(3);
         NotificationFX.showSignInformationErrorNotification(errorMessage);
 
     }

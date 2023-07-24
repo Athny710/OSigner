@@ -119,10 +119,8 @@ public class WSSFDAdapter implements RestPort {
             throw new Exception("Error conectando al servicio: " + url);
 
         SignatureImage signatureImage = GSON.fromJson(response.getBody(), SignatureImage.class);
-        if(signatureImage.getEstado() == 0)
-            return null;
 
-        return signatureImage.getImage();
+        return signatureImage.getImagen();
 
     }
 

@@ -30,7 +30,7 @@ public class SignFilesTask extends Task<Void> {
         super.succeeded();
 
         Platform.runLater(() -> {
-            StepComponent.showStepCompleted(1);
+            StepComponent.showStepCompleted(2);
 
         });
 
@@ -45,7 +45,7 @@ public class SignFilesTask extends Task<Void> {
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
-        StepComponent.showStepError(1);
+        StepComponent.showStepError(2);
         NotificationFX.showSignInformationErrorNotification(errorMessage);
 
     }

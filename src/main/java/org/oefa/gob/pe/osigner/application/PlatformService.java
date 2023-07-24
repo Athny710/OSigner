@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.scene.Parent;
 import org.oefa.gob.pe.osigner.core.AnimationFX;
 import org.oefa.gob.pe.osigner.core.AppFX;
+import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
@@ -25,6 +26,7 @@ public class PlatformService {
 
     public static void completeSignProccess(String certificateAlias){
         try {
+            StepComponent.showStepCompleted(1);
             SignTaskManager.completeSignProccess(
                     CertificateUtil.getCertificateToSignByAlias(certificateAlias)
             );
@@ -61,7 +63,7 @@ public class PlatformService {
     }
 
     public static void showErrorAndClose(){
-        showEndView("view/PlatformSuccess.fxml");
+        showEndView("view/PlatformError.fxml");
 
     }
 

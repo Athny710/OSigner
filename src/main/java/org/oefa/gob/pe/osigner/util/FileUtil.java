@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 public class FileUtil {
 
     private static final String OSIGNER_DIRECTORY = System.getProperty("user.home") + AppConfiguration.getKey("OSIGNER_FOLDER");
-    private static final String TO_SIGN_FOLDER = AppConfiguration.getKey("POR_FIRMA_FOLDER");
+    private static final String TO_SIGN_FOLDER = AppConfiguration.getKey("POR_FIRMAR_FOLDER");
 
     public static String saveFileBytes(FileModel file) throws Exception{
         LogUtil.setInfo("Guardando el archivo: " + file.getName(), FileUtil.class.getName());
