@@ -1,6 +1,5 @@
 package org.oefa.gob.pe.osigner.domain;
 
-import java.io.File;
 import java.util.List;
 
 public class SignConfiguration {

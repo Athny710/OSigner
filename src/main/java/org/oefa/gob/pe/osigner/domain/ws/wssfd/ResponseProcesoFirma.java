@@ -1,6 +1,4 @@
-package org.oefa.gob.pe.osigner.domain.ws;
-
-import org.oefa.gob.pe.osigner.domain.SignConfiguration;
+package org.oefa.gob.pe.osigner.domain.ws.wssfd;
 
 public class ResponseProcesoFirma {
 

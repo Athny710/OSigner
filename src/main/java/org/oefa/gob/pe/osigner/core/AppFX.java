@@ -25,7 +25,7 @@ public class AppFX {
         Stage stage = ApplicationModel.CURRENT_STAGE;
 
         stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setAlwaysOnTop(true);
+        //stage.setAlwaysOnTop(true);
         stage.setScene(scene);
         stage.setOnShowing(e -> {
             PlatformLoaderService.initializeConfiguration();

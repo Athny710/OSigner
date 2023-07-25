@@ -5,35 +5,63 @@ import javafx.concurrent.Task;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.application.PlatformService;
 import org.oefa.gob.pe.osigner.commons.AppType;
+import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.util.FileUtil;
 import org.oefa.gob.pe.osigner.util.LogUtil;
+import org.oefa.gob.pe.osigner.util.PdfUtil;
 
 public class DownloadFilesTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
-        Thread.sleep(1000);
+        LogUtil.setInfo("Obteniendo los archivos", this.getClass().getName());
+        Thread.sleep(500);
+
         if(AppConfiguration.APP_TYPE.equals(AppType.SIMPLE_SIGN)){
             for(FileModel fileToSave : SignConfiguration.getInstance().getFilesToSign()){
                 fileToSave.setLocation(
                         FileUtil.saveFileBytes(fileToSave)
                 );
             }
+        }
 
-        }else{
-            String url = SignConfiguration.getInstance().getSignProcessConfiguration().getDownloadRestService();
-            String zipPath = FileUtil.saveFileFromUrl(url);
+        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
+            LogUtil.setInfo("Descargando zip", this.getClass().getName());
+            String zipPath = FileUtil.saveFileFromUrl(
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getDownloadRestService(),
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getZipName()
+            );
+
+            LogUtil.setInfo("Descomprimiendo archivos", this.getClass().getName());
             String directoryPath = FileUtil.unzipFiles(zipPath);
-
             SignConfiguration.getInstance()
                     .getFilesToSign()
                     .forEach(x ->
                             x.setLocation(directoryPath + x.getName())
                     );
+
+            PdfUtil.convertFilesToPDF(
+                    SignConfiguration.getInstance().getFilesToSign()
+            );
+            /*
+            PdfUtil.addGlosaVerificacion(
+                    SignConfiguration.getInstance().getFilesToSign(),
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getGlosaVerificacion()
+            );
+
+             */
+
+            PdfUtil.setCoordenadasPosicionFirma(
+                    SignConfiguration.getInstance().getFilesToSign(),
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getSignatureType(),
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getSignatureStyle(),
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getSignaturePositionType(),
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getUsernameSSFD()
+            );
 
         }
         return null;

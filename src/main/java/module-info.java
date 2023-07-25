@@ -11,6 +11,9 @@ module org.oefa.gob.pe.osigner {
     requires sign;
     requires kernel;
     requires io;
+    requires itext;
+    requires org.apache.pdfbox;
+    requires aspose.words;
 
     opens org.oefa.gob.pe.osigner to javafx.fxml;
     exports org.oefa.gob.pe.osigner;
@@ -18,6 +21,7 @@ module org.oefa.gob.pe.osigner {
     opens org.oefa.gob.pe.osigner.infra.input.adapter to javafx.fxml;
     exports org.oefa.gob.pe.osigner.infra.input.adapter;
 
-    opens org.oefa.gob.pe.osigner.domain.ws to com.google.gson;
     opens org.oefa.gob.pe.osigner.domain to com.google.gson;
+    opens org.oefa.gob.pe.osigner.domain.ws to com.google.gson;
+    opens org.oefa.gob.pe.osigner.domain.ws.wssfd to com.google.gson;
 }

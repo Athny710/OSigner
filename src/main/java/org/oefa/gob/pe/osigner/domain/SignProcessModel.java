@@ -14,6 +14,7 @@ public class SignProcessModel {
     private String downloadRestService;
     private String uploadRestService;
     private String authorizationTokenService;
+    private String zipName;
 
     private String urlTsa;
     private String userTsa;
@@ -24,6 +25,7 @@ public class SignProcessModel {
 
     private int signatureType;
     private int signatureStyle;
+    private int glosaVerificacion;
     private int signaturePositionType;
     private int signatureRelativePosition;
 
@@ -31,6 +33,10 @@ public class SignProcessModel {
     private String glosaText;
     private String glosaUrl;
 
+
+    public SignProcessModel(){
+
+    }
 
     public SignProcessModel(String userDNI, String userRole, String location, String reason, String fechaCreacion, boolean timeStamp, boolean ltv, String urlTsa, String userTsa, String passTsa, int signatureType, int signatureStyle, byte[] singatureImage){
         this.userDNI = userDNI;
@@ -231,5 +237,21 @@ public class SignProcessModel {
 
     public void setGlosaUrl(String glosaUrl) {
         this.glosaUrl = glosaUrl;
+    }
+
+    public String getZipName() {
+        return zipName;
+    }
+
+    public void setZipName(String zipName) {
+        this.zipName = zipName;
+    }
+
+    public int getGlosaVerificacion() {
+        return glosaVerificacion;
+    }
+
+    public void setGlosaVerificacion(int glosaVerificacion) {
+        this.glosaVerificacion = glosaVerificacion;
     }
 }

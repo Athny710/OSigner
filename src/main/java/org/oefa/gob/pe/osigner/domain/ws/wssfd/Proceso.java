@@ -1,4 +1,4 @@
-package org.oefa.gob.pe.osigner.domain.ws;
+package org.oefa.gob.pe.osigner.domain.ws.wssfd;
 
 public class Proceso {
 

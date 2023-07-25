@@ -6,8 +6,9 @@ import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
-import org.oefa.gob.pe.osigner.domain.SignProcessModel;
-import org.oefa.gob.pe.osigner.domain.ws.*;
+import org.oefa.gob.pe.osigner.domain.ws.MassiveSignatureResponse;
+import org.oefa.gob.pe.osigner.domain.ws.SimpleSignatureResponse;
+import org.oefa.gob.pe.osigner.domain.ws.wssfd.*;
 import org.oefa.gob.pe.osigner.infra.output.port.RestPort;
 import org.oefa.gob.pe.osigner.util.MapperUtil;
 import org.springframework.http.HttpEntity;
@@ -22,7 +23,6 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.security.Key;
 import java.util.*;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class WSSFDAdapter implements RestPort {
@@ -33,8 +33,22 @@ public class WSSFDAdapter implements RestPort {
 
     @Override
     public SignConfiguration getMassiveSignConfiguration() throws Exception{
-        return null;
+        String url = URL_SERVER + "obtenerConfiguracionFirmaMasiva/" + AppConfiguration.ID_GROUP;
+
+        ResponseEntity<String>  response = REST_TEMPLATE.getForEntity(url, String.class);
+        if(!response.getStatusCode().is2xxSuccessful())
+            throw new Exception("Error conectando al servicio: " + url);
+
+        ResponseConfiguracionMasiva responseWSEntity = GSON.fromJson(response.getBody(), ResponseConfiguracionMasiva.class);
+        if(!responseWSEntity.isStatus())
+            throw new Exception(responseWSEntity.getMensaje());
+
+        MassiveSignatureResponse massiveSignatureResponse = responseWSEntity.getResponseFirmaMasiva();
+
+        return MapperUtil.mapMassiveSignatureResponseToSignConfiguration(massiveSignatureResponse);
+
     }
+
 
     @Override
     public SignConfiguration getSimpleSignConfiguration() throws Exception {

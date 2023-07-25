@@ -4,8 +4,10 @@ import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.SignProcessModel;
-import org.oefa.gob.pe.osigner.domain.ws.DocProcesoFirma;
-import org.oefa.gob.pe.osigner.domain.ws.GrupoProcesoFirma;
+import org.oefa.gob.pe.osigner.domain.ws.MassiveSignatureResponse;
+import org.oefa.gob.pe.osigner.domain.ws.wssfd.ArchivoFirmaMasiva;
+import org.oefa.gob.pe.osigner.domain.ws.wssfd.DocProcesoFirma;
+import org.oefa.gob.pe.osigner.domain.ws.wssfd.GrupoProcesoFirma;
 import org.oefa.gob.pe.osigner.domain.ws.SimpleSignatureResponse;
 
 import java.util.ArrayList;
@@ -104,7 +106,59 @@ public class MapperUtil {
 
     }
 
-    public static SignConfiguration mapMassiveSignatureResponseToSignConfiguration(){
-        return null;
+    public static SignConfiguration mapMassiveSignatureResponseToSignConfiguration(MassiveSignatureResponse msResponse){
+        SignProcessModel signProcessModel = new SignProcessModel();
+        signProcessModel.setId(msResponse.getConfiguracionFirma().getId());
+        signProcessModel.setClientUUID(msResponse.getConfiguracionFirma().getClientUUID());
+        signProcessModel.setUsernameSSFD(msResponse.getConfiguracionFirma().getUsernameSSFD());
+        signProcessModel.setUserDNI(msResponse.getConfiguracionFirma().getUserDNI());
+        signProcessModel.setUserRole(msResponse.getConfiguracionFirma().getUserRole());
+        signProcessModel.setLocation(msResponse.getConfiguracionFirma().getLocation());
+        signProcessModel.setReason(msResponse.getConfiguracionFirma().getReason());
+        signProcessModel.setFechaCreacion(msResponse.getConfiguracionFirma().getFechaCreacion());
+        signProcessModel.setZipName(msResponse.getConfiguracionFirma().getZipName());
+
+        signProcessModel.setDownloadRestService(msResponse.getConfiguracionFirma().getDownloadRestService());
+        signProcessModel.setUploadRestService(msResponse.getConfiguracionFirma().getUploadRestService());
+        signProcessModel.setAuthorizationTokenService(msResponse.getConfiguracionFirma().getAuthorizationTokenService());
+
+        signProcessModel.setUrlTsa(msResponse.getConfiguracionFirma().getServicioFirma().getUrl());
+        signProcessModel.setUserTsa(msResponse.getConfiguracionFirma().getServicioFirma().getUsuario());
+        signProcessModel.setPassTsa(msResponse.getConfiguracionFirma().getServicioFirma().getClave());
+
+        signProcessModel.setTimeStamp(msResponse.getConfiguracionFirma().getSignatureLevel().equals("STSA"));
+        signProcessModel.setLtv(msResponse.getConfiguracionFirma().getSignatureLevel().equals("SLTV"));
+
+        signProcessModel.setSignatureType(msResponse.getConfiguracionFirma().getSignatureType());
+        signProcessModel.setSignatureStyle(msResponse.getConfiguracionFirma().getSignatureStyle());
+        signProcessModel.setSignaturePositionType(msResponse.getConfiguracionFirma().getSignaturePositionType());
+        signProcessModel.setSignatureRelativePosition(msResponse.getConfiguracionFirma().getSignatureRelativePosition());
+
+        signProcessModel.setGlosaVerificacion(msResponse.getConfiguracionFirma().getGlosaVerificacion());
+        signProcessModel.setGlosaText(msResponse.getConfiguracionFirma().getExtension().getTexto());
+        signProcessModel.setGlosaUrl(msResponse.getConfiguracionFirma().getExtension().getUrl());
+
+        signProcessModel.setSignatureImage(msResponse.getImagenFirma());
+
+        List<FileModel> fileModelList = new ArrayList<>();
+        for(ArchivoFirmaMasiva archivo : msResponse.getListaArchivos()){
+            FileModel fileToSign = new FileModel(
+                    archivo.getId(),
+                    archivo.getIdArchivo(),
+                    archivo.getName(),
+                    archivo.getCodigoOperacion(),
+                    archivo.getEstadoOperacion(),
+                    archivo.getClaveVerificacion(),
+                    msResponse.getConfiguracionFirma().getPositionX(),
+                    msResponse.getConfiguracionFirma().getPositionY(),
+                    msResponse.getConfiguracionFirma().getHeight(),
+                    msResponse.getConfiguracionFirma().getWidth(),
+                    msResponse.getConfiguracionFirma().getPage()
+            );
+            fileModelList.add(fileToSign);
+        }
+
+        return new SignConfiguration(signProcessModel, fileModelList);
+
     }
 }

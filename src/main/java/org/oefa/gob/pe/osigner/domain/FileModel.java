@@ -19,6 +19,20 @@ public class FileModel {
     private Float width;
     private int page;
 
+    public FileModel(Long id, int idArchivo, String name, int codigoOperacion, int estadoOperacion, String claveVerificacion, Float positionX, Float positionY, Float height, Float width, int page) {
+        this.id = id;
+        this.idArchivo = idArchivo;
+        this.name = name;
+        this.codigoOperacion = codigoOperacion;
+        this.estadoOperacion = estadoOperacion;
+        this.claveVerificacion = claveVerificacion;
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.height = height;
+        this.width = width;
+        this.page = page;
+    }
+
     public FileModel(String name, Float positionX, Float positionY, Float height, Float width, int page, byte[] bytes){
         this.name = name;
         this.positionX = positionX;
