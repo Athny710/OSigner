@@ -46,9 +46,14 @@ public class PdfUtil {
                         changeExtensionToPdf(file)
                 );
 
-                new File(OSIGNER_DIRECTORY + TO_SIGN_FOLDER + docxName).delete();
+                deleteFile(OSIGNER_DIRECTORY + TO_SIGN_FOLDER +  docxName);
             }
         }
+
+    }
+
+    private static void deleteFile(String fileToDeletePath) {
+        new File(fileToDeletePath).delete();
 
     }
 

@@ -44,6 +44,9 @@ public class WSSFDAdapter implements RestPort {
             throw new Exception(responseWSEntity.getMensaje());
 
         MassiveSignatureResponse massiveSignatureResponse = responseWSEntity.getResponseFirmaMasiva();
+        massiveSignatureResponse.getConfiguracionFirma().getServicioFirma().setClave(
+                this.decryptTsaPassword(massiveSignatureResponse.getConfiguracionFirma().getServicioFirma().getClave())
+        );
 
         return MapperUtil.mapMassiveSignatureResponseToSignConfiguration(massiveSignatureResponse);
 

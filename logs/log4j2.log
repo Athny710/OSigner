@@ -3377,3 +3377,481 @@ Caused by: java.io.IOException: unknown tag 13 encountered
 	... 13 more
 
 25-07-2023 17:22:59.316 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+26-07-2023 10:40:42.188 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 10:40:42.533 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 10:40:42.543 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 10:40:43.176 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 10:40:47.012 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 10:40:47.661 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 10:40:48.047 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 10:40:48.057 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 10:40:48.093 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 10:40:48.594 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 10:40:48.731 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error descargando los archivos de firma
+java.io.IOException: Server returned HTTP response code: 401 for URL: https://desarrollo.oefa.gob.pe/alfresco/s/slingshot/node/content/workspace/SpacesStore/b8c6c46d-e1c0-45e6-bb9b-a3efdbdb4d2a/ARDQWJ9OZC03YY9FMHWF8K8VPI2NMT.zip?a=true&alf_ticket=TICKET_f67f60b3c6bd78dfde75956958bfd0ce2843a432
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:2013)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1592)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:224)
+	at java.base/java.net.URL.openStream(URL.java:1161)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.FileUtil.saveFileFromUrl(FileUtil.java:42)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:34)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+26-07-2023 10:43:44.174 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 10:43:44.487 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 10:43:44.495 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 10:43:45.234 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 10:43:49.251 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 10:43:49.625 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 10:43:49.978 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 10:43:49.986 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 10:43:50.006 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 10:43:50.507 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 10:43:50.562 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 10:43:55.020 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Se descargaron los archivos
+26-07-2023 10:44:12.383 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 10:44:12.974 ERROR org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Error firmando los archivos
+com.itextpdf.kernel.PdfException: Unknown PdfException.
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:933)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:648)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:538)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.IText7Adapter.signFilesFromSignConfiguration(IText7Adapter.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.SignService.signFiles(SignService.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: unknown tag 13 encountered
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.createPrimitiveDERObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.buildObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.readObject(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.readTimeStampResp(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at sign@7.1.10/com.itextpdf.signatures.TSAClientBouncyCastle.getTimeStampToken(TSAClientBouncyCastle.java:230)
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:899)
+	... 13 more
+
+26-07-2023 10:44:13.077 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+26-07-2023 10:57:44.907 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 10:57:45.222 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 10:57:45.231 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 10:57:45.872 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 10:57:49.687 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 10:57:50.379 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 10:57:50.759 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 10:57:50.764 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 10:57:50.784 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 10:57:51.287 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 10:57:51.356 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 10:57:55.865 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Se descargaron los archivos
+26-07-2023 10:58:04.182 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 10:58:04.715 ERROR org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Error firmando los archivos
+com.itextpdf.kernel.PdfException: Unknown PdfException.
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:933)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:648)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:538)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.IText7Adapter.signFilesFromSignConfiguration(IText7Adapter.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.SignService.signFiles(SignService.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: unknown tag 13 encountered
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.createPrimitiveDERObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.buildObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.readObject(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.readTimeStampResp(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at sign@7.1.10/com.itextpdf.signatures.TSAClientBouncyCastle.getTimeStampToken(TSAClientBouncyCastle.java:230)
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:899)
+	... 13 more
+
+26-07-2023 10:58:04.834 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+26-07-2023 11:04:31.775 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 11:04:32.098 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 11:04:32.107 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 11:04:32.733 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 11:04:36.564 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 11:04:37.226 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 11:04:37.686 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 11:04:37.692 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 11:04:37.741 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 11:04:38.242 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 11:04:38.303 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 11:04:42.662 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Se descargaron los archivos
+26-07-2023 11:04:47.977 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 11:04:48.509 ERROR org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Error firmando los archivos
+com.itextpdf.kernel.PdfException: Unknown PdfException.
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:933)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:648)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:538)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.IText7Adapter.signFilesFromSignConfiguration(IText7Adapter.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.SignService.signFiles(SignService.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: unknown tag 13 encountered
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.createPrimitiveDERObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.buildObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.readObject(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.readTimeStampResp(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at sign@7.1.10/com.itextpdf.signatures.TSAClientBouncyCastle.getTimeStampToken(TSAClientBouncyCastle.java:230)
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:899)
+	... 13 more
+
+26-07-2023 11:09:32.481 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 11:09:32.819 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 11:09:32.829 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 11:09:33.490 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 11:09:37.416 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 11:09:37.939 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 11:09:38.406 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 11:09:38.413 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 11:09:38.461 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 11:09:38.962 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 11:09:39.024 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 11:09:51.172 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Se descargaron los archivos
+26-07-2023 11:10:02.114 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 11:11:33.399 ERROR org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Error firmando los archivos
+com.itextpdf.kernel.PdfException: Unknown PdfException.
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:933)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:648)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:538)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.IText7Adapter.signFilesFromSignConfiguration(IText7Adapter.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.SignService.signFiles(SignService.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: unknown tag 13 encountered
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.createPrimitiveDERObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.buildObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.readObject(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.readTimeStampResp(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at sign@7.1.10/com.itextpdf.signatures.TSAClientBouncyCastle.getTimeStampToken(TSAClientBouncyCastle.java:230)
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:899)
+	... 15 more
+
+26-07-2023 12:24:53.767 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 12:24:54.119 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 12:24:54.132 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 12:24:54.738 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 12:24:59.123 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 12:24:59.719 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 12:25:00.110 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 12:25:00.115 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 12:25:00.134 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 12:25:00.636 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 12:25:00.784 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.io.IOException: Server returned HTTP response code: 401 for URL: https://desarrollo.oefa.gob.pe/alfresco/s/slingshot/node/content/workspace/SpacesStore/b8c6c46d-e1c0-45e6-bb9b-a3efdbdb4d2a/ARDQWJ9OZC03YY9FMHWF8K8VPI2NMT.zip?a=true&alf_ticket=TICKET_3146a0f27eaa58c548583c5d1cfe0cae57b655f8
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:2013)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1592)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:224)
+	at java.base/java.net.URL.openStream(URL.java:1161)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.FileUtil.saveFileFromUrl(FileUtil.java:42)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:34)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+26-07-2023 12:25:36.964 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 12:25:37.275 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 12:25:37.286 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 12:25:37.902 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 12:25:41.800 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 12:25:42.656 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 12:25:43.170 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 12:25:43.177 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 12:25:43.203 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 12:25:43.704 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 12:25:43.780 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 12:25:43.788 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 12:25:47.879 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 12:25:48.303 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 12:25:59.345 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 12:25:59.366 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 12:25:59.887 ERROR org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Error firmando los archivos
+com.itextpdf.kernel.PdfException: Unknown PdfException.
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:933)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:648)
+	at sign@7.1.10/com.itextpdf.signatures.PdfSigner.signDetached(PdfSigner.java:538)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.IText7Adapter.signFilesFromSignConfiguration(IText7Adapter.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.SignService.signFiles(SignService.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:23)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: unknown tag 13 encountered
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.createPrimitiveDERObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.buildObject(Unknown Source)
+	at org.bouncycastle.provider/org.bouncycastle.asn1.ASN1InputStream.readObject(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.readTimeStampResp(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at org.bouncycastle.tsp.TimeStampResponse.<init>(Unknown Source)
+	at sign@7.1.10/com.itextpdf.signatures.TSAClientBouncyCastle.getTimeStampToken(TSAClientBouncyCastle.java:230)
+	at sign@7.1.10/com.itextpdf.signatures.PdfPKCS7.getEncodedPKCS7(PdfPKCS7.java:899)
+	... 13 more
+
+26-07-2023 12:27:39.474 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 12:27:39.883 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 12:27:39.894 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 12:27:40.574 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 12:27:44.703 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 12:27:45.352 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 12:27:45.832 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 12:27:45.839 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 12:27:45.842 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 12:27:46.344 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 12:27:46.395 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 12:27:46.400 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 12:27:50.588 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 12:27:50.999 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 12:28:05.355 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 12:28:05.373 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 12:34:02.401 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 12:34:02.700 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 12:34:02.709 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 12:34:05.331 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 12:34:07.300 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 12:34:08.641 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 12:34:09.070 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 12:34:09.075 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 12:34:09.099 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 12:34:09.601 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 12:34:09.659 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 12:34:09.665 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 12:34:13.771 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 12:34:14.116 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 12:34:24.114 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 12:34:24.134 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 12:34:25.730 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Se firmaron los archivos exitosamente
+26-07-2023 12:34:25.733 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+26-07-2023 12:54:57.047 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 12:54:57.362 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 12:54:57.373 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 12:54:58.075 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 12:54:58.700 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:397)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:171)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+26-07-2023 12:54:58.708 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 12:55:01.921 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 12:55:02.314 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 12:55:02.319 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 12:55:02.327 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 12:55:02.829 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 12:55:02.886 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 12:55:02.892 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 12:55:06.897 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 12:55:07.236 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+26-07-2023 12:55:07.275 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 12:55:14.536 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 12:55:14.542 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 12:55:16.679 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Se firmaron los archivos exitosamente
+26-07-2023 12:55:16.681 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+26-07-2023 13:03:52.746 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 13:03:53.223 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 13:03:53.243 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 13:03:54.057 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 13:03:57.824 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 13:03:58.527 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 13:03:58.972 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 13:03:59.022 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 13:03:59.062 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 13:03:59.564 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 13:03:59.643 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 13:03:59.649 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 13:04:07.690 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 13:04:08.073 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 13:04:25.367 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 13:04:25.413 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 13:04:25.639 ERROR org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Error firmando los archivos
+java.lang.NullPointerException: Cannot invoke "java.io.InputStream.readAllBytes()" because the return value of "org.oefa.gob.pe.osigner.core.LoaderFX.loadResource(String)" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.IText7Adapter.signFilesFromSignConfiguration(IText7Adapter.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.SignService.signFiles(SignService.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:23)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:12)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+26-07-2023 13:05:29.431 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 13:05:29.784 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 13:05:29.792 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 13:05:30.685 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 13:05:34.514 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 13:05:35.261 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 13:05:35.660 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 13:05:35.668 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 13:05:35.699 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 13:05:36.200 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 13:05:36.340 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 13:05:36.347 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 13:05:40.389 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 13:05:40.741 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 13:05:48.879 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 13:05:48.903 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 13:05:50.820 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Se firmaron los archivos exitosamente
+26-07-2023 13:05:50.823 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+26-07-2023 15:11:39.989 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 15:11:40.300 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 15:11:40.308 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 15:11:40.976 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 15:11:44.961 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 15:11:45.776 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 15:11:46.261 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 15:11:46.271 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 15:11:46.302 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 15:11:46.806 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 15:11:46.870 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 15:11:46.875 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 15:11:50.954 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 15:11:51.315 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 15:11:58.276 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 15:11:58.315 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 15:12:00.397 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Se firmaron los archivos exitosamente
+26-07-2023 15:12:00.426 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+26-07-2023 15:22:36.165 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 15:22:36.496 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 15:22:36.505 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 15:22:37.200 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 15:22:41.161 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 15:22:41.878 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 15:22:42.299 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 15:22:42.304 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 15:22:42.336 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 15:22:42.838 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 15:22:42.894 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 15:22:42.902 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 15:22:47.117 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 15:22:47.503 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 15:22:54.531 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 15:22:54.565 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 15:24:22.286 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 15:24:22.584 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 15:24:22.593 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 15:24:23.287 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 15:24:26.860 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 15:24:27.676 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 15:24:28.126 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 15:24:28.134 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 15:24:28.154 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 15:24:28.657 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 15:24:28.725 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 15:24:28.729 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 15:24:32.687 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 15:24:33.060 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 15:24:41.095 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+26-07-2023 15:24:41.120 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+26-07-2023 15:24:43.344 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Se firmaron los archivos exitosamente
+26-07-2023 15:24:43.388 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+26-07-2023 15:25:09.248 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 15:25:09.577 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 15:25:09.587 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 15:25:10.284 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 15:25:14.540 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 15:25:15.135 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 15:25:15.589 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 15:25:15.597 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 15:25:15.621 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 15:25:16.121 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 15:25:16.187 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 15:25:50.325 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 15:25:54.480 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 15:25:54.859 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 16:30:57.760 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 16:30:58.093 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 16:30:58.103 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 16:30:58.837 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 16:31:02.785 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 16:31:03.461 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 16:31:03.888 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 16:31:03.894 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 16:31:03.919 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 16:31:04.421 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 16:31:04.484 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 16:31:10.116 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 16:31:14.624 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 16:31:14.987 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 16:32:38.671 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+26-07-2023 16:32:38.672 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+26-07-2023 16:33:33.821 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 16:33:34.142 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 16:33:34.151 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 16:33:34.969 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 16:33:38.953 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 16:33:39.408 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 16:33:39.767 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 16:33:39.774 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 16:33:39.795 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 16:33:40.296 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 16:33:40.360 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 16:33:40.369 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 16:33:44.401 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 16:33:44.756 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+26-07-2023 16:38:34.598 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+26-07-2023 16:38:34.901 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+26-07-2023 16:38:34.909 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+26-07-2023 16:38:35.544 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+26-07-2023 16:38:39.494 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+26-07-2023 16:38:40.259 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+26-07-2023 16:38:40.627 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+26-07-2023 16:38:40.632 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+26-07-2023 16:38:40.653 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+26-07-2023 16:38:41.154 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descargando zip
+26-07-2023 16:38:41.227 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos
+26-07-2023 16:38:41.239 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+26-07-2023 16:38:45.297 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+26-07-2023 16:38:45.664 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar

@@ -44,6 +44,7 @@ public class DownloadFilesTask extends Task<Void> {
                             x.setLocation(directoryPath + x.getName())
                     );
 
+            LogUtil.setInfo("Convirtiendo archivos a PDF.", this.getClass().getName());
             PdfUtil.convertFilesToPDF(
                     SignConfiguration.getInstance().getFilesToSign()
             );
@@ -55,6 +56,7 @@ public class DownloadFilesTask extends Task<Void> {
 
              */
 
+            LogUtil.setInfo("Obteniendo coordenadas de firma.", this.getClass().getName());
             PdfUtil.setCoordenadasPosicionFirma(
                     SignConfiguration.getInstance().getFilesToSign(),
                     SignConfiguration.getInstance().getSignProcessConfiguration().getSignatureType(),
@@ -70,7 +72,7 @@ public class DownloadFilesTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("Se descargaron los archivos", this.getClass().getName());
+        LogUtil.setInfo("Archivos listos para firmar", this.getClass().getName());
         super.succeeded();
 
         Platform.runLater(() -> {
@@ -85,7 +87,7 @@ public class DownloadFilesTask extends Task<Void> {
     protected void failed() {
         super.failed();
         String errorMessage = LogUtil.setError(
-                "Error descargando los archivos de firma",
+                "Error obteniendo los archivos de firma",
                 this.getClass().getName(),
                 (Exception) super.getException()
         );

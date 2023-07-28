@@ -43,6 +43,8 @@ public class FileModel {
         this.bytes = bytes;
     }
 
+    public FileModel(){}
+
     public Float getPositionX() {
         return positionX;
     }

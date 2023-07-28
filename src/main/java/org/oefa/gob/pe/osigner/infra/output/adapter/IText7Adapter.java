@@ -7,11 +7,13 @@ import com.itextpdf.kernel.pdf.StampingProperties;
 import com.itextpdf.signatures.*;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
+import org.oefa.gob.pe.osigner.core.LoaderFX;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.SignProcessModel;
 import org.oefa.gob.pe.osigner.infra.output.port.SignPort;
+import org.oefa.gob.pe.osigner.util.FileUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 public class IText7Adapter implements SignPort {
 
     private final String OSIGNER_DIRECTORY = System.getProperty("user.home") + AppConfiguration.getKey("OSIGNER_FOLDER");
-    private final String TO_SIGN_FOLDER = AppConfiguration.getKey("FIRMADOS_FOLDER");
+    private final String SIGNED_FOLDER = AppConfiguration.getKey("FIRMADOS_FOLDER");
 
     @Override
     public SignConfiguration signFilesFromSignConfiguration(SignConfiguration signConfiguration, CertificateModel certificate) throws Exception {
@@ -39,9 +41,10 @@ public class IText7Adapter implements SignPort {
         }
 
         for(FileModel fileToSign : signConfiguration.getFilesToSign()){
-            String path = OSIGNER_DIRECTORY + TO_SIGN_FOLDER + fileToSign.getName();
-            FileOutputStream fout = new FileOutputStream(path);
-            PdfReader reader = new PdfReader(new File(fileToSign.getLocation()));
+            String pathOut = OSIGNER_DIRECTORY + SIGNED_FOLDER + fileToSign.getName();
+            String pathIn = fileToSign.getLocation();
+            FileOutputStream fout = new FileOutputStream(pathOut);
+            PdfReader reader = new PdfReader(new File(pathIn));
             PdfSigner signer = new PdfSigner(reader, fout, new StampingProperties().useAppendMode());
             PdfSignatureAppearance sap = signer.getSignatureAppearance();
 
@@ -52,9 +55,11 @@ public class IText7Adapter implements SignPort {
                     sap.setRenderingMode(PdfSignatureAppearance.RenderingMode.GRAPHIC_AND_DESCRIPTION);
                     sap.setSignatureGraphic(ImageDataFactory.create(signConfiguration.getSignProcessConfiguration().getSignatureImage()));
                 }
+
                 sap.setLayer2Text(
                         buildSignatureText(signConfiguration.getSignProcessConfiguration(), certificate.getNombre())
                 );
+                sap.setImage(ImageDataFactory.create(LoaderFX.loadResource("FirmaFondoBlanco.png").readAllBytes()));
                 sap.setPageRect(new Rectangle(
                         fileToSign.getPositionX(),
                         fileToSign.getPositionY(),
@@ -81,11 +86,13 @@ public class IText7Adapter implements SignPort {
                     PdfSigner.CryptoStandard.CADES
             );
 
-            fileToSign.setLocation(path);
+            fileToSign.setLocation(pathOut);
 
             reader.close();
             fout.flush();
             fout.close();
+
+            FileUtil.deleteFile(pathIn);
 
         }
 

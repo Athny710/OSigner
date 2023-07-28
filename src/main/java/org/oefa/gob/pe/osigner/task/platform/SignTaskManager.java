@@ -27,7 +27,7 @@ public class SignTaskManager {
         SignFilesTask signFilesTask = new SignFilesTask(certificateModel);
         UploadFilesTask uploadFilesTask = new UploadFilesTask();
 
-        TaskUtil.executeTasksOnSerial(List.of(signFilesTask, uploadFilesTask));
+        TaskUtil.executeTwoTasksOnSerial(List.of(signFilesTask, uploadFilesTask));
 
     }
 

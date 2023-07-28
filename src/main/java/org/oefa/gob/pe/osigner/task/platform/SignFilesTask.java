@@ -19,6 +19,7 @@ public class SignFilesTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        LogUtil.setInfo("Firmando los archivos", this.getClass().getName());
         SignService.signFiles(this.certificateModel);
         return null;
 

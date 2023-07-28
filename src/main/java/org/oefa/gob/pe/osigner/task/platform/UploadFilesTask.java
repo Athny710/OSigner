@@ -8,12 +8,18 @@ import org.oefa.gob.pe.osigner.application.SignService;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
+import org.oefa.gob.pe.osigner.util.FileUtil;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 
 public class UploadFilesTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        FileUtil.zipFiles(
+                SignConfiguration.getInstance().getSignProcessConfiguration().getZipName(),
+                SignConfiguration.getInstance().getFilesToSign()
+        );
+
         RestService.uploadFilesSigned(
                 SignConfiguration.getInstance()
         );

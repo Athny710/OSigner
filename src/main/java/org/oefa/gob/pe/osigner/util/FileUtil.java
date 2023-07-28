@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
+
 import com.aspose.words.*;
 import org.oefa.gob.pe.osigner.domain.ws.wssfd.ArchivoFirmaMasiva;
 
@@ -25,6 +27,7 @@ public class FileUtil {
 
     private static final String OSIGNER_DIRECTORY = System.getProperty("user.home") + AppConfiguration.getKey("OSIGNER_FOLDER");
     private static final String TO_SIGN_FOLDER = AppConfiguration.getKey("POR_FIRMAR_FOLDER");
+    private static final String SIGNED_FOLDER= AppConfiguration.getKey("POR_FIRMAR_FOLDER");
 
     public static String saveFileBytes(FileModel file) throws Exception{
         LogUtil.setInfo("Guardando el archivo: " + file.getName(), FileUtil.class.getName());
@@ -50,8 +53,35 @@ public class FileUtil {
 
     }
 
+    public static void zipFiles(String zipName, List<FileModel> filesToZip) throws Exception{
+        FileOutputStream fout = new FileOutputStream(OSIGNER_DIRECTORY + SIGNED_FOLDER + zipName);
+        ZipOutputStream zipOut = new ZipOutputStream(fout);
+        for(FileModel file : filesToZip){
+            File f = new File(file.getLocation());
+            FileInputStream fis = new FileInputStream(f);
+            ZipEntry zipEntry = new ZipEntry(file.getName());
+
+            zipOut.putNextEntry(zipEntry);
+
+            byte[] bytes = new byte[10240000];
+            int r;
+            long nread = 0L;
+            while((r = fis.read(bytes)) != -1){
+                zipOut.write(bytes, 0, r);
+                nread += r;
+                System.out.println(nread + "/" + f.length());
+            }
+            System.out.println("================================================");
+            fis.close();
+
+        }
+        zipOut.close();
+        fout.close();
+    }
+
     public static String unzipFiles(String zipPath) throws Exception{
-        ZipFile zip = new ZipFile(new File(zipPath));
+        File zipFile = new File(zipPath);
+        ZipFile zip = new ZipFile(zipFile);
         Enumeration<ZipEntry> entries = (Enumeration<ZipEntry>) zip.entries();
 
         while(entries.hasMoreElements()){
@@ -61,16 +91,28 @@ public class FileUtil {
 
             byte[] buf = new byte[4096];
             int r;
+            long nread = 0L;
+            //long length = zipFile.length();
+            long length = entry.getSize();
             while((r = is.read(buf)) != -1){
                 os.write(buf, 0, r);
+                nread += r;
+                System.out.println(nread + "/" + length);
             }
             os.close();
             is.close();
+            System.out.println("==============");
         }
+
+        deleteFile(zipPath);
 
         return OSIGNER_DIRECTORY + TO_SIGN_FOLDER;
 
     }
 
+    public static void deleteFile(String fileToDeletePath) {
+        (new File(fileToDeletePath)).delete();
+
+    }
 
 }
