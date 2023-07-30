@@ -1,7 +1,9 @@
 package org.oefa.gob.pe.osigner.util;
 
+import javafx.application.Preloader;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
+import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.ProgressComponent;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 
@@ -101,7 +103,7 @@ public class FileUtil {
                 os.write(buf, 0, r);
                 nread += r;
                 double progress = (double) nread /zipSize;
-                ProgressComponent.updateProgress(0.20 + 0.5 * progress);
+                NotificationFX.updateProgressNotification(0.20 + 0.5 * progress);
             }
             os.close();
             is.close();

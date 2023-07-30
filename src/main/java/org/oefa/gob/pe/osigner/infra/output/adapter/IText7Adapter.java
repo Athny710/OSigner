@@ -8,17 +8,14 @@ import com.itextpdf.signatures.*;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.LoaderFX;
-import org.oefa.gob.pe.osigner.core.component.ProgressComponent;
+import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.SignProcessModel;
 import org.oefa.gob.pe.osigner.infra.output.port.SignPort;
 import org.oefa.gob.pe.osigner.util.FileUtil;
-
-import javax.swing.*;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
@@ -96,7 +93,7 @@ public class IText7Adapter implements SignPort {
 
             FileUtil.deleteFile(pathIn);
             double progress = (double) index/signConfiguration.getFilesToSign().size();
-            ProgressComponent.updateProgress(0.0 + 0.4 * progress);
+            NotificationFX.updateProgressNotification(0.0 + 0.4 * progress);
         }
 
         return signConfiguration;

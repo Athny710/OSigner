@@ -9,6 +9,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.LoaderFX;
+import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.ProgressComponent;
 import org.oefa.gob.pe.osigner.domain.*;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -48,7 +49,7 @@ public class PdfUtil {
                 deleteFile(OSIGNER_DIRECTORY + TO_SIGN_FOLDER +  docxName);
             }
             double progress =  (double) index /filesToSign.size();
-            ProgressComponent.updateProgress(0.7 + 0.2 * progress);
+            NotificationFX.updateProgressNotification(0.7 + 0.2 * progress);
 
             index++;
         }
@@ -122,7 +123,7 @@ public class PdfUtil {
             file.setPage((int) coordenadas[2]);
 
             double progress = (double) index/filesToSign.size();
-            ProgressComponent.updateProgress(0.95 + 0.05 * progress);
+            NotificationFX.updateProgressNotification(0.95 + 0.05 * progress);
 
         }
 
@@ -142,7 +143,7 @@ public class PdfUtil {
             }
 
             double progress = (double) index/filesToSign.size();
-            ProgressComponent.updateProgress(0.95 + 0.05 * progress);
+            NotificationFX.updateProgressNotification(0.95 + 0.05 * progress);
         }
     }
 
@@ -182,7 +183,7 @@ public class PdfUtil {
         }
 
         double progress = (double) index/filesToSign.size();
-        ProgressComponent.updateProgress(0.95 + 0.05 * progress);
+        NotificationFX.updateProgressNotification(0.95 + 0.05 * progress);
 
     }
 

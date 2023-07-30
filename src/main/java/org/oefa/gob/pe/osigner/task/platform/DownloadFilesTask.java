@@ -6,9 +6,7 @@ import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.application.PlatformService;
 import org.oefa.gob.pe.osigner.application.ProgressService;
 import org.oefa.gob.pe.osigner.commons.AppType;
-import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
-import org.oefa.gob.pe.osigner.core.component.ProgressComponent;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
@@ -35,7 +33,7 @@ public class DownloadFilesTask extends Task<Void> {
 
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
             LogUtil.setInfo("Descargando zip", this.getClass().getName());
-            ProgressComponent.initializeAndShowProgress(
+            NotificationFX.initializeAndShowProgressNotification(
                     "Obteniendo archivos",
                     "Descargando archivos para firmar...",
                     0.01
@@ -46,7 +44,7 @@ public class DownloadFilesTask extends Task<Void> {
             );
 
             LogUtil.setInfo("Descomprimiendo archivos", this.getClass().getName());
-            ProgressComponent.updateMessageAndProgress(
+            NotificationFX.updateProgressNotification(
                     "Descomprimiendo archivos",
                     0.20
             );
@@ -58,7 +56,7 @@ public class DownloadFilesTask extends Task<Void> {
                     );
 
             LogUtil.setInfo("Convirtiendo archivos a PDF.", this.getClass().getName());
-            ProgressComponent.updateMessageAndProgress(
+            NotificationFX.updateProgressNotification(
                     "Convirtiendo archivos a PDF",
                     0.70
             );
@@ -78,7 +76,7 @@ public class DownloadFilesTask extends Task<Void> {
              */
 
             LogUtil.setInfo("Obteniendo coordenadas de firma.", this.getClass().getName());
-            ProgressComponent.updateMessageAndProgress(
+            NotificationFX.updateProgressNotification(
                     "Obteniendo posición de firmas",
                     0.95
             );
@@ -86,7 +84,7 @@ public class DownloadFilesTask extends Task<Void> {
                     SignConfiguration.getInstance().getFilesToSign(),
                     SignConfiguration.getInstance().getSignProcessConfiguration()
             );
-            ProgressService.closeProgressNotification();
+            NotificationFX.closeProgressNotification();
 
         }
 
