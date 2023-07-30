@@ -10,5 +10,10 @@ public class LoaderFX {
 
     }
 
+    public static String loadImage(String resource){
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        return loader.getResource(resource).toString();
+    }
+
 
 }

@@ -3855,3 +3855,1117 @@ java.lang.NullPointerException: Cannot invoke "java.io.InputStream.readAllBytes(
 26-07-2023 16:38:41.239 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
 26-07-2023 16:38:45.297 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
 26-07-2023 16:38:45.664 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+28-07-2023 11:41:36.148 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:41:36.282 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/PlatformLoader.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:70)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showPlatformLoader(AppFX.java:24)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.initSimpleSignProcessByPlatform(RouterFX.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.net.URL.toString()" because the return value of "java.lang.Class.getResource(String)" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.LoaderFX.loadImage(LoaderFX.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.initialize(PlatformLoaderController.java:31)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 16 more
+
+28-07-2023 11:42:56.571 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:42:56.714 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/PlatformLoader.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:70)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showPlatformLoader(AppFX.java:24)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.initSimpleSignProcessByPlatform(RouterFX.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.net.URL.toString()" because the return value of "java.lang.Class.getResource(String)" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.LoaderFX.loadImage(LoaderFX.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.initialize(PlatformLoaderController.java:31)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 16 more
+
+28-07-2023 11:43:11.592 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:43:11.732 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/PlatformLoader.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:70)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showPlatformLoader(AppFX.java:24)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.initSimpleSignProcessByPlatform(RouterFX.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.net.URL.toString()" because the return value of "java.lang.Class.getResource(String)" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.LoaderFX.loadImage(LoaderFX.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.initialize(PlatformLoaderController.java:31)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 16 more
+
+28-07-2023 11:44:53.185 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:44:53.453 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:44:53.457 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:44:53.706 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/WSSFDFirmador/FirmaDigital_Rest/verificarNuevoGrupoFirmado/456": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:361)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.Socket.connect(Socket.java:639)
+	at java.base/java.net.Socket.connect(Socket.java:588)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1312)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1245)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1131)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1060)
+	at spring.web@5.3.20/org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at spring.web@5.3.20/org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at spring.web@5.3.20/org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 9 more
+
+28-07-2023 11:44:59.020 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:44:59.974 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 11:47:26.547 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:47:26.796 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:47:26.800 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:47:27.043 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/WSSFDFirmador/FirmaDigital_Rest/verificarNuevoGrupoFirmado/456": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:361)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.Socket.connect(Socket.java:639)
+	at java.base/java.net.Socket.connect(Socket.java:588)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1312)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1245)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1131)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1060)
+	at spring.web@5.3.20/org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at spring.web@5.3.20/org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at spring.web@5.3.20/org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 9 more
+
+28-07-2023 11:47:31.876 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:47:32.993 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 11:49:18.217 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:49:18.458 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:49:18.462 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:49:18.710 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/WSSFDFirmador/FirmaDigital_Rest/verificarNuevoGrupoFirmado/456": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:361)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.Socket.connect(Socket.java:639)
+	at java.base/java.net.Socket.connect(Socket.java:588)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1312)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1245)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1131)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1060)
+	at spring.web@5.3.20/org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at spring.web@5.3.20/org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at spring.web@5.3.20/org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at spring.web@5.3.20/org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 9 more
+
+28-07-2023 11:49:25.320 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:49:25.321 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 11:51:03.370 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:51:03.574 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:51:03.579 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:51:04.498 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 11:51:08.178 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:51:08.990 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 11:51:49.850 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:51:50.060 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:51:50.063 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:51:50.634 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 11:51:54.366 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:51:55.619 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 11:52:36.314 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:52:36.520 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:52:36.525 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:52:37.072 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 11:52:41.067 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:52:41.856 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 11:53:18.055 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:53:18.273 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:53:18.278 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:53:18.871 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 11:53:22.740 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:53:23.643 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 11:54:11.878 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:54:12.114 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:54:12.118 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:54:12.699 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 11:54:16.572 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:54:17.460 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 11:54:55.705 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 11:54:55.942 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 11:54:55.946 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 11:54:56.522 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 11:55:00.514 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 11:55:01.778 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:03:40.978 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:03:41.202 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:03:41.206 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:03:41.854 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:03:46.247 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:03:46.938 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:08:43.789 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:08:44.064 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:08:44.067 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:08:44.653 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:08:49.080 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:08:50.962 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:09:37.513 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:09:37.797 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:09:37.801 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:09:38.480 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:09:42.391 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:09:43.159 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:11:41.378 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:11:41.610 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:11:41.615 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:11:42.252 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:11:46.266 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:11:47.085 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:12:16.185 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:12:16.395 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:12:16.397 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:12:16.946 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:12:21.212 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:12:22.560 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:12:31.502 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:12:31.724 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:12:31.728 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:12:32.320 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:12:35.946 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:12:40.853 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:15:24.284 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:15:24.527 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:15:24.531 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:15:25.171 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:15:29.271 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:15:29.894 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:15:57.851 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:15:58.052 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:15:58.056 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:15:58.625 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:16:04.562 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:16:04.603 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:16:56.551 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:16:56.755 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:16:56.760 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:16:57.302 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:17:00.744 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:17:02.894 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:18:13.580 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:18:13.813 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:18:13.818 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:18:14.449 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:18:18.514 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:18:19.753 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:18:43.126 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:18:43.330 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:18:43.334 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:18:43.922 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:18:48.116 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:18:48.859 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:19:20.999 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:19:21.200 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:19:21.205 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:19:21.734 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:19:25.411 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:19:27.715 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:19:39.892 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:19:40.103 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:19:40.107 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:19:40.674 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:19:44.229 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:19:46.211 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:20:50.421 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:20:50.634 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:20:50.638 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:20:51.198 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:20:55.352 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:20:55.786 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:21:40.359 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:21:40.562 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:21:40.565 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:21:41.123 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:21:45.088 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:21:46.065 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:21:53.531 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:21:53.730 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:21:53.734 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:21:54.293 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:21:58.512 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:21:59.145 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:22:17.619 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:22:17.812 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:22:17.815 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:22:18.417 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:22:22.516 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:22:23.684 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:22:35.274 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:22:35.592 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:22:35.595 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:22:36.182 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:22:40.534 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:22:41.333 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:23:27.915 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:23:28.120 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:23:28.123 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:23:28.695 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:23:32.032 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:23:34.306 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:24:53.866 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:24:54.113 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:24:54.119 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:24:54.732 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:24:58.650 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:24:59.420 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:41:27.766 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:41:28.024 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:41:28.028 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:41:28.733 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:41:33.183 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:41:34.291 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:41:46.469 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:41:46.640 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/PlatformLoader.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:70)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showPlatformLoader(AppFX.java:24)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.initSimpleSignProcessByPlatform(RouterFX.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.image.ImageView.setImage(javafx.scene.image.Image)" because "this.imgLogoCFDContainer" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.initialize(PlatformLoaderController.java:37)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 16 more
+
+28-07-2023 12:42:21.480 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:42:21.715 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:42:21.719 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:42:22.347 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:42:26.419 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:42:27.384 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:42:53.478 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:42:53.690 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:42:53.692 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:42:54.271 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:42:58.624 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:42:59.320 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 12:45:08.843 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 12:45:09.151 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 12:45:09.155 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 12:45:09.784 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 12:45:13.792 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 12:45:14.487 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+28-07-2023 15:16:27.305 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+28-07-2023 15:16:27.950 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+28-07-2023 15:16:27.956 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+28-07-2023 15:16:34.652 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+28-07-2023 15:16:34.919 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+28-07-2023 15:16:40.763 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 09:54:58.572 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 09:54:58.831 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/PlatformLoader.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:70)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showPlatformLoader(AppFX.java:24)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.initSimpleSignProcessByPlatform(RouterFX.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.net.URL.toString()" because the return value of "java.lang.ClassLoader.getResource(String)" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.LoaderFX.loadImage(LoaderFX.java:15)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.initialize(PlatformLoaderController.java:35)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 16 more
+
+29-07-2023 09:55:32.907 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 09:55:33.158 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/PlatformLoader.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:70)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showPlatformLoader(AppFX.java:24)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.initSimpleSignProcessByPlatform(RouterFX.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.net.URL.toString()" because the return value of "java.lang.ClassLoader.getResource(String)" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.LoaderFX.loadImage(LoaderFX.java:15)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.initialize(PlatformLoaderController.java:35)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 16 more
+
+29-07-2023 09:56:00.237 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 09:56:00.478 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/PlatformLoader.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:70)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showPlatformLoader(AppFX.java:24)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.initSimpleSignProcessByPlatform(RouterFX.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.net.URL.toString()" because the return value of "java.lang.ClassLoader.getResource(String)" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.LoaderFX.loadImage(LoaderFX.java:15)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.initialize(PlatformLoaderController.java:35)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 16 more
+
+29-07-2023 09:56:38.887 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 09:56:39.126 ERROR org.oefa.gob.pe.osigner.Configuration.AppConfiguration - Error obteniendo parámetros de ejecución para iniciar la aplicación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/PlatformLoader.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:70)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showPlatformLoader(AppFX.java:24)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.initSimpleSignProcessByPlatform(RouterFX.java:60)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.RouterFX.intializeApp(RouterFX.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.MainApplication.start(MainApplication.java:15)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.net.URL.toString()" because the return value of "java.lang.ClassLoader.getResource(String)" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.LoaderFX.loadImage(LoaderFX.java:15)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController.initialize(PlatformLoaderController.java:35)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 16 more
+
+29-07-2023 10:06:10.171 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:06:10.529 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:06:10.534 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+29-07-2023 10:06:13.733 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:397)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:171)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:06:15.700 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:06:15.877 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:06:15.877 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:11:17.937 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:11:18.256 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:11:18.260 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Obteniendo información de firma
+29-07-2023 10:11:22.731 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:11:22.861 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:11:24.884 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:397)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:171)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:11:24.890 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:14:31.675 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:14:31.975 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:14:37.211 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:14:37.619 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:14:38.382 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:14:41.815 ERROR org.oefa.gob.pe.osigner.application.PlatformLoaderService - Error cargando interfaz de usuario
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 1
+	at java.base/java.util.ArrayList.rangeCheckForAdd(ArrayList.java:756)
+	at java.base/java.util.ArrayList.add(ArrayList.java:481)
+	at javafx.base/com.sun.javafx.collections.ObservableListWrapper.doAdd(ObservableListWrapper.java:101)
+	at javafx.base/javafx.collections.ModifiableObservableListBase.add(ModifiableObservableListBase.java:158)
+	at javafx.base/com.sun.javafx.collections.VetoableListDecorator.add(VetoableListDecorator.java:319)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformService.showEndView(PlatformService.java:73)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformService.showErrorAndClose(PlatformService.java:66)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.NotificationService.lambda$buildSignInformationError$2(NotificationService.java:36)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:557)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:943)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:17:42.752 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:17:43.086 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:17:43.790 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:17:49.010 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:17:50.144 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:17:53.462 ERROR org.oefa.gob.pe.osigner.application.PlatformLoaderService - Error cargando interfaz de usuario
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 1
+	at java.base/java.util.ArrayList.rangeCheckForAdd(ArrayList.java:756)
+	at java.base/java.util.ArrayList.add(ArrayList.java:481)
+	at javafx.base/com.sun.javafx.collections.ObservableListWrapper.doAdd(ObservableListWrapper.java:101)
+	at javafx.base/javafx.collections.ModifiableObservableListBase.add(ModifiableObservableListBase.java:158)
+	at javafx.base/com.sun.javafx.collections.VetoableListDecorator.add(VetoableListDecorator.java:319)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformService.showEndView(PlatformService.java:73)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformService.showErrorAndClose(PlatformService.java:66)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.NotificationService.lambda$buildSignInformationError$2(NotificationService.java:36)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:557)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:943)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:18:40.920 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:18:41.243 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:18:41.900 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:18:46.224 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:18:47.322 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:19:08.487 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:19:08.827 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:19:09.589 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:19:13.745 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:19:14.468 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:24:58.072 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:24:58.400 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:24:59.074 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 10:25:04.549 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:25:05.157 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:26:19.454 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:26:19.788 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:26:20.702 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+29-07-2023 10:26:24.188 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:26:26.402 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:26:26.654 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+29-07-2023 10:26:26.658 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+29-07-2023 10:26:26.660 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+29-07-2023 10:26:27.170 INFO org.oefa.gob.pe.osigner.util.FileUtil - Guardando el archivo: SSigner14.pdf
+29-07-2023 10:26:27.175 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+29-07-2023 10:27:03.029 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:27:03.395 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:27:09.269 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+29-07-2023 10:27:09.275 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:27:10.241 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:27:10.534 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+29-07-2023 10:27:10.539 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+29-07-2023 10:27:10.540 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+29-07-2023 10:27:11.045 INFO org.oefa.gob.pe.osigner.util.FileUtil - Guardando el archivo: SSigner14.pdf
+29-07-2023 10:27:11.047 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+29-07-2023 10:28:13.555 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:28:13.883 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:28:14.696 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+29-07-2023 10:28:18.494 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:28:19.256 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:28:19.516 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+29-07-2023 10:28:19.522 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+29-07-2023 10:28:19.523 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+29-07-2023 10:28:20.026 INFO org.oefa.gob.pe.osigner.util.FileUtil - Guardando el archivo: SSigner14.pdf
+29-07-2023 10:28:20.029 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+29-07-2023 10:32:01.204 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 10:32:01.534 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 10:32:02.491 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+29-07-2023 10:32:05.791 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+29-07-2023 10:32:07.382 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 10:32:07.856 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+29-07-2023 10:32:07.860 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Iniciando con el proceso de firma
+29-07-2023 10:32:07.861 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+29-07-2023 10:32:08.369 INFO org.oefa.gob.pe.osigner.util.FileUtil - Guardando el archivo: SSigner14.pdf
+29-07-2023 10:32:08.374 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+29-07-2023 10:32:28.327 INFO org.oefa.gob.pe.osigner.task.platform.SignTaskManager - Completando el proceso de firma
+29-07-2023 10:32:28.331 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+29-07-2023 10:32:29.989 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Se firmaron los archivos exitosamente
+29-07-2023 10:32:30.260 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente
+29-07-2023 20:51:40.505 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+29-07-2023 20:51:40.883 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+29-07-2023 20:51:41.782 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: Error, el documento archivo_test.pdf no existe
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getSimpleSignConfiguration(WSSFDAdapter.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+29-07-2023 20:51:49.822 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+29-07-2023 20:51:49.823 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX

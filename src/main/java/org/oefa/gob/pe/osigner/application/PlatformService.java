@@ -70,7 +70,10 @@ public class PlatformService {
     private static void showEndView(String resource){
         try {
             Parent platformParent = AppFX.getParent(resource);
-            PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().add(2, platformParent);
+            PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().add(
+                    PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().size(),
+                    platformParent
+            );
 
             AnimationFX.displayEndView(platformParent);
             AppFX.closeApplication();

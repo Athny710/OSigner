@@ -2,6 +2,7 @@ package org.oefa.gob.pe.osigner.util;
 
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
+import org.oefa.gob.pe.osigner.core.component.ProgressComponent;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 
 import java.io.*;
@@ -56,6 +57,8 @@ public class FileUtil {
     public static void zipFiles(String zipName, List<FileModel> filesToZip) throws Exception{
         FileOutputStream fout = new FileOutputStream(OSIGNER_DIRECTORY + SIGNED_FOLDER + zipName);
         ZipOutputStream zipOut = new ZipOutputStream(fout);
+        int index = 1;
+
         for(FileModel file : filesToZip){
             File f = new File(file.getLocation());
             FileInputStream fis = new FileInputStream(f);
@@ -63,15 +66,15 @@ public class FileUtil {
 
             zipOut.putNextEntry(zipEntry);
 
-            byte[] bytes = new byte[10240000];
+            byte[] bytes = new byte[4096];
             int r;
             long nread = 0L;
             while((r = fis.read(bytes)) != -1){
                 zipOut.write(bytes, 0, r);
                 nread += r;
-                System.out.println(nread + "/" + f.length());
+                double progress = ((double) nread / f.length()) * ((double) index /filesToZip.size());
+                ProgressComponent.updateProgress(0.4 + 0.4 * progress);
             }
-            System.out.println("================================================");
             fis.close();
 
         }
@@ -84,6 +87,9 @@ public class FileUtil {
         ZipFile zip = new ZipFile(zipFile);
         Enumeration<ZipEntry> entries = (Enumeration<ZipEntry>) zip.entries();
 
+        long zipSize = zipFile.length();
+        long nread = 0L;
+
         while(entries.hasMoreElements()){
             ZipEntry entry = entries.nextElement();
             InputStream is = zip.getInputStream(entry);
@@ -91,17 +97,14 @@ public class FileUtil {
 
             byte[] buf = new byte[4096];
             int r;
-            long nread = 0L;
-            //long length = zipFile.length();
-            long length = entry.getSize();
             while((r = is.read(buf)) != -1){
                 os.write(buf, 0, r);
                 nread += r;
-                System.out.println(nread + "/" + length);
+                double progress = (double) nread /zipSize;
+                ProgressComponent.updateProgress(0.20 + 0.5 * progress);
             }
             os.close();
             is.close();
-            System.out.println("==============");
         }
 
         deleteFile(zipPath);

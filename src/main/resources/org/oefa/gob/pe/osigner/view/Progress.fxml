@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="65.0" prefWidth="320.0" styleClass="background-white" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oefa.gob.pe.osigner.infra.input.adapter.NotificationController">
+   <children>
+      <GridPane layoutX="50.0" layoutY="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="13.0" minHeight="13.0" prefHeight="13.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="12.0" minHeight="12.0" prefHeight="12.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="8.0" minHeight="8.0" prefHeight="8.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="6.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="26.0" minHeight="26.0" prefHeight="26.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <MFXProgressBar fx:id="progressBar" prefWidth="268.0" progress="0.12" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="26.0" />
+               </GridPane.margin>
+            </MFXProgressBar>
+            <Label fx:id="textLabel" styleClass="active-text" text="Label" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="26.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="titleLabel" styleClass="active-text" text="Label">
+               <GridPane.margin>
+                  <Insets left="13.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="14.0" fitWidth="14.0" onMouseClicked="#closeProgress" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets right="13.0" />
+               </GridPane.margin>
+               <image>
+                  <Image url="@../icon/Close.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

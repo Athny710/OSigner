@@ -7,8 +7,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.oefa.gob.pe.osigner.application.PlatformService;
+import org.oefa.gob.pe.osigner.core.LoaderFX;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformStepModel;
 import java.net.URL;
@@ -19,6 +21,9 @@ public class PlatformController implements Initializable {
 
     @FXML
     private MFXComboBox<String> certificateComboBox;
+
+    @FXML
+    private ImageView imgLogoContainer;
 
     @FXML
     private MFXButton cancelButton;
@@ -56,6 +61,9 @@ public class PlatformController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image image= new Image(LoaderFX.loadImage("Oefa_small_logo.png"), 103, 36, true, true);
+        imgLogoContainer.setImage(image);
+
         PlatformStepModel stepModel_1 = new PlatformStepModel(this.imgView_1, this.stepLabel_1);
         PlatformStepModel stepModel_2 = new PlatformStepModel(this.imgView_2, this.stepLabel_2);
         PlatformStepModel stepModel_3 = new PlatformStepModel(this.imgView_3, this.stepLabel_3);
@@ -63,6 +71,7 @@ public class PlatformController implements Initializable {
         List<PlatformStepModel> stepList = List.of(stepModel_1, stepModel_2, stepModel_3, stepModel_4);
 
         PlatformService.PLATFORM_MODEL = new PlatformModel(stepList, this.certificateComboBox, this.confirmButton, this.cancelButton, this.updateButton);
+
     }
 
     @FXML

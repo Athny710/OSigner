@@ -27,9 +27,12 @@ public class AnimationFX {
     }
 
     public static void closeApplication(Stage stage){
+        /*
         Platform.runLater(() -> {
             PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().remove(1);
         });
+
+         */
 
         KeyValue kv_width = new KeyValue(stage.getScene().getRoot().scaleXProperty(), 0,Interpolator.EASE_BOTH);
         KeyValue kv_height = new KeyValue(stage.getScene().getRoot().scaleYProperty(), 0, Interpolator.EASE_BOTH);
@@ -48,6 +51,17 @@ public class AnimationFX {
         Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(kf);
         timeline.play();
+
+        new Thread(() -> {
+            try {
+                Thread.sleep(700);
+                Platform.runLater(() -> {
+                    PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().remove(1);
+                });
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
 
     }
 

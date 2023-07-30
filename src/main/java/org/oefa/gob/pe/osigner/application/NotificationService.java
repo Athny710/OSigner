@@ -9,7 +9,8 @@ public class NotificationService {
 
     public static NotificationModel NOTIFICATION_MODEL;
 
-    public static void showCrlError(String message){
+
+    public static void buildCrlError(String message){
         NOTIFICATION_MODEL.getTitleLabel().setText("Advertencia");
         NOTIFICATION_MODEL.getTextLabel().setText(message + "\n¿Desea continuar sin verificar los certificados?");
 
@@ -21,12 +22,12 @@ public class NotificationService {
         });
 
         NOTIFICATION_MODEL.getCancelButton().setOnAction(e -> {
-            Platform.exit();
+            PlatformService.showErrorAndClose();
         });
 
     }
 
-    public static void showSignInformationError(String message){
+    public static void buildSignInformationError(String message){
         NOTIFICATION_MODEL.getTitleLabel().setText("Error");
         NOTIFICATION_MODEL.getTextLabel().setText(message + "\nNo es posible continuar con el proceso de firma.");
 
@@ -37,6 +38,10 @@ public class NotificationService {
         });
 
         NOTIFICATION_MODEL.getCancelButton().setVisible(false);
+
+    }
+
+    public static void buildMaterialFxError(String message){
 
     }
 }

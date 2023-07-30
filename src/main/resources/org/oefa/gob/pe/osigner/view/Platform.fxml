@@ -102,10 +102,7 @@
             </MFXComboBox>
          </children>
       </GridPane>
-      <ImageView fitHeight="22.5" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/Oefa_logo_small.png" />
-         </image>
+      <ImageView  fx:id="imgLogoContainer" fitHeight="18" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
          <GridPane.margin>
             <Insets left="13.0" />
          </GridPane.margin>

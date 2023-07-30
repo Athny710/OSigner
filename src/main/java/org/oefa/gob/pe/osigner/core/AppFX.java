@@ -25,7 +25,6 @@ public class AppFX {
         Stage stage = ApplicationModel.CURRENT_STAGE;
 
         stage.initStyle(StageStyle.TRANSPARENT);
-        //stage.setAlwaysOnTop(true);
         stage.setScene(scene);
         stage.setOnShowing(e -> {
             PlatformLoaderService.initializeConfiguration();
@@ -36,11 +35,20 @@ public class AppFX {
 
     }
 
-
     public static void showNotificationError() {
+        showNotification("view/Notification.fxml");
+
+    }
+
+    public static void showProgressNotification(){
+        showNotification("view/Progress.fxml");
+    }
+
+
+    public static void showNotification(String resource) {
         try {
             Scene parentScene = ApplicationModel.CURRENT_SCENE;
-            Scene scene = loadScene("view/Notification.fxml");
+            Scene scene = loadScene(resource);
             Stage stage = ApplicationModel.NOTIFICATION_STAGE;
 
             stage.initStyle(StageStyle.TRANSPARENT);
@@ -56,7 +64,6 @@ public class AppFX {
         }
 
     }
-
 
     public static Parent getParent(String fxmlResource) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource(fxmlResource));

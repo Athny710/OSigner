@@ -1,6 +1,7 @@
 package org.oefa.gob.pe.osigner.domain.fx;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import javafx.scene.control.Label;
 
 public class NotificationModel {
@@ -10,8 +11,14 @@ public class NotificationModel {
     private Label titleLabel;
     private MFXButton confirmButton;
     private MFXButton cancelButton;
+    private MFXProgressBar progressBar;
 
 
+    public NotificationModel(Label textLabel, Label titleLabel, MFXProgressBar progressBar) {
+        this.textLabel = textLabel;
+        this.titleLabel = titleLabel;
+        this.progressBar = progressBar;
+    }
 
     public NotificationModel(Label textLabel, Label titleLabel, MFXButton confirmButton, MFXButton cancelButton) {
         this.textLabel = textLabel;
@@ -48,6 +55,13 @@ public class NotificationModel {
         return confirmButton;
     }
 
+    public MFXProgressBar getProgressBar() {
+        return progressBar;
+    }
+
+    public void setProgressBar(MFXProgressBar progressBar) {
+        this.progressBar = progressBar;
+    }
     public void setConfirmButton(MFXButton confirmButton) {
         this.confirmButton = confirmButton;
     }

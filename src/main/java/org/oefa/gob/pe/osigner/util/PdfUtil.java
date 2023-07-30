@@ -9,11 +9,9 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.LoaderFX;
-import org.oefa.gob.pe.osigner.domain.CharCoordinates;
-import org.oefa.gob.pe.osigner.domain.FileModel;
-import org.oefa.gob.pe.osigner.domain.SignConfiguration;
+import org.oefa.gob.pe.osigner.core.component.ProgressComponent;
+import org.oefa.gob.pe.osigner.domain.*;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.oefa.gob.pe.osigner.domain.SignCoordinates;
 
 import javax.swing.text.html.Option;
 import java.io.*;
@@ -35,6 +33,7 @@ public class PdfUtil {
         License license = new License();
         license.setLicense(LoaderFX.loadResource("SSignerProd.lic"));
 
+        int index = 1;
         for(FileModel file : filesToSign) {
             OutputStream returnValue = new ByteArrayOutputStream();
             OutputStream out = new ByteArrayOutputStream();
@@ -48,6 +47,10 @@ public class PdfUtil {
 
                 deleteFile(OSIGNER_DIRECTORY + TO_SIGN_FOLDER +  docxName);
             }
+            double progress =  (double) index /filesToSign.size();
+            ProgressComponent.updateProgress(0.7 + 0.2 * progress);
+
+            index++;
         }
 
     }
@@ -58,16 +61,16 @@ public class PdfUtil {
     }
 
 
-    public static void setCoordenadasPosicionFirma(List<FileModel> filesToSign, int signatureType, int signatureStyle, int positionType, String usernameSSFD) throws Exception{
-        if(signatureStyle == Constant.FIRMA_ESTILO_INVISIBLE)
+    public static void setCoordenadasPosicionFirma(List<FileModel> filesToSign, SignProcessModel signProcessModel) throws Exception{
+        if(signProcessModel.getSignatureStyle() == Constant.FIRMA_ESTILO_INVISIBLE)
             return;
 
-        if(signatureType == Constant.FIRMA_TIPO_FIRMA){
-            if(positionType == Constant.FIRMA_POSICION_AUTOMATICA)
-                setCoordenadasByEtiqueta(filesToSign, usernameSSFD);
+        if(signProcessModel.getSignatureType() == Constant.FIRMA_TIPO_FIRMA){
+            if(signProcessModel.getSignaturePositionType() == Constant.FIRMA_POSICION_AUTOMATICA)
+                setCoordenadasByEtiqueta(filesToSign, signProcessModel.getUsernameSSFD());
 
-            if(positionType == Constant.FIRMA_POSICION_RELATIVA){}
-                //setCoordenadasByPositionRelativa();
+            if(signProcessModel.getSignaturePositionType() == Constant.FIRMA_POSICION_RELATIVA)
+                setCoordenadasByPositionRelativa(filesToSign, signProcessModel.getSignatureRelativePosition());
 
         }else {
             setCoordenadasByNumeroVisado(filesToSign);
@@ -77,6 +80,7 @@ public class PdfUtil {
     }
 
     private static void setCoordenadasByEtiqueta(List<FileModel> filesToSign, String usernameSSFD) throws Exception{
+        int index = 1;
         for(FileModel file : filesToSign){
             InputStream is = new FileInputStream(file.getLocation());
             PDDocument document = PDDocument.load(is);
@@ -117,11 +121,15 @@ public class PdfUtil {
             file.setPositionY(coordenadas[1]);
             file.setPage((int) coordenadas[2]);
 
+            double progress = (double) index/filesToSign.size();
+            ProgressComponent.updateProgress(0.95 + 0.05 * progress);
+
         }
 
     }
 
     private static void setCoordenadasByPositionRelativa(List<FileModel> filesToSign, int relativePosition) throws Exception{
+        int index = 0;
         for(FileModel file : filesToSign){
             Optional<SignCoordinates> coordinatesOpt = Constant.UbicacionFirma.relativePosition
                     .stream()
@@ -132,11 +140,15 @@ public class PdfUtil {
                 file.setPositionX((float) coordinatesOpt.get().getPosX());
                 file.setPositionY((float) coordinatesOpt.get().getPosY());
             }
+
+            double progress = (double) index/filesToSign.size();
+            ProgressComponent.updateProgress(0.95 + 0.05 * progress);
         }
     }
 
     private static void setCoordenadasByNumeroVisado(List<FileModel> filesToSign) throws Exception{
-        List<SignCoordinates> coordinatesList = new ArrayList<>();
+        List<SignCoordinates> coordinatesList;
+        int index = 0;
 
         for(FileModel file : filesToSign){
             PdfReader reader = new PdfReader(file.getLocation());
@@ -168,6 +180,9 @@ public class PdfUtil {
                 file.setPage(1);
             }
         }
+
+        double progress = (double) index/filesToSign.size();
+        ProgressComponent.updateProgress(0.95 + 0.05 * progress);
 
     }
 

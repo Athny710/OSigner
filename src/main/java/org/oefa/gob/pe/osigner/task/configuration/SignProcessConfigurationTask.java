@@ -10,7 +10,6 @@ public class SignProcessConfigurationTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
-        LogUtil.setInfo("Obteniendo información de firma", this.getClass().getName());
         RestService.getSignConfiguration();
         return null;
 
@@ -34,7 +33,7 @@ public class SignProcessConfigurationTask extends Task<Void> {
                 (Exception) super.getException()
         );
 
-        NotificationFX.showCrlErrorNotification(errorMessage);
+        NotificationFX.showSignInformationErrorNotification(errorMessage);
 
     }
 }

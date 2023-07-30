@@ -8,6 +8,7 @@ import com.itextpdf.signatures.*;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.LoaderFX;
+import org.oefa.gob.pe.osigner.core.component.ProgressComponent;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
@@ -15,6 +16,7 @@ import org.oefa.gob.pe.osigner.domain.SignProcessModel;
 import org.oefa.gob.pe.osigner.infra.output.port.SignPort;
 import org.oefa.gob.pe.osigner.util.FileUtil;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -28,7 +30,7 @@ public class IText7Adapter implements SignPort {
     @Override
     public SignConfiguration signFilesFromSignConfiguration(SignConfiguration signConfiguration, CertificateModel certificate) throws Exception {
         ITSAClient tsa = null;
-        int index = 0;
+        int index = 1;
 
         if(signConfiguration.getSignProcessConfiguration().isTimeStamp()) {
             tsa = new TSAClientBouncyCastle(
@@ -93,7 +95,8 @@ public class IText7Adapter implements SignPort {
             fout.close();
 
             FileUtil.deleteFile(pathIn);
-
+            double progress = (double) index/signConfiguration.getFilesToSign().size();
+            ProgressComponent.updateProgress(0.0 + 0.4 * progress);
         }
 
         return signConfiguration;
