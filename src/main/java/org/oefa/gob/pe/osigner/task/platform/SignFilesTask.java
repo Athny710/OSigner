@@ -21,8 +21,7 @@ public class SignFilesTask extends Task<Void> {
         LogUtil.setInfo("Firmando los archivos", this.getClass().getName());
         NotificationFX.initializeAndShowProgressNotification(
                 "Firmando archivos",
-                "Firmando archivos",
-                0.0
+                "Firmando archivos"
         );
         SignService.signFiles(this.certificateModel);
         return null;

@@ -10,16 +10,12 @@ import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.LoaderFX;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
-import org.oefa.gob.pe.osigner.core.component.ProgressComponent;
 import org.oefa.gob.pe.osigner.domain.*;
 import org.apache.pdfbox.pdmodel.PDDocument;
-
-import javax.swing.text.html.Option;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

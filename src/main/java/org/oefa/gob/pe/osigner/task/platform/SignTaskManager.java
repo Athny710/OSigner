@@ -1,8 +1,12 @@
 package org.oefa.gob.pe.osigner.task.platform;
 
+import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+import org.oefa.gob.pe.osigner.commons.AppType;
+import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.CertificateComponent;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
+import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 import org.oefa.gob.pe.osigner.util.TaskUtil;
@@ -22,8 +26,20 @@ public class SignTaskManager {
 
     }
 
+
+    private static void startSignProccess(){
+        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
+            NotificationFX.initializeAndShowProgressNotification(
+                    "Obteniendo archivos",
+                    "Descargando archivos..."
+            );
+
+        DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
+        TaskUtil.executeTask(downloadFilesTask);
+
+    }
+
     public static void completeSignProccess(CertificateModel certificateModel){
-        LogUtil.setInfo("Completando el proceso de firma", SignTaskManager.class.getName());
         SignFilesTask signFilesTask = new SignFilesTask(certificateModel);
         UploadFilesTask uploadFilesTask = new UploadFilesTask();
 
@@ -31,12 +47,5 @@ public class SignTaskManager {
 
     }
 
-    private static void startSignProccess(){
-        LogUtil.setInfo("Iniciando con el proceso de firma", SignTaskManager.class.getName());
-        DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
-
-        TaskUtil.executeTask(downloadFilesTask);
-
-    }
 
 }

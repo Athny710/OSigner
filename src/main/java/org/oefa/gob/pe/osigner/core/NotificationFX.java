@@ -9,10 +9,10 @@ public class NotificationFX {
     private static String message;
     private static double progress;
 
-    public static void initializeAndShowProgressNotification(String t, String msg, double pgrs){
+    public static void initializeAndShowProgressNotification(String t, String msg){
         title = t;
         message = msg;
-        progress = pgrs;
+        progress = 0.0;
 
         AppFX.showProgressNotification();
         ProgressService.buildProgressNotification(title, message, progress);

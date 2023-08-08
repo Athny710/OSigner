@@ -2,6 +2,7 @@ package org.oefa.gob.pe.osigner.infra.input.adapter;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -26,6 +27,8 @@ public class ProgressController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ProgressService.NOTIFICATION_MODEL = new NotificationModel(textLabel, titleLabel, progressBar);
+        Bindings.bindBidirectional(this.textLabel.textProperty(), ProgressService.NOTIFICATION_MODEL.textLabelProperty());
+        Bindings.bindBidirectional(this.progressBar.progressProperty(), ProgressService.NOTIFICATION_MODEL.progressBarProperty());
     }
 
     @FXML

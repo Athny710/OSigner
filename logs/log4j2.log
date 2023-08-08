@@ -4969,3 +4969,1022 @@ java.lang.Exception: Error, el documento archivo_test.pdf no existe
 
 29-07-2023 20:51:49.822 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
 29-07-2023 20:51:49.823 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 10:18:10.963 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 10:18:11.327 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 10:18:16.915 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 10:18:16.917 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 10:18:17.987 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 10:18:18.310 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 10:18:18.349 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+javafx.fxml.LoadException: Error resolving onMouseClicked='#closeProgress', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/Progress.fxml:59
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2710)
+	at javafx.fxml/javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:621)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:781)
+	at javafx.fxml/javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2961)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2646)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:77)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:51)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showProgressNotification(AppFX.java:44)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.initializeAndShowProgressNotification(NotificationFX.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignTaskManager.startSignProccess(SignTaskManager.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignTaskManager.initializeSignProccess(SignTaskManager.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformService.initializeSignProccess(PlatformService.java:23)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformLoaderService.initializeSignProccess(PlatformLoaderService.java:20)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformLoaderService.showUserInterface(PlatformLoaderService.java:30)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager.setConfigurationFinished(ConfigurationTaskManager.java:27)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.succeeded(CertificateConfigurationTask.java:22)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:726)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$1(Task.java:1437)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:18:18.353 ERROR org.oefa.gob.pe.osigner.application.PlatformLoaderService - Error cargando interfaz de usuario
+java.lang.NullPointerException: Cannot invoke "org.oefa.gob.pe.osigner.domain.fx.NotificationModel.getTitleLabel()" because "org.oefa.gob.pe.osigner.application.ProgressService.NOTIFICATION_MODEL" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.buildProgressNotification(ProgressService.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.initializeAndShowProgressNotification(NotificationFX.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignTaskManager.startSignProccess(SignTaskManager.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignTaskManager.initializeSignProccess(SignTaskManager.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformService.initializeSignProccess(PlatformService.java:23)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformLoaderService.initializeSignProccess(PlatformLoaderService.java:20)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformLoaderService.showUserInterface(PlatformLoaderService.java:30)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager.setConfigurationFinished(ConfigurationTaskManager.java:27)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.succeeded(CertificateConfigurationTask.java:22)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:726)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$1(Task.java:1437)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:19:38.882 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 10:19:39.203 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 10:19:40.089 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 10:19:45.115 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 10:19:46.481 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 10:19:49.117 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 10:19:49.666 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+javafx.fxml.LoadException: 
+/C:/Users/Anthony/Documents/Proyectos/Oefa/OSigner/target/classes/org/oefa/gob/pe/osigner/view/Progress.fxml
+
+	at javafx.fxml/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2714)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2692)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.loadScene(AppFX.java:77)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:51)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showProgressNotification(AppFX.java:44)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.initializeAndShowProgressNotification(NotificationFX.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignTaskManager.startSignProccess(SignTaskManager.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignTaskManager.initializeSignProccess(SignTaskManager.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformService.initializeSignProccess(PlatformService.java:23)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformLoaderService.initializeSignProccess(PlatformLoaderService.java:20)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformLoaderService.showUserInterface(PlatformLoaderService.java:30)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager.setConfigurationFinished(ConfigurationTaskManager.java:27)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask.succeeded(MaterialConfigurationTask.java:25)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:726)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$1(Task.java:1437)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Both properties must be specified.
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at javafx.base/com.sun.javafx.binding.BidirectionalBinding.checkParameters(BidirectionalBinding.java:52)
+	at javafx.base/com.sun.javafx.binding.BidirectionalBinding.bind(BidirectionalBinding.java:59)
+	at javafx.base/javafx.beans.binding.Bindings.bindBidirectional(Bindings.java:868)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.input.adapter.ProgressController.initialize(ProgressController.java:30)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	... 22 more
+
+05-08-2023 10:19:49.701 ERROR org.oefa.gob.pe.osigner.application.PlatformLoaderService - Error cargando interfaz de usuario
+java.lang.NullPointerException: Cannot invoke "javafx.beans.property.SimpleStringProperty.set(String)" because "this.textLabelProperty" is null
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.domain.fx.NotificationModel.setTextLabelProperty(NotificationModel.java:44)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.buildProgressNotification(ProgressService.java:14)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.initializeAndShowProgressNotification(NotificationFX.java:18)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignTaskManager.startSignProccess(SignTaskManager.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignTaskManager.initializeSignProccess(SignTaskManager.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformService.initializeSignProccess(PlatformService.java:23)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformLoaderService.initializeSignProccess(PlatformLoaderService.java:20)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.PlatformLoaderService.showUserInterface(PlatformLoaderService.java:30)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager.setConfigurationFinished(ConfigurationTaskManager.java:27)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask.succeeded(MaterialConfigurationTask.java:25)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:726)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$1(Task.java:1437)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:23:11.225 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 10:23:11.558 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 10:23:12.421 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 10:23:16.177 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 10:23:25.513 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 10:23:25.869 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 10:23:25.939 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 10:23:26.443 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descargando zip
+05-08-2023 10:23:26.519 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.io.FileNotFoundException: C:\Users\Anthony\OSIGNER\porfirmar\05\08\2023 09:43:33.zip (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:293)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:235)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:123)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.FileUtil.saveFileFromUrl(FileUtil.java:42)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:34)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:23:26.556 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:110)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:24:51.861 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 10:24:52.199 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 10:24:56.613 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 10:24:56.614 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 10:24:58.330 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 10:24:58.614 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 10:24:58.679 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 10:24:59.185 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descargando zip
+05-08-2023 10:26:18.477 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 10:26:18.626 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 10:26:29.531 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+05-08-2023 10:26:34.701 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:19)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:79)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:26:34.787 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:110)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:27:32.136 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 10:27:32.485 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 10:27:33.325 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 10:27:37.043 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 10:27:38.247 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 10:27:38.462 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 10:27:38.527 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 10:27:39.036 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descargando zip
+05-08-2023 10:29:29.239 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 10:29:29.623 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 10:29:30.425 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 10:29:36.287 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 10:29:36.320 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 10:29:36.601 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 10:29:36.672 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 10:29:37.178 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descargando zip
+05-08-2023 10:30:50.738 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 10:30:50.868 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 10:30:57.262 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+05-08-2023 10:31:04.078 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:79)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:31:04.146 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:110)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:37:55.615 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 10:37:55.970 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 10:37:57.036 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 10:38:00.326 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 10:38:02.894 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 10:38:03.134 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 10:38:03.210 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 10:38:03.714 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descargando zip
+05-08-2023 10:39:14.366 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 10:39:22.325 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 10:39:22.502 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 10:39:31.904 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+05-08-2023 10:39:38.527 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:79)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 10:39:38.597 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:110)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:09:32.779 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:09:33.291 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:09:47.575 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: No se encontro el registro del Grupo con id : 135630
+java.lang.Exception: No se encontro el registro del Grupo con id : 135630
+	at Metodos.parametrizacion_metodos.getConfiguracionMasivaByGrupoId(parametrizacion_metodos.java:2162)
+	at Servicios.FirmaMasivaService.obtenerConfiguracionFirmaByGrupoID(FirmaMasivaService.java:70)
+	at Servicios.FirmaDigital_Rest.obtenerConfiguracionFirmaMasiva(FirmaDigital_Rest.java:162)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:168)
+	at org.jboss.resteasy.core.ResourceMethod.invokeOnTarget(ResourceMethod.java:269)
+	at org.jboss.resteasy.core.ResourceMethod.invoke(ResourceMethod.java:227)
+	at org.jboss.resteasy.core.ResourceMethod.invoke(ResourceMethod.java:216)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getResponse(SynchronousDispatcher.java:583)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:565)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:130)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:208)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:55)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:50)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:847)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:295)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:231)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:149)
+	at org.jboss.modcluster.container.jbossweb.JBossWebContext$RequestListenerValve.event(JBossWebContext.java:91)
+	at org.jboss.modcluster.container.jbossweb.JBossWebContext$RequestListenerValve.invoke(JBossWebContext.java:72)
+	at org.jboss.as.web.security.SubjectInfoSetupValve.invoke(SubjectInfoSetupValve.java:34)
+	at org.jboss.as.web.security.SecurityContextAssociationValve.invoke(SecurityContextAssociationValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:97)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:102)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:522)
+	at org.apache.coyote.ajp.AjpProtocol$AjpConnectionHandler.process(AjpProtocol.java:434)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:926)
+	at java.lang.Thread.run(Thread.java:748)
+
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getMassiveSignConfiguration(WSSFDAdapter.java:44)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:19)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:09:47.953 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:09:47.954 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:10:22.654 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:10:23.117 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:10:29.879 ERROR org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - Error obteniendo obteniendo la configuración del proceso de firma
+java.lang.Exception: No se encontro el registro del Grupo con id : 35630
+java.lang.Exception: No se encontro el registro del Grupo con id : 35630
+	at Metodos.parametrizacion_metodos.getConfiguracionMasivaByGrupoId(parametrizacion_metodos.java:2162)
+	at Servicios.FirmaMasivaService.obtenerConfiguracionFirmaByGrupoID(FirmaMasivaService.java:70)
+	at Servicios.FirmaDigital_Rest.obtenerConfiguracionFirmaMasiva(FirmaDigital_Rest.java:162)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:168)
+	at org.jboss.resteasy.core.ResourceMethod.invokeOnTarget(ResourceMethod.java:269)
+	at org.jboss.resteasy.core.ResourceMethod.invoke(ResourceMethod.java:227)
+	at org.jboss.resteasy.core.ResourceMethod.invoke(ResourceMethod.java:216)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getResponse(SynchronousDispatcher.java:583)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:565)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:130)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:208)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:55)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:50)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:847)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:295)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:231)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:149)
+	at org.jboss.modcluster.container.jbossweb.JBossWebContext$RequestListenerValve.event(JBossWebContext.java:91)
+	at org.jboss.modcluster.container.jbossweb.JBossWebContext$RequestListenerValve.invoke(JBossWebContext.java:72)
+	at org.jboss.as.web.security.SubjectInfoSetupValve.invoke(SubjectInfoSetupValve.java:34)
+	at org.jboss.as.web.security.SecurityContextAssociationValve.invoke(SecurityContextAssociationValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:97)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:102)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:522)
+	at org.apache.coyote.ajp.AjpProtocol$AjpConnectionHandler.process(AjpProtocol.java:434)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:926)
+	at java.lang.Thread.run(Thread.java:748)
+
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.infra.output.adapter.WSSFDAdapter.getMassiveSignConfiguration(WSSFDAdapter.java:44)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.RestService.getSignConfiguration(RestService.java:19)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask.call(SignProcessConfigurationTask.java:9)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:10:30.190 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:10:30.999 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:11:32.633 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:11:33.298 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:11:40.904 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:11:40.905 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:11:40.905 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:11:41.262 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:11:41.406 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:12:14.341 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:12:15.770 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:12:15.970 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:12:23.990 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:12:24.027 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:109)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:13:13.782 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:13:14.248 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:13:21.312 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:13:21.323 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:13:21.820 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:13:22.188 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:13:22.277 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:13:55.355 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:13:56.797 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:13:56.981 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:14:05.090 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:14:05.133 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:109)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:15:07.181 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:15:07.633 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:15:14.447 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:15:14.448 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:15:14.731 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:15:15.026 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:15:15.106 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:15:48.819 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:15:51.733 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:15:52.036 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:16:01.994 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:16:02.077 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:109)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:16:23.695 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:16:24.153 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:16:30.690 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:16:30.692 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:16:30.931 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:16:31.264 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:16:31.359 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:17:21.337 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:17:21.924 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:17:29.060 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:17:29.061 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:17:29.290 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:17:29.761 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:17:29.868 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:22:35.164 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:22:35.717 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:22:42.887 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:22:42.893 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:22:43.538 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:22:44.101 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:22:44.210 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:23:28.368 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:23:30.553 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:23:30.760 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:23:42.077 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:23:42.204 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:109)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run$$$capture(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:24:04.852 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:24:05.372 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:24:12.340 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:24:12.341 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:24:12.421 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:24:12.730 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:24:12.812 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:24:46.354 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:24:48.431 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:24:48.591 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:24:59.679 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:24:59.766 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:109)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:29:42.005 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:29:42.535 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:29:55.058 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:29:55.061 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:29:55.062 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:29:55.486 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:29:55.582 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:30:29.251 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:30:35.116 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:30:35.303 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:30:47.569 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:30:47.645 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:109)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:33:58.052 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:33:58.428 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:33:59.316 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:34:03.553 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:34:04.838 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:34:05.170 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:34:05.264 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:34:38.099 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:34:39.099 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:34:39.253 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:34:45.414 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:74)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:34:45.459 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:109)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:35:53.516 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:35:53.861 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:35:58.880 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:35:58.881 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:35:59.837 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:36:00.047 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:36:00.118 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:36:33.956 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:36:34.823 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:36:34.971 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:36:41.066 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:75)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:36:41.110 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:110)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:38:06.366 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:38:06.712 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:38:16.142 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:38:16.143 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:38:16.233 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:38:20.098 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:38:21.865 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:38:55.351 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos.
+05-08-2023 19:38:55.352 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:38:59.701 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:39:00.072 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:39:07.434 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:76)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:39:07.461 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:111)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:39:16.265 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:39:16.807 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:39:22.702 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:39:22.703 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:39:23.193 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:39:23.382 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:39:23.448 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:39:57.191 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos.
+05-08-2023 19:39:57.192 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:39:58.434 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:39:58.591 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:40:06.151 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.updateProgressNotification(NotificationFX.java:28)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasByEtiqueta(PdfUtil.java:122)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.PdfUtil.setCoordenadasPosicionFirma(PdfUtil.java:67)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:76)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:40:06.213 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:111)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:42:09.995 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:42:10.415 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:42:11.350 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:42:15.835 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:42:17.455 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:42:17.864 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:42:17.979 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:44:43.078 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos.
+05-08-2023 19:44:43.080 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:45:02.373 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:45:02.586 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:45:11.537 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+05-08-2023 19:45:19.779 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+05-08-2023 19:46:03.216 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:46:03.634 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:46:07.944 ERROR org.oefa.gob.pe.osigner.util.CertificateUtil - Error obteniendo crl desde: 
+java.security.cert.CRLException: Incomplete BER/DER data
+	at java.base/sun.security.provider.X509Factory.engineGenerateCRL(X509Factory.java:397)
+	at java.base/java.security.cert.CertificateFactory.generateCRL(CertificateFactory.java:515)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadServerCrl(CertificateUtil.java:171)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.buildAndGetCertificates(CertificateUtil.java:84)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.getCertificates(CertificateUtil.java:78)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.util.CertificateUtil.loadCertificates(CertificateUtil.java:25)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:13)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask.call(CertificateConfigurationTask.java:8)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:46:12.372 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:46:12.373 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:46:12.374 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:46:12.607 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:46:12.692 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:46:13.812 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos.
+05-08-2023 19:46:13.813 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:46:13.818 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:46:13.929 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:46:14.371 WARN org.apache.pdfbox.pdmodel.font.FileSystemFontProvider - New fonts found, font cache will be re-built
+05-08-2023 19:46:14.371 WARN org.apache.pdfbox.pdmodel.font.FileSystemFontProvider - Building on-disk font cache, this may take a while
+05-08-2023 19:46:23.743 WARN org.apache.pdfbox.pdmodel.font.FileSystemFontProvider - Finished building on-disk font cache, found 433 fonts
+05-08-2023 19:46:23.853 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:80)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:46:23.910 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:111)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:47:17.156 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+05-08-2023 19:47:17.157 WARN org.apache.pdfbox.cos.COSDocument - Warning: You did not close a PDF Document
+05-08-2023 19:47:52.707 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:47:53.358 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:48:01.838 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:48:01.839 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:48:01.840 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:48:04.061 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:48:04.124 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:48:05.208 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos.
+05-08-2023 19:48:05.209 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:48:05.213 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:48:14.746 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:48:15.113 ERROR org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Error obteniendo los archivos de firma
+java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-8
+	at javafx.graphics/com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:297)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:458)
+	at javafx.graphics/javafx.stage.Window.setShowing(Window.java:1210)
+	at javafx.graphics/javafx.stage.Window.hide(Window.java:1236)
+	at javafx.graphics/javafx.stage.Stage.close(Stage.java:1258)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.application.ProgressService.closeProgressNotification(ProgressService.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.closeProgressNotification(NotificationFX.java:32)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:80)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.call(DownloadFilesTask.java:17)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:48:15.159 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotificationError(AppFX.java:39)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.showSignInformationErrorNotification(NotificationFX.java:46)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask.failed(DownloadFilesTask.java:111)
+	at javafx.graphics/javafx.concurrent.Task.setState(Task.java:710)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.lambda$call$2(Task.java:1456)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:49:41.031 INFO org.oefa.gob.pe.osigner.MainApplication - Iniciado aplicación
+05-08-2023 19:49:41.385 INFO org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager - [CONFIGURACION] Iniciando la configuración de la aplicación
+05-08-2023 19:49:42.189 INFO org.oefa.gob.pe.osigner.task.configuration.SignProcessConfigurationTask - [CONFIGURACION] Se obtuvo la configuración del proceso de firma
+05-08-2023 19:49:46.204 INFO org.oefa.gob.pe.osigner.task.configuration.MaterialConfigurationTask - [CONFIGURACION] Se configuró la aplicación con MaterialFX
+05-08-2023 19:49:47.759 INFO org.oefa.gob.pe.osigner.task.configuration.CertificateConfigurationTask - [CONFIGURACION] Se cargaron los certificados del ordenador
+05-08-2023 19:49:48.059 INFO org.oefa.gob.pe.osigner.application.PlatformService - Cargando los certificados
+05-08-2023 19:49:48.151 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo los archivos
+05-08-2023 19:49:49.271 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Descomprimiendo archivos.
+05-08-2023 19:49:49.272 INFO org.oefa.gob.pe.osigner.util.FileUtil - Descomprimeindo zip
+05-08-2023 19:49:49.280 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Convirtiendo archivos a PDF.
+05-08-2023 19:49:53.293 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Obteniendo coordenadas de firma.
+05-08-2023 19:49:53.612 INFO org.oefa.gob.pe.osigner.task.platform.DownloadFilesTask - Archivos listos para firmar
+05-08-2023 19:50:00.015 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Firmando los archivos
+05-08-2023 19:50:00.047 ERROR org.oefa.gob.pe.osigner.core.AppFX - Error cargando la notificación
+java.lang.IllegalStateException: Cannot set style once stage has been set visible
+	at javafx.graphics/javafx.stage.Stage.initStyle(Stage.java:488)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showNotification(AppFX.java:54)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.AppFX.showProgressNotification(AppFX.java:44)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.core.NotificationFX.initializeAndShowProgressNotification(NotificationFX.java:17)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:22)
+	at org.oefa.gob.pe.osigner/org.oefa.gob.pe.osigner.task.platform.SignFilesTask.call(SignFilesTask.java:11)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+05-08-2023 19:50:01.908 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Zipeando los archivos firmados.
+05-08-2023 19:50:01.908 INFO org.oefa.gob.pe.osigner.task.platform.SignFilesTask - Se firmaron los archivos exitosamente
+05-08-2023 19:50:01.925 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Subiendo los archivos firmados.
+05-08-2023 19:50:01.925 INFO org.oefa.gob.pe.osigner.task.platform.UploadFilesTask - Se subieron los archivos firmados exitosamente

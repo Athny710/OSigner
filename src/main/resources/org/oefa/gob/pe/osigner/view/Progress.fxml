@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="65.0" prefWidth="320.0" styleClass="background-white" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oefa.gob.pe.osigner.infra.input.adapter.NotificationController">
+<AnchorPane prefHeight="65.0" prefWidth="320.0" styleClass="background-white" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oefa.gob.pe.osigner.infra.input.adapter.ProgressController">
    <children>
       <GridPane layoutX="50.0" layoutY="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>

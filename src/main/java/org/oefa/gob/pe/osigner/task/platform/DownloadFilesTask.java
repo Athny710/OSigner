@@ -22,7 +22,6 @@ public class DownloadFilesTask extends Task<Void> {
         LogUtil.setInfo("Obteniendo los archivos", this.getClass().getName());
         Thread.sleep(500);
 
-
         if(AppConfiguration.APP_TYPE.equals(AppType.SIMPLE_SIGN)){
             for(FileModel fileToSave : SignConfiguration.getInstance().getFilesToSign()){
                 fileToSave.setLocation(
@@ -32,21 +31,15 @@ public class DownloadFilesTask extends Task<Void> {
         }
 
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
-            LogUtil.setInfo("Descargando zip", this.getClass().getName());
-            NotificationFX.initializeAndShowProgressNotification(
-                    "Obteniendo archivos",
-                    "Descargando archivos para firmar...",
-                    0.01
-            );
             String zipPath = FileUtil.saveFileFromUrl(
-                    SignConfiguration.getInstance().getSignProcessConfiguration().getDownloadRestService(),
-                    SignConfiguration.getInstance().getSignProcessConfiguration().getZipName()
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getDownloadRestService()
             );
 
-            LogUtil.setInfo("Descomprimiendo archivos", this.getClass().getName());
+            Thread.sleep(500);
+            LogUtil.setInfo("Descomprimiendo archivos.", this.getClass().getName());
             NotificationFX.updateProgressNotification(
                     "Descomprimiendo archivos",
-                    0.20
+                    0.50
             );
             String directoryPath = FileUtil.unzipFiles(zipPath);
             SignConfiguration.getInstance()

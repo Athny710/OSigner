@@ -2,6 +2,9 @@ package org.oefa.gob.pe.osigner.domain.fx;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Label;
 
 public class NotificationModel {
@@ -13,11 +16,15 @@ public class NotificationModel {
     private MFXButton cancelButton;
     private MFXProgressBar progressBar;
 
+    private SimpleStringProperty textLabelProperty;
+    private SimpleDoubleProperty progressBarProperty;
 
     public NotificationModel(Label textLabel, Label titleLabel, MFXProgressBar progressBar) {
         this.textLabel = textLabel;
         this.titleLabel = titleLabel;
         this.progressBar = progressBar;
+        this.textLabelProperty = new SimpleStringProperty("");
+        this.progressBarProperty = new SimpleDoubleProperty(0.0);
     }
 
     public NotificationModel(Label textLabel, Label titleLabel, MFXButton confirmButton, MFXButton cancelButton) {
@@ -25,6 +32,30 @@ public class NotificationModel {
         this.titleLabel = titleLabel;
         this.confirmButton = confirmButton;
         this.cancelButton = cancelButton;
+    }
+
+    public String gettextlabelpropertyValue() {
+        return textLabelProperty.get();
+    }
+
+    public SimpleStringProperty textLabelProperty() {
+        return textLabelProperty;
+    }
+
+    public void setTextLabelProperty(String taxtLabelProperty) {
+        this.textLabelProperty.set(taxtLabelProperty);
+    }
+
+    public double getProgressBarPropertyValue() {
+        return progressBarProperty.get();
+    }
+
+    public SimpleDoubleProperty progressBarProperty() {
+        return progressBarProperty;
+    }
+
+    public void setProgressBarProperty(double progressBarProperty) {
+        this.progressBarProperty.set(progressBarProperty);
     }
 
     public Label getTextLabel() {
