@@ -11,15 +11,18 @@ public class PlatformLoaderService {
 
     public static PlatformLoaderModel platformLoaderModel;
 
+    /**
+     * Función que inicia la configuración de la aplicación.
+     */
     public static void initializeConfiguration(){
         ConfigurationTaskManager.initializeConfigurationTask();
 
     }
 
-    private static void initializeSignProccess(){
-        PlatformService.initializeSignProccess();
-    }
 
+    /**
+     * Función que muestra la interfaz de firma.
+     */
     public static void showUserInterface(){
         try {
             Parent platformParent = AppFX.getParent("view/Platform.fxml");
@@ -27,7 +30,8 @@ public class PlatformLoaderService {
             platformLoaderModel.getMainContainer().getChildren().add(0, platformParent);
             AnimationFX.displayPlatformView(platformLoaderModel.getPlatformLoaderContainer());
 
-            initializeSignProccess();
+            // Se inicia con el proceso de firma.
+            PlatformService.initializeSignProccess();
 
         }catch (Exception e){
             LogUtil.setError(
@@ -35,7 +39,6 @@ public class PlatformLoaderService {
                     PlatformLoaderService.class.getName(),
                     e
             );
-
         }
     }
 

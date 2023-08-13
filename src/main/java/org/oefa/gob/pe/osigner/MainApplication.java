@@ -10,6 +10,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) {
         ApplicationModel.NOTIFICATION_STAGE = new Stage();
+        ApplicationModel.PROGRESS_STAGE = new Stage();
         ApplicationModel.CURRENT_STAGE = stage;
 
         RouterFX.intializeApp(getParameters());
@@ -17,7 +18,6 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) {
-        LogUtil.setInfo("Iniciado aplicación", MainApplication.class.getName());
         launch(args);
 
     }

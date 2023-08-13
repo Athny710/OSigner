@@ -9,25 +9,38 @@ public class Constant {
     public static final byte[] TSA_PASS_HASH_KEY = new byte[] {50, 45, 113, 43, 56, 98, 106, 68, 35, 69, 103, 57, 46, 82, 45, 121 };
     public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("HH:mm dd-MM-yyyy");
     public static final String OS = System.getProperty("os.name", "generic").toLowerCase();
+
     public static final String KEY_STORE = "Windows-MY";
     public static final String PROVIDER = "SunMSCAPI";
+
     public static final int TSA_TOKEN_SIZE = 4*8192;
     public static final int SIGNATURE_SIZE = 2*8192;
+
     public static final String HASH = "SHA-256";
     public static final String HASH_FORMAT_2 = "sha256";
+
     public static final String DOC_EXTENSION = ".DOC";
     public static final String DOCX_EXTENSION = ".DOCX";
     public static final String PDF_EXTENSION = ".pdf";
-    public static final String TEMP_FILE_NAME_EXTENSION = "[TMP].pdf";
+    public static final String TEMP_EXTENSION = "[TMP].pdf";
+
     public static final int GLOSA_SI = 1;
     public static final int FIRMA_POSICION_AUTOMATICA = 1;
     public static final int FIRMA_POSICION_RELATIVA = 2;
+
     public static final int FIRMA_ESTILO_INVISIBLE = 0;
     public static final int FIRMA_ESTILO_TEXTO = 1;
     public static final int FIRMA_ESTILO_TEXTO_IMAGEN = 2;
+
     public static final int FIRMA_TIPO_FIRMA = 1;
     public static final int FIRMA_TIPO_VISADO = 2;
 
+    public static final int FIRMA_ESTADO_FIRMADO = 4;
+    public static final int FIRMA_ESTADO_FINALIZADO = 5;
+
+    public static final int INITIALIZATION_APP_DELAY_TIME = 500;
+    public static final int CLOSE_APP_DELAY_TIME = 2000;
+    public static final int EXIT_APP_DELAY_TIME = 400;
 
     public static final class UbicacionFirma{
 

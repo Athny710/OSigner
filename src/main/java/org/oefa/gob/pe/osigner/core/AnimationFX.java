@@ -8,6 +8,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.oefa.gob.pe.osigner.application.PlatformLoaderService;
+import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 
 public class AnimationFX {
@@ -27,16 +28,9 @@ public class AnimationFX {
     }
 
     public static void closeApplication(Stage stage){
-        /*
-        Platform.runLater(() -> {
-            PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().remove(1);
-        });
-
-         */
-
         KeyValue kv_width = new KeyValue(stage.getScene().getRoot().scaleXProperty(), 0,Interpolator.EASE_BOTH);
         KeyValue kv_height = new KeyValue(stage.getScene().getRoot().scaleYProperty(), 0, Interpolator.EASE_BOTH);
-        KeyFrame kf = new KeyFrame(Duration.millis(400), kv_width, kv_height);
+        KeyFrame kf = new KeyFrame(Duration.millis(Constant.CLOSE_APP_DELAY_TIME), kv_width, kv_height);
 
         Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(kf);

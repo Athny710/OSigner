@@ -32,7 +32,8 @@ public class DownloadFilesTask extends Task<Void> {
 
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
             String zipPath = FileUtil.saveFileFromUrl(
-                    SignConfiguration.getInstance().getSignProcessConfiguration().getDownloadRestService()
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getDownloadRestService(),
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getZipUUID()
             );
 
             Thread.sleep(500);

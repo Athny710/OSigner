@@ -7,6 +7,7 @@ public class ApplicationModel {
 
     public static Stage CURRENT_STAGE;
     public static Stage NOTIFICATION_STAGE;
+    public static Stage PROGRESS_STAGE;
     public static Scene CURRENT_SCENE;
 
 }

@@ -304,7 +304,7 @@ public class PdfUtil {
 
     private static String getTempName(FileModel file){
         int pos = file.getName().lastIndexOf('.');
-        String pdfName = file.getName().substring(0, pos) + Constant.TEMP_FILE_NAME_EXTENSION;
+        String pdfName = file.getName().substring(0, pos) + Constant.TEMP_EXTENSION;
         String pdfLocation = OSIGNER_DIRECTORY + TO_SIGN_FOLDER + pdfName;
 
         file.setName(pdfName);

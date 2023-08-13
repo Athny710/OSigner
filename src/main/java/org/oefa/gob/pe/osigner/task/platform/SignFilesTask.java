@@ -2,7 +2,11 @@ package org.oefa.gob.pe.osigner.task.platform;
 
 import javafx.application.Platform;
 import javafx.concurrent.Task;
+import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+import org.oefa.gob.pe.osigner.application.RestService;
 import org.oefa.gob.pe.osigner.application.SignService;
+import org.oefa.gob.pe.osigner.commons.AppType;
+import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
@@ -18,12 +22,11 @@ public class SignFilesTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
-        LogUtil.setInfo("Firmando los archivos", this.getClass().getName());
-        NotificationFX.initializeAndShowProgressNotification(
-                "Firmando archivos",
-                "Firmando archivos"
-        );
         SignService.signFiles(this.certificateModel);
+
+        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
+            RestService.updateSignProcess(Constant.FIRMA_ESTADO_FIRMADO);
+
         return null;
 
     }

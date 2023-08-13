@@ -1,10 +1,13 @@
 package org.oefa.gob.pe.osigner.util;
 
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.SignProcessModel;
+import org.oefa.gob.pe.osigner.domain.ws.ArchivoFirmado;
 import org.oefa.gob.pe.osigner.domain.ws.MassiveSignatureResponse;
+import org.oefa.gob.pe.osigner.domain.ws.rest.FirmaMasivaFinalizadaRequest;
 import org.oefa.gob.pe.osigner.domain.ws.wssfd.ArchivoFirmaMasiva;
 import org.oefa.gob.pe.osigner.domain.ws.wssfd.DocProcesoFirma;
 import org.oefa.gob.pe.osigner.domain.ws.wssfd.GrupoProcesoFirma;
@@ -115,11 +118,13 @@ public class MapperUtil {
         signProcessModel.setUserRole(msResponse.getConfiguracionFirma().getUserRole());
         signProcessModel.setLocation(msResponse.getConfiguracionFirma().getLocation());
         signProcessModel.setReason(msResponse.getConfiguracionFirma().getReason());
+        signProcessModel.setOptional(msResponse.getConfiguracionFirma().getOptional());
         signProcessModel.setFechaCreacion(msResponse.getConfiguracionFirma().getFechaCreacion());
-        signProcessModel.setZipName(msResponse.getConfiguracionFirma().getZipName());
+        signProcessModel.setZipUUID(msResponse.getConfiguracionFirma().getZipUUID());
 
         signProcessModel.setDownloadRestService(msResponse.getConfiguracionFirma().getDownloadRestService());
         signProcessModel.setUploadRestService(msResponse.getConfiguracionFirma().getUploadRestService());
+        signProcessModel.setUpdateRestService(msResponse.getConfiguracionFirma().getUpdateRestService());
         signProcessModel.setAuthorizationTokenService(msResponse.getConfiguracionFirma().getAuthorizationTokenService());
 
         signProcessModel.setUrlTsa(msResponse.getConfiguracionFirma().getServicioFirma().getUrl());
@@ -159,6 +164,48 @@ public class MapperUtil {
         }
 
         return new SignConfiguration(signProcessModel, fileModelList);
+
+    }
+
+    public static List<ArchivoFirmado> mapSignConfigurationToSignedFilesList(List<FileModel> signedFiles){
+        List<ArchivoFirmado> archivosFirmadoRequest = new ArrayList<>();
+
+        for(FileModel archivo : signedFiles){
+            ArchivoFirmado request = new ArchivoFirmado();
+            request.setId(archivo.getId().intValue());
+            request.setIdArchivo(archivo.getIdArchivo());
+            request.setNombreArchivo(archivo.getName());
+            request.setCodigoOperacion(String.valueOf(archivo.getCodigoOperacion()));
+            request.setCodigoVerificacion(archivo.getClaveVerificacion());
+            request.setEstadoOperacion(archivo.getEstadoOperacion());
+
+            archivosFirmadoRequest.add(request);
+        }
+
+        return archivosFirmadoRequest;
+    }
+
+    public static FirmaMasivaFinalizadaRequest mapSignConfigurationToFirmaFinalizadaRequest(SignConfiguration signConfiguration){
+        List<ArchivoFirmado> archivosFirmadosList = new ArrayList<>();
+        for(FileModel fileSigned : signConfiguration.getFilesToSign()){
+            ArchivoFirmado archivoFirmado = new ArchivoFirmado();
+            archivoFirmado.setId(fileSigned.getId().intValue());
+            archivoFirmado.setIdArchivo(fileSigned.getIdArchivo());
+            archivoFirmado.setNombreArchivo(fileSigned.getName());
+            archivoFirmado.setCodigoOperacion(String.valueOf(fileSigned.getCodigoOperacion()));
+            archivoFirmado.setCodigoVerificacion(fileSigned.getClaveVerificacion());
+            archivoFirmado.setEstadoOperacion(fileSigned.getEstadoOperacion());
+
+            archivosFirmadosList.add(archivoFirmado);
+        }
+
+        FirmaMasivaFinalizadaRequest firmaMasivaFinalizadaRequest = new FirmaMasivaFinalizadaRequest();
+        firmaMasivaFinalizadaRequest.setGrupoOperacion(Integer.valueOf(AppConfiguration.ID_GROUP));
+        firmaMasivaFinalizadaRequest.setClientUUID(signConfiguration.getSignProcessConfiguration().getClientUUID());
+        firmaMasivaFinalizadaRequest.setOptional(signConfiguration.getSignProcessConfiguration().getOptional());
+        firmaMasivaFinalizadaRequest.setArchivos(archivosFirmadosList);
+
+        return firmaMasivaFinalizadaRequest;
 
     }
 }

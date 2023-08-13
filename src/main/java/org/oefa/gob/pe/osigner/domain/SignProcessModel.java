@@ -9,12 +9,14 @@ public class SignProcessModel {
     private String userRole;
     private String location;
     private String reason;
+    private String optional;
     private String fechaCreacion;
 
     private String downloadRestService;
     private String uploadRestService;
+    private String updateRestService;
     private String authorizationTokenService;
-    private String zipName;
+    private String zipUUID;
 
     private String urlTsa;
     private String userTsa;
@@ -55,21 +57,7 @@ public class SignProcessModel {
 
     }
 
-    public boolean isTimeStamp() {
-        return timeStamp;
-    }
 
-    public void setTimeStamp(boolean timeStamp) {
-        this.timeStamp = timeStamp;
-    }
-
-    public boolean isLtv() {
-        return ltv;
-    }
-
-    public void setLtv(boolean ltv) {
-        this.ltv = ltv;
-    }
 
     public Long getId() {
         return id;
@@ -127,6 +115,14 @@ public class SignProcessModel {
         this.reason = reason;
     }
 
+    public String getOptional() {
+        return optional;
+    }
+
+    public void setOptional(String optional) {
+        this.optional = optional;
+    }
+
     public String getFechaCreacion() {
         return fechaCreacion;
     }
@@ -151,12 +147,28 @@ public class SignProcessModel {
         this.uploadRestService = uploadRestService;
     }
 
+    public String getUpdateRestService() {
+        return updateRestService;
+    }
+
+    public void setUpdateRestService(String updateRestService) {
+        this.updateRestService = updateRestService;
+    }
+
     public String getAuthorizationTokenService() {
         return authorizationTokenService;
     }
 
     public void setAuthorizationTokenService(String authorizationTokenService) {
         this.authorizationTokenService = authorizationTokenService;
+    }
+
+    public String getZipUUID() {
+        return zipUUID;
+    }
+
+    public void setZipUUID(String zipUUID) {
+        this.zipUUID = zipUUID;
     }
 
     public String getUrlTsa() {
@@ -183,6 +195,22 @@ public class SignProcessModel {
         this.passTsa = passTsa;
     }
 
+    public boolean isTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(boolean timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public boolean isLtv() {
+        return ltv;
+    }
+
+    public void setLtv(boolean ltv) {
+        this.ltv = ltv;
+    }
+
     public int getSignatureType() {
         return signatureType;
     }
@@ -197,6 +225,14 @@ public class SignProcessModel {
 
     public void setSignatureStyle(int signatureStyle) {
         this.signatureStyle = signatureStyle;
+    }
+
+    public int getGlosaVerificacion() {
+        return glosaVerificacion;
+    }
+
+    public void setGlosaVerificacion(int glosaVerificacion) {
+        this.glosaVerificacion = glosaVerificacion;
     }
 
     public int getSignaturePositionType() {
@@ -237,21 +273,5 @@ public class SignProcessModel {
 
     public void setGlosaUrl(String glosaUrl) {
         this.glosaUrl = glosaUrl;
-    }
-
-    public String getZipName() {
-        return zipName;
-    }
-
-    public void setZipName(String zipName) {
-        this.zipName = zipName;
-    }
-
-    public int getGlosaVerificacion() {
-        return glosaVerificacion;
-    }
-
-    public void setGlosaVerificacion(int glosaVerificacion) {
-        this.glosaVerificacion = glosaVerificacion;
     }
 }

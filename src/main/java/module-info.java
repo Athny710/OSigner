@@ -14,6 +14,10 @@ module org.oefa.gob.pe.osigner {
     requires itext;
     requires org.apache.pdfbox;
     requires aspose.words;
+    requires spring.core;
+    requires org.apache.httpcomponents.httpcore;
+    requires org.apache.httpcomponents.httpclient;
+    requires org.apache.httpcomponents.httpmime;
 
     opens org.oefa.gob.pe.osigner to javafx.fxml;
     exports org.oefa.gob.pe.osigner;
@@ -24,4 +28,5 @@ module org.oefa.gob.pe.osigner {
     opens org.oefa.gob.pe.osigner.domain to com.google.gson;
     opens org.oefa.gob.pe.osigner.domain.ws to com.google.gson;
     opens org.oefa.gob.pe.osigner.domain.ws.wssfd to com.google.gson;
+    opens org.oefa.gob.pe.osigner.domain.ws.rest to com.google.gson;
 }

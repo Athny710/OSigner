@@ -19,13 +19,41 @@ import java.util.stream.Collectors;
 
 public class CertificateUtil {
 
+
     public static List<CertificateModel> certificateList = null;
 
+
+    /**
+     * Función que se encarga de cargar los certificados.
+     * @throws Exception Excepción al momento de cargar los certificados.
+     */
     public static void loadCertificates() throws Exception{
         certificateList = getCertificates();
 
     }
 
+
+    /**
+     * Función que se encarga de volver a obtener los certificados válidos en el sistema operativo.
+     * @param userDNI DNI del usuario con el que se filtrarán los certificados encontrados.
+     * @return Lista de certificados encontrados.
+     * @throws Exception Excepción al momento de cargar los certificados.
+     */
+    public static ArrayList<String> reloadCertificateList(String userDNI) throws Exception{
+        return getCertificates()
+                .stream()
+                .filter(cert -> cert.getNumeroDocumento().equals(userDNI))
+                .map(CertificateModel::getAlias)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+    }
+
+
+    /**
+     * Función que se encarga de obtener los certificados para un determinado usuario.
+     * @param userDNI DNI del usuario con el que se filtrarán los certificados encontrados.
+     * @return Lista de certificados encontrados.
+     */
     public static ArrayList<String> getUserCertificateList(String userDNI){
         return certificateList
                 .stream()
@@ -35,14 +63,13 @@ public class CertificateUtil {
 
     }
 
-    public static ArrayList<String> reloadCertificateList(String userDNI) throws Exception{
-        return getCertificates()
-                .stream()
-                .filter(cert -> cert.getNumeroDocumento().equals(userDNI))
-                .map(CertificateModel::getAlias)
-                .collect(Collectors.toCollection(ArrayList::new));
 
-    }
+    /**
+     * Función que obtiene parámetros de firma del certificado para realizar la firma digital.
+     * @param alias Alias del certificado.
+     * @return Clase con las propiedades del certificado.
+     * @throws Exception Excepción al momento de cargar la información de firma del certificado.
+     */
     public static CertificateModel getCertificateToSignByAlias(String alias) throws Exception{
         CertificateModel cert = certificateList
                 .stream()
@@ -67,6 +94,12 @@ public class CertificateUtil {
         return cert;
     }
 
+
+    /**
+     * Función que obtiene todos los certificados válidos del sistema operativo.
+     * @return Lista de certificados válidos encontrados.
+     * @throws Exception Exceptión al momento de cargar la información de los certificados.
+     */
     private static List<CertificateModel> getCertificates() throws Exception {
         if (!Constant.OS.contains("win"))
             return Collections.emptyList();
@@ -122,6 +155,12 @@ public class CertificateUtil {
     }
 
 
+    /**
+     * Función que se encarga de validar el certificado.
+     * @param certificate Certificado que se desea validar.
+     * @param crl Archivo CRL con el cual se va a validar el certificado.
+     * @return True si el certificado es válido.
+     */
     private static boolean isCertificateValid(X509Certificate certificate, X509CRL crl){
         try {
             certificate.checkValidity();
@@ -137,6 +176,12 @@ public class CertificateUtil {
     }
 
 
+    /**
+     * Función que se encarga de obtener el nombre de la persona del certificado.
+     * @param certificate Certificado del que se desea obtener la información.
+     * @return Nombre de la persona.
+     * @throws Exception Excepción al momento de obtener la información.
+     */
     private static String getCertUserName(X509Certificate certificate) throws Exception {
         String dn = certificate.getSubjectDN().toString();
         LdapName ln = new LdapName(dn);
@@ -147,6 +192,12 @@ public class CertificateUtil {
     }
 
 
+    /**
+     * Función que se encarga de obtener el número de documento del certificados. Por lo general es el DNI.
+     * @param certificate Certificados del que se desea obtener la información.
+     * @return Número de documento
+     * @throws Exception Excepción al momento de obtener la información.
+     */
     private static String getSerialNumber(X509Certificate certificate) throws Exception {
         String dn = certificate.getSubjectDN().toString();
         String[] tagserie = new String[]{"SERIALNUMBER"};
@@ -161,6 +212,11 @@ public class CertificateUtil {
 
     }
 
+
+    /**
+     * Función que se encarga de descargar el CRL del servidor mediante el cual se validarán los certificados.
+     * @return CRL.
+     */
     private static X509CRL loadServerCrl() {
         try {
             URL url = new URL(AppConfiguration.getKey("CRL_URL_SERVER"));
@@ -182,4 +238,5 @@ public class CertificateUtil {
             return null;
         }
     }
+
 }

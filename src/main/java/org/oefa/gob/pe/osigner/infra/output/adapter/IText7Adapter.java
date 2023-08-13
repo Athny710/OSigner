@@ -86,6 +86,7 @@ public class IText7Adapter implements SignPort {
             );
 
             fileToSign.setLocation(pathOut);
+            fileToSign.setEstadoOperacion(Constant.FIRMA_ESTADO_FIRMADO);
 
             reader.close();
             fout.flush();

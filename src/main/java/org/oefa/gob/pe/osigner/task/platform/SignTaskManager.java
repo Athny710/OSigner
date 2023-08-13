@@ -6,17 +6,13 @@ import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.CertificateComponent;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
-import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
-import org.oefa.gob.pe.osigner.util.LogUtil;
 import org.oefa.gob.pe.osigner.util.TaskUtil;
-
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class SignTaskManager {
+
+
 
     public static void initializeSignProccess(PlatformModel platformModel){
         StepComponent.STEP_LIST = platformModel.getSteps();
@@ -40,6 +36,12 @@ public class SignTaskManager {
     }
 
     public static void completeSignProccess(CertificateModel certificateModel){
+        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
+            NotificationFX.initializeAndShowProgressNotification(
+                    "Completando proceso",
+                    "Firmando archivos..."
+            );
+
         SignFilesTask signFilesTask = new SignFilesTask(certificateModel);
         UploadFilesTask uploadFilesTask = new UploadFilesTask();
 

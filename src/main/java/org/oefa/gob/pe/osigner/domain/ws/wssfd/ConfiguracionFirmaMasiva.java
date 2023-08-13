@@ -9,9 +9,11 @@ public class ConfiguracionFirmaMasiva {
     private String userRole;
     private String location;
     private String reason;
+    private String optional;
 
     private String downloadRestService;
     private String uploadRestService;
+    private String updateRestService;
     private String authorizationTokenService;
 
     private int signatureType; // 1,2
@@ -29,11 +31,12 @@ public class ConfiguracionFirmaMasiva {
 
     private String fechaCreacion;
     private String fechaActualizacion;
-    private String zipName;
+    private String zipUUID;
 
     private GrupoProcesoFirma grupoProcesoFirma;
     private ServicioFirma servicioFirma;
     private Extension extension;
+
 
     public Long getId() {
         return id;
@@ -91,6 +94,14 @@ public class ConfiguracionFirmaMasiva {
         this.reason = reason;
     }
 
+    public String getOptional() {
+        return optional;
+    }
+
+    public void setOptional(String optional) {
+        this.optional = optional;
+    }
+
     public String getDownloadRestService() {
         return downloadRestService;
     }
@@ -105,6 +116,14 @@ public class ConfiguracionFirmaMasiva {
 
     public void setUploadRestService(String uploadRestService) {
         this.uploadRestService = uploadRestService;
+    }
+
+    public String getUpdateRestService() {
+        return updateRestService;
+    }
+
+    public void setUpdateRestService(String updateRestService) {
+        this.updateRestService = updateRestService;
     }
 
     public String getAuthorizationTokenService() {
@@ -227,6 +246,14 @@ public class ConfiguracionFirmaMasiva {
         this.fechaActualizacion = fechaActualizacion;
     }
 
+    public String getZipUUID() {
+        return zipUUID;
+    }
+
+    public void setZipUUID(String zipUUID) {
+        this.zipUUID = zipUUID;
+    }
+
     public GrupoProcesoFirma getGrupoProcesoFirma() {
         return grupoProcesoFirma;
     }
@@ -249,13 +276,5 @@ public class ConfiguracionFirmaMasiva {
 
     public void setExtension(Extension extension) {
         this.extension = extension;
-    }
-
-    public String getZipName() {
-        return zipName;
-    }
-
-    public void setZipName(String zipName) {
-        this.zipName = zipName;
     }
 }
