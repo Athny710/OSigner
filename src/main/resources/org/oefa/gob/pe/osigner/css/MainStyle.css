@@ -37,16 +37,6 @@
 .background-blue{
     -fx-background-color: -fx-blue-5;
 }
-.background-green{
-    -fx-background-color: -fx-white;
-    -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
-}
-.background-red{
-    -fx-background-color: -fx-red-5;
-    -fx-background-radius: 8px;
-    -fx-border-radius: 8px;
-}
 
 
 /**************************************************

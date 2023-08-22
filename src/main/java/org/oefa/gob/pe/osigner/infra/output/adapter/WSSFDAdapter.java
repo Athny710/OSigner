@@ -14,7 +14,11 @@ import org.oefa.gob.pe.osigner.domain.ws.rest.FirmaMasivaFinalizadaRequest;
 import org.oefa.gob.pe.osigner.domain.ws.wssfd.*;
 import org.oefa.gob.pe.osigner.infra.output.port.RestPort;
 import org.oefa.gob.pe.osigner.util.MapperUtil;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.springframework.http.*;
+import org.springframework.http.client.MultipartBodyBuilder;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import javax.crypto.Cipher;
@@ -140,8 +144,6 @@ public class WSSFDAdapter implements RestPort {
 
     private void uploadSignedFiles(SignConfiguration signConfiguration, File zipFile) throws Exception{
 
-
-        /*
         String url = signConfiguration.getSignProcessConfiguration().getUploadRestService();
         Resource resource = new FileSystemResource(zipFile.getPath());
 
@@ -161,7 +163,6 @@ public class WSSFDAdapter implements RestPort {
         if(!response.getStatusCode().is2xxSuccessful())
             throw new Exception("Error conectando al servicio: " + url);
 
-         */
 
     }
 

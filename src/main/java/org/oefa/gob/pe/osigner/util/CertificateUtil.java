@@ -132,6 +132,7 @@ public class CertificateUtil {
         X509Certificate x509Certificate = (X509Certificate) keyStore.getCertificate(alias);
         if(!isCertificateValid(x509Certificate, crl))
             return Optional.empty();
+
         try {
             String nombre = getCertUserName(x509Certificate);
             String numeroDocumento = getSerialNumber(x509Certificate);
@@ -185,9 +186,10 @@ public class CertificateUtil {
     private static String getCertUserName(X509Certificate certificate) throws Exception {
         String dn = certificate.getSubjectDN().toString();
         LdapName ln = new LdapName(dn);
-        Rdn rdn = ln.getRdns().stream().filter(r -> r.getType().equalsIgnoreCase("CN")).findFirst().orElseThrow();
+        Rdn rdnName = ln.getRdns().stream().filter(r -> r.getType().equalsIgnoreCase("GIVENNAME")).findFirst().orElseThrow();
+        Rdn rdnLastName = ln.getRdns().stream().filter(r -> r.getType().equalsIgnoreCase("SURNAME")).findFirst().orElseThrow();
 
-        return rdn.getValue().toString();
+        return rdnName.getValue().toString() + " " + rdnLastName.getValue().toString();
 
     }
 

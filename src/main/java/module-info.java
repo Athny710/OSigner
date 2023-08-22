@@ -11,13 +11,14 @@ module org.oefa.gob.pe.osigner {
     requires sign;
     requires kernel;
     requires io;
-    requires itext;
     requires org.apache.pdfbox;
     requires aspose.words;
     requires spring.core;
     requires org.apache.httpcomponents.httpcore;
     requires org.apache.httpcomponents.httpclient;
     requires org.apache.httpcomponents.httpmime;
+    requires OefaUtils;
+    requires itext;
 
     opens org.oefa.gob.pe.osigner to javafx.fxml;
     exports org.oefa.gob.pe.osigner;

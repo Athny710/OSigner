@@ -49,15 +49,21 @@ public class AppFX {
     public static void showNotification(String resource, Stage notificaionStage) {
         try {
             Scene parentScene = ApplicationModel.CURRENT_SCENE;
-            Scene scene = loadScene(resource);
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource(resource));
+            Parent parent = fxmlLoader.load();
+            Scene scene = new Scene(parent);
+            scene.setFill(Color.TRANSPARENT);
 
-            notificaionStage.initStyle(StageStyle.TRANSPARENT);
+            if(notificaionStage.getStyle() != StageStyle.TRANSPARENT) {
+                notificaionStage.initStyle(StageStyle.TRANSPARENT);
+                notificaionStage.initModality(Modality.WINDOW_MODAL);
+                notificaionStage.initOwner(parentScene.getWindow());
+            }
+
             notificaionStage.setScene(scene);
-            notificaionStage.initModality(Modality.WINDOW_MODAL);
-            notificaionStage.initOwner(parentScene.getWindow());
             notificaionStage.show();
 
-            MFXThemeManager.addOn(ApplicationModel.NOTIFICATION_STAGE.getScene(), Themes.DEFAULT, Themes.LEGACY);
+            MFXThemeManager.addOn(notificaionStage.getScene(), Themes.DEFAULT, Themes.LEGACY);
             AnimationFX.displayNotification(notificaionStage);
 
         } catch (Exception e){

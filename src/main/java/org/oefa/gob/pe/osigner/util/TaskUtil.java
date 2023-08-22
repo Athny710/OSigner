@@ -2,14 +2,10 @@ package org.oefa.gob.pe.osigner.util;
 
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
-
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+
 
 public class TaskUtil {
 
@@ -20,18 +16,21 @@ public class TaskUtil {
 
     }
 
-    public static void executeTwoTasksOnSerial(List<Task<Void>> taskList) {
+
+    public static void executeTasksOnSerial(List<Task<Void>> taskList){
         ExecutorService executorService  = Executors.newSingleThreadExecutor();
 
-        taskList.get(0).addEventHandler(
-                WorkerStateEvent.WORKER_STATE_SUCCEEDED,
-                workerStateEvent -> {
-                    executorService.submit(taskList.get(1));
-                }
-        );
+        for(int i=0; i< taskList.size() - 1; i++){
+            int nextValue = i + 1;
+            taskList.get(i).addEventHandler(
+                    WorkerStateEvent.WORKER_STATE_SUCCEEDED,
+                    workerStateEvent -> {
+                        executorService.submit(taskList.get(nextValue));
+                    }
+            );
+        }
 
         executorService.submit(taskList.get(0));
-
 
     }
 

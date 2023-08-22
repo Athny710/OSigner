@@ -31,7 +31,18 @@ public class SignTaskManager {
             );
 
         DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
-        TaskUtil.executeTask(downloadFilesTask);
+
+        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)) {
+            UnzipFilesTask unzipFilesTask = new UnzipFilesTask();
+            ConvertFilesTask convertFilesTask = new ConvertFilesTask();
+            GlosaTask glosaTask = new GlosaTask();
+            SignPositionTask signPositionTask = new SignPositionTask();
+
+            TaskUtil.executeTasksOnSerial(List.of(downloadFilesTask, unzipFilesTask, convertFilesTask, glosaTask, signPositionTask));
+
+        }else{
+            TaskUtil.executeTask(downloadFilesTask);
+        }
 
     }
 
@@ -45,7 +56,7 @@ public class SignTaskManager {
         SignFilesTask signFilesTask = new SignFilesTask(certificateModel);
         UploadFilesTask uploadFilesTask = new UploadFilesTask();
 
-        TaskUtil.executeTwoTasksOnSerial(List.of(signFilesTask, uploadFilesTask));
+        TaskUtil.executeTasksOnSerial(List.of(signFilesTask, uploadFilesTask));
 
     }
 

@@ -41,7 +41,7 @@ public class IText7Adapter implements SignPort {
 
         for(FileModel fileToSign : signConfiguration.getFilesToSign()){
             String pathOut = OSIGNER_DIRECTORY + SIGNED_FOLDER + fileToSign.getName();
-            String pathIn = fileToSign.getLocation();
+            String pathIn = fileToSign.getLocation() + fileToSign.getName();
             FileOutputStream fout = new FileOutputStream(pathOut);
             PdfReader reader = new PdfReader(new File(pathIn));
             PdfSigner signer = new PdfSigner(reader, fout, new StampingProperties().useAppendMode());
@@ -94,7 +94,7 @@ public class IText7Adapter implements SignPort {
 
             FileUtil.deleteFile(pathIn);
             double progress = (double) index/signConfiguration.getFilesToSign().size();
-            NotificationFX.updateProgressNotification(0.0 + 0.4 * progress);
+            NotificationFX.updateProgressNotification(0.0 , 0.4 * progress);
         }
 
         return signConfiguration;

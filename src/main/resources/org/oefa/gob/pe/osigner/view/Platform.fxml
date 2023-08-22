@@ -74,22 +74,22 @@
                   <Label fx:id="stepLabel_4" styleClass="inactive-text" text="Subida de archivos" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                   <ImageView fx:id="imgView_1" fitHeight="150.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icon/Loading.png" />
+                        <Image url="@../icon/Loading.gif" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imgView_2" fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                      <image>
-                        <Image url="@../icon/Loading.png" />
+                        <Image url="@../icon/Loading.gif" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imgView_3" fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
                      <image>
-                        <Image url="@../icon/Loading.png" />
+                        <Image url="@../icon/Loading.gif" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imgView_4" fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
                      <image>
-                        <Image url="@../icon/Loading.png" />
+                        <Image url="@../icon/Loading.gif" />
                      </image>
                   </ImageView>
                </children>

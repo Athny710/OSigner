@@ -19,7 +19,10 @@ public class FileModel {
     private Float width;
     private int page;
 
-    public FileModel(Long id, int idArchivo, String name, int codigoOperacion, int estadoOperacion, String claveVerificacion, Float positionX, Float positionY, Float height, Float width, int page) {
+    private boolean addGlosa;
+
+
+    public FileModel(Long id, int idArchivo, String name, int codigoOperacion, int estadoOperacion, String claveVerificacion, Float positionX, Float positionY, Float height, Float width, int page, boolean addGlosa) {
         this.id = id;
         this.idArchivo = idArchivo;
         this.name = name;
@@ -31,57 +34,16 @@ public class FileModel {
         this.height = height;
         this.width = width;
         this.page = page;
+        this.addGlosa = addGlosa;
     }
 
-    public FileModel(String name, Float positionX, Float positionY, Float height, Float width, int page, byte[] bytes){
+    public FileModel(String name, Float positionX, Float positionY, Float height, Float width, int page, byte[] bytes) {
         this.name = name;
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.height = height;
-        this.width = width;
-        this.page = page;
         this.bytes = bytes;
-    }
-
-    public FileModel(){}
-
-    public Float getPositionX() {
-        return positionX;
-    }
-
-    public void setPositionX(Float positionX) {
         this.positionX = positionX;
-    }
-
-    public Float getPositionY() {
-        return positionY;
-    }
-
-    public void setPositionY(Float positionY) {
         this.positionY = positionY;
-    }
-
-    public Float getHeight() {
-        return height;
-    }
-
-    public void setHeight(Float height) {
         this.height = height;
-    }
-
-    public Float getWidth() {
-        return width;
-    }
-
-    public void setWidth(Float width) {
         this.width = width;
-    }
-
-    public int getPage() {
-        return page;
-    }
-
-    public void setPage(int page) {
         this.page = page;
     }
 
@@ -147,5 +109,53 @@ public class FileModel {
 
     public void setBytes(byte[] bytes) {
         this.bytes = bytes;
+    }
+
+    public Float getPositionX() {
+        return positionX;
+    }
+
+    public void setPositionX(Float positionX) {
+        this.positionX = positionX;
+    }
+
+    public Float getPositionY() {
+        return positionY;
+    }
+
+    public void setPositionY(Float positionY) {
+        this.positionY = positionY;
+    }
+
+    public Float getHeight() {
+        return height;
+    }
+
+    public void setHeight(Float height) {
+        this.height = height;
+    }
+
+    public Float getWidth() {
+        return width;
+    }
+
+    public void setWidth(Float width) {
+        this.width = width;
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+
+    public boolean isAddGlosa() {
+        return addGlosa;
+    }
+
+    public void setAddGlosa(boolean addGlosa) {
+        this.addGlosa = addGlosa;
     }
 }

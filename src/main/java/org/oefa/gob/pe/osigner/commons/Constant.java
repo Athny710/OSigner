@@ -1,9 +1,10 @@
 package org.oefa.gob.pe.osigner.commons;
 
+import org.oefa.gob.pe.osigner.domain.ProgressModel;
 import org.oefa.gob.pe.osigner.domain.SignCoordinates;
-
 import java.text.SimpleDateFormat;
 import java.util.List;
+
 
 public class Constant {
     public static final byte[] TSA_PASS_HASH_KEY = new byte[] {50, 45, 113, 43, 56, 98, 106, 68, 35, 69, 103, 57, 46, 82, 45, 121 };
@@ -27,6 +28,7 @@ public class Constant {
     public static final int GLOSA_SI = 1;
     public static final int FIRMA_POSICION_AUTOMATICA = 1;
     public static final int FIRMA_POSICION_RELATIVA = 2;
+    public static final int FIRMA_POSISION_ABSOLUTA = 3;
 
     public static final int FIRMA_ESTILO_INVISIBLE = 0;
     public static final int FIRMA_ESTILO_TEXTO = 1;
@@ -41,6 +43,20 @@ public class Constant {
     public static final int INITIALIZATION_APP_DELAY_TIME = 500;
     public static final int CLOSE_APP_DELAY_TIME = 2000;
     public static final int EXIT_APP_DELAY_TIME = 400;
+
+    public static final ProgressModel PROGRESS_VALUE_DOWNLOAD = new ProgressModel(0.0,0.5);
+    public static final ProgressModel PROGRESS_VALUE_UNZIP = new ProgressModel(0.5, 0.1);
+    public static final ProgressModel PROGRESS_VALUE_CONVERT = new ProgressModel(0.6, 0.1);
+    public static final ProgressModel PROGRESS_VALUE_GLOSA = new ProgressModel(0.7, 0.2);
+    public static final ProgressModel PROGRESS_VALUE_SIGNATURE_POS = new ProgressModel(0.9, 0.1);
+
+    public static final int GLOSA_SSFD_WIDTH = 500;
+    public static final int GLOSA_SSFD_HEIGTH = 70;
+    public static final int GLOSA_MARGIN = 20;
+
+    public static final String GLOSA_PERU_TEXT_TOP = "Documento electrónico firmado digitalmente en el marco de la Ley N° 27269, Ley de Firmas y Certificados Digitales, su Reglamento y modificatorias.";
+    public static final String GLOSA_PERU_TEXT_BOTTOM = "La integridad del documento y la autoría de la(s) firma(s) pueden ser verificadas en ";
+    public static final String GLOSA_PERU_TEXT_URL = "https://apps.firmaperu.gob.pe/web/validador.xhtml";
 
     public static final class UbicacionFirma{
 

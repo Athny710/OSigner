@@ -10,6 +10,8 @@ public class ArchivoFirmaMasiva {
     private String fechaCreacion;
     private String fechaActualizacion;
     private int estadoOperacion; //0,1,2,4,5
+    private int glosa;
+
 
     public Long getId() {
         return id;
@@ -75,4 +77,11 @@ public class ArchivoFirmaMasiva {
         this.estadoOperacion = estadoOperacion;
     }
 
+    public int getGlosa() {
+        return glosa;
+    }
+
+    public void setGlosa(int glosa) {
+        this.glosa = glosa;
+    }
 }

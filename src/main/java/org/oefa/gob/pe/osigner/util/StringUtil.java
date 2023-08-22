@@ -24,4 +24,11 @@ public class StringUtil {
         return paramsList;
 
     }
+
+    public static boolean isPdfName(String fileName){
+        int index = fileName.lastIndexOf('.');
+        String extension = fileName.substring(index);
+
+        return extension.toUpperCase().contains("PDF");
+    }
 }

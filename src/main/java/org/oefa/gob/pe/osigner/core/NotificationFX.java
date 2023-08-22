@@ -18,13 +18,18 @@ public class NotificationFX {
         ProgressService.buildProgressNotification(title, message, progress);
     }
 
+    public static void updateProgressNotification(String msg){
+        ProgressService.buildProgressNotification(title, msg, progress);
+    }
+
     public static void updateProgressNotification(String msg, double pgrs){
         ProgressService.buildProgressNotification(title, msg, pgrs);
     }
 
-    public static void updateProgressNotification(double pgrs){
-        ProgressService.buildProgressNotification(title, message, pgrs);
-        if(pgrs == 1)
+    public static void updateProgressNotification(double baseProgress, double partialProgress){
+        progress = baseProgress + partialProgress;
+        ProgressService.buildProgressNotification(title, message, progress);
+        if(progress == 1)
             closeProgressNotification();
     }
 

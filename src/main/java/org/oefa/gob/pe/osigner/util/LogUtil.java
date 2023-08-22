@@ -17,7 +17,7 @@ public class LogUtil {
         Logger logger = LogManager.getLogger(className);
         logger.error(finalMessage);
 
-        return e.getMessage();
+        return finalMessage;
 
     }
 

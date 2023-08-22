@@ -1,17 +1,13 @@
 package org.oefa.gob.pe.osigner.util;
 
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
-import java.nio.channels.Channels;
-import java.nio.channels.FileChannel;
-import java.nio.channels.ReadableByteChannel;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -27,9 +23,11 @@ public class FileUtil {
 
     public static String saveFileBytes(FileModel file) throws Exception{
         LogUtil.setInfo("Guardando el archivo: " + file.getName(), FileUtil.class.getName());
-        String path = getPorFirmarFolder() + file.getName();
+        String path = getPorFirmarFolder();
 
-        FileOutputStream fos = new FileOutputStream(path);
+        deleteFile(path + file.getName());
+
+        FileOutputStream fos = new FileOutputStream(path + file.getName());
         fos.write(file.getBytes());
         fos.close();
 
@@ -51,7 +49,10 @@ public class FileUtil {
             fis.write(buffer, 0, count);
             nread += count;
             double progress = (double) nread / fileSize;
-            NotificationFX.updateProgressNotification(0.0 + 0.5 * progress);
+            NotificationFX.updateProgressNotification(
+                    Constant.PROGRESS_VALUE_DOWNLOAD.getInitialValue(),
+                    Constant.PROGRESS_VALUE_DOWNLOAD.getPartialValue()  * progress
+            );
         }
         fis.close();
         bis.close();
@@ -78,7 +79,7 @@ public class FileUtil {
                 zipOut.write(bytes, 0, r);
                 nread += r;
                 double progress = ((double) nread / f.length()) * ((double) index /filesToZip.size());
-                NotificationFX.updateProgressNotification(0.4 + 0.4 * progress);
+                //NotificationFX.updateProgressNotification(0.4 + 0.4 * progress);
             }
             fis.close();
 
@@ -87,9 +88,9 @@ public class FileUtil {
         fout.close();
     }
 
-    public static String unzipFiles(String zipPath) throws Exception{
+    public static String unzipFiles(String zipName) throws Exception{
         LogUtil.setInfo("Descomprimeindo zip", FileUtil.class.getName());
-        File zipFile = new File(zipPath);
+        File zipFile = new File(getPorFirmarFolder() + zipName);
         ZipFile zip = new ZipFile(zipFile);
         Enumeration<ZipEntry> entries = (Enumeration<ZipEntry>) zip.entries();
 
@@ -106,14 +107,18 @@ public class FileUtil {
             while((r = is.read(buf)) != -1){
                 os.write(buf, 0, r);
                 nread += r;
-                double progress = (double) nread /zipSize;
-                NotificationFX.updateProgressNotification(0.50 + 0.2 * progress);
+                double percent = (double) nread /zipSize;
+                NotificationFX.updateProgressNotification(
+                        Constant.PROGRESS_VALUE_UNZIP.getInitialValue(),
+                        Constant.PROGRESS_VALUE_UNZIP.getPartialValue() * percent
+                );
             }
             os.close();
             is.close();
-        }
 
-        deleteFile(zipPath);
+        }
+        zip.close();
+        deleteFile(getPorFirmarFolder() + zipName);
 
         return getPorFirmarFolder();
 

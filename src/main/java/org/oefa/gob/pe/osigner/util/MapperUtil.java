@@ -158,7 +158,8 @@ public class MapperUtil {
                     msResponse.getConfiguracionFirma().getPositionY(),
                     msResponse.getConfiguracionFirma().getHeight(),
                     msResponse.getConfiguracionFirma().getWidth(),
-                    msResponse.getConfiguracionFirma().getPage()
+                    msResponse.getConfiguracionFirma().getPage(),
+                    archivo.getGlosa() == 1
             );
             fileModelList.add(fileToSign);
         }
