@@ -4,10 +4,12 @@ import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.domain.FileModel;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.FileChannel;
+import java.nio.channels.ReadableByteChannel;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -17,13 +19,15 @@ import java.util.zip.ZipOutputStream;
 
 public class FileUtil {
 
+
     private static final String OSIGNER_DIRECTORY = System.getProperty("user.home") + AppConfiguration.getKey("OSIGNER_FOLDER");
-    private static final String TO_SIGN_FOLDER = AppConfiguration.getKey("POR_FIRMAR_FOLDER");
-    private static final String SIGNED_FOLDER= AppConfiguration.getKey("FIRMADOS_FOLDER");
+    private static final String TEMP_FOLDER = AppConfiguration.getKey("TEMP_FOLDER");
+    private static final String SIGNED_FOLDER= AppConfiguration.getKey("SIGNED_FOLDER");
+
 
     public static String saveFileBytes(FileModel file) throws Exception{
         LogUtil.setInfo("Guardando el archivo: " + file.getName(), FileUtil.class.getName());
-        String path = getPorFirmarFolder();
+        String path = getTempFolder();
 
         deleteFile(path + file.getName());
 
@@ -35,10 +39,11 @@ public class FileUtil {
 
     }
 
-    public static String saveFileFromUrl(String urlStr, String zipUUID) throws Exception{
-        String path = getPorFirmarFolder() + zipUUID + ".zip";
-        long fileSize = getSizeOfUrlFile(urlStr);
+
+    public static void saveFileFromUrlWithProgress(String urlStr, String fileName) throws Exception{
+        String path = getTempFolder() + fileName;
         URL url = new URL(urlStr);
+        long fileSize = getSizeOfUrlFile(urlStr);
 
         BufferedInputStream bis = new BufferedInputStream(url.openStream());
         FileOutputStream fis = new FileOutputStream(path);
@@ -56,12 +61,25 @@ public class FileUtil {
         }
         fis.close();
         bis.close();
-        return path;
 
     }
 
+
+    public static void saveFileFromUrl(String urlStr, String fileName) throws Exception {
+        String path = getTempFolder() + fileName;
+        URL url = new URL(urlStr);
+
+        ReadableByteChannel readableByteChannel = Channels.newChannel(url.openStream());
+        FileOutputStream fileOutputStream = new FileOutputStream(path);
+
+        FileChannel fileChannel = fileOutputStream.getChannel();
+        fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
+
+    }
+
+
     public static void zipFiles(String zipName, List<FileModel> filesToZip) throws Exception{
-        FileOutputStream fout = new FileOutputStream(getFirmadosFolder() + zipName);
+        FileOutputStream fout = new FileOutputStream(getSignedFolder() + zipName);
         ZipOutputStream zipOut = new ZipOutputStream(fout);
         int index = 1;
 
@@ -79,7 +97,10 @@ public class FileUtil {
                 zipOut.write(bytes, 0, r);
                 nread += r;
                 double progress = ((double) nread / f.length()) * ((double) index /filesToZip.size());
-                //NotificationFX.updateProgressNotification(0.4 + 0.4 * progress);
+                NotificationFX.updateProgressNotification(
+                        Constant.PROGRESS_VALUE_ZIP.getInitialValue(),
+                        Constant.PROGRESS_VALUE_ZIP.getPartialValue() * progress
+                );
             }
             fis.close();
 
@@ -90,7 +111,7 @@ public class FileUtil {
 
     public static String unzipFiles(String zipName) throws Exception{
         LogUtil.setInfo("Descomprimeindo zip", FileUtil.class.getName());
-        File zipFile = new File(getPorFirmarFolder() + zipName);
+        File zipFile = new File(getTempFolder() + zipName);
         ZipFile zip = new ZipFile(zipFile);
         Enumeration<ZipEntry> entries = (Enumeration<ZipEntry>) zip.entries();
 
@@ -100,7 +121,7 @@ public class FileUtil {
         while(entries.hasMoreElements()){
             ZipEntry entry = entries.nextElement();
             InputStream is = zip.getInputStream(entry);
-            OutputStream os = new FileOutputStream(getPorFirmarFolder() + entry.getName());
+            OutputStream os = new FileOutputStream(getTempFolder() + entry.getName());
 
             byte[] buf = new byte[4096];
             int r;
@@ -118,9 +139,9 @@ public class FileUtil {
 
         }
         zip.close();
-        deleteFile(getPorFirmarFolder() + zipName);
+        deleteFile(getTempFolder() + zipName);
 
-        return getPorFirmarFolder();
+        return getTempFolder();
 
     }
 
@@ -145,12 +166,12 @@ public class FileUtil {
         }
     }
 
-    public static String getFirmadosFolder(){
+    public static String getSignedFolder(){
         return OSIGNER_DIRECTORY + SIGNED_FOLDER;
     }
 
-    public static String getPorFirmarFolder(){
-        return OSIGNER_DIRECTORY + TO_SIGN_FOLDER;
+    public static String getTempFolder(){
+        return OSIGNER_DIRECTORY + TEMP_FOLDER;
     }
 
 }

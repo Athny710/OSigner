@@ -54,9 +54,14 @@ public class SignTaskManager {
             );
 
         SignFilesTask signFilesTask = new SignFilesTask(certificateModel);
+        ZipFilesTask zipFilesTask = new ZipFilesTask();
         UploadFilesTask uploadFilesTask = new UploadFilesTask();
 
-        TaskUtil.executeTasksOnSerial(List.of(signFilesTask, uploadFilesTask));
+        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
+            TaskUtil.executeTasksOnSerial(List.of(signFilesTask, zipFilesTask, uploadFilesTask));
+        }else{
+            TaskUtil.executeTasksOnSerial(List.of(signFilesTask, uploadFilesTask));
+        }
 
     }
 

@@ -6,6 +6,9 @@ import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import javax.naming.ldap.LdapName;
 import javax.naming.ldap.Rdn;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.security.KeyStore;
@@ -115,7 +118,6 @@ public class CertificateUtil {
     private static List<CertificateModel> buildAndGetCertificates(KeyStore keyStore) throws Exception {
         List<CertificateModel> list = new ArrayList<>();
         X509CRL crl = loadServerCrl();
-
         Enumeration<String> certificatesListFromKs = keyStore.aliases();
         while(certificatesListFromKs.hasMoreElements()){
             Optional<CertificateModel> certificate = buildAndValidCertificate(certificatesListFromKs.nextElement(), keyStore, crl);
@@ -221,15 +223,14 @@ public class CertificateUtil {
      */
     private static X509CRL loadServerCrl() {
         try {
-            URL url = new URL(AppConfiguration.getKey("CRL_URL_SERVER"));
+            String crlFileName = "X509CRL.crl";
+            FileUtil.saveFileFromUrl(AppConfiguration.getKey("CRL_URL_SERVER"), crlFileName);
+            File crlFile = new File(FileUtil.getTempFolder() + crlFileName);
+            InputStream is = new FileInputStream(crlFile);
 
             CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
 
-            InputStream inputStream = url.openStream();
-            X509CRL crl = (X509CRL) certificateFactory.generateCRL(inputStream);
-            inputStream.close();
-
-            return crl;
+            return (X509CRL) certificateFactory.generateCRL(is);
 
         }catch (Exception e){
             LogUtil.setError(

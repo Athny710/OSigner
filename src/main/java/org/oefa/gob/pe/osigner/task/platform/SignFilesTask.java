@@ -23,7 +23,6 @@ public class SignFilesTask extends Task<Void> {
     @Override
     protected Void call() throws Exception {
         SignService.signFiles(this.certificateModel);
-
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
             RestService.updateSignProcess(Constant.FIRMA_ESTADO_FIRMADO);
 
@@ -35,10 +34,9 @@ public class SignFilesTask extends Task<Void> {
     protected void succeeded() {
         LogUtil.setInfo("Se firmaron los archivos exitosamente", this.getClass().getName());
         super.succeeded();
-
+        NotificationFX.updateProgressNotification("Comprimiendo archivos firmados");
         Platform.runLater(() -> {
             StepComponent.showStepCompleted(2);
-
         });
 
     }

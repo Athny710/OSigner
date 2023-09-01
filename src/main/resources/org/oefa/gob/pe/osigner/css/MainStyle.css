@@ -1,7 +1,7 @@
 
 *{
     -fx-white: #FFFFFF;
-    -fx-green: #8CC048;
+    -fx-green: #4CB051;
     -fx-blue: #006496;
     -fx-gray: #DEE3EA;
 
@@ -28,6 +28,12 @@
     -fx-border-radius: 8px;
     -fx-effect: dropshadow(gaussian, -fx-shadow, 15, 0, 0, 0);
     -fx-background-insets: 10;
+}
+.background-notification-container {
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, -fx-shadow, 5, 0, 0, 0);
+    -fx-background-insets: 5;
 }
 .background-white{
     -fx-background-color: -fx-white;
@@ -98,4 +104,20 @@
 }
 .mfx-combo-box-cell:selected {
     -fx-background-color: -fx-blue-8;
+}
+
+
+/**************************************************
+ * PROGRESS BAR
+**************************************************/
+#progress-bar .track{
+    -fx-fill: -fx-gray;
+}
+.mfx-progress-bar .bar1{
+    -fx-fill: -fx-green;
+}
+.mfx-progress-bar .track,
+.mfx-progress-bar .bar1,
+.mfx-progress-bar .bar2 {
+    -fx-stroke-width: 1;
 }

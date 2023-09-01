@@ -47,6 +47,8 @@ public class FileModel {
         this.page = page;
     }
 
+    public FileModel() {}
+
     public Long getId() {
         return id;
     }

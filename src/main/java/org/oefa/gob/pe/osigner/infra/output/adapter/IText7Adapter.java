@@ -6,6 +6,7 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.StampingProperties;
 import com.itextpdf.signatures.*;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+import org.oefa.gob.pe.osigner.commons.AppType;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.LoaderFX;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
@@ -22,10 +23,10 @@ import java.util.ArrayList;
 public class IText7Adapter implements SignPort {
 
     private final String OSIGNER_DIRECTORY = System.getProperty("user.home") + AppConfiguration.getKey("OSIGNER_FOLDER");
-    private final String SIGNED_FOLDER = AppConfiguration.getKey("FIRMADOS_FOLDER");
+    private final String SIGNED_FOLDER = AppConfiguration.getKey("SIGNED_FOLDER");
 
     @Override
-    public SignConfiguration signFilesFromSignConfiguration(SignConfiguration signConfiguration, CertificateModel certificate) throws Exception {
+    public void signFilesFromSignConfiguration(SignConfiguration signConfiguration, CertificateModel certificate) throws Exception {
         ITSAClient tsa = null;
         int index = 1;
 
@@ -94,10 +95,12 @@ public class IText7Adapter implements SignPort {
 
             FileUtil.deleteFile(pathIn);
             double progress = (double) index/signConfiguration.getFilesToSign().size();
-            NotificationFX.updateProgressNotification(0.0 , 0.4 * progress);
-        }
 
-        return signConfiguration;
+            if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
+                NotificationFX.updateProgressNotification(
+                        Constant.PROGRESS_VALUE_SIGN.getInitialValue(),
+                        Constant.PROGRESS_VALUE_SIGN.getPartialValue() * progress);
+        }
 
     }
 

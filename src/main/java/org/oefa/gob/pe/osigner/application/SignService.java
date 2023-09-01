@@ -9,11 +9,9 @@ public class SignService {
     private static final IText7Adapter ITEXT7_ADAPTER= new IText7Adapter();
 
     public static void signFiles(CertificateModel certificateModel) throws Exception {
-        SignConfiguration.updateInstance(
-                ITEXT7_ADAPTER.signFilesFromSignConfiguration(
-                        SignConfiguration.getInstance(),
-                        certificateModel
-                ).getFilesToSign()
+        ITEXT7_ADAPTER.signFilesFromSignConfiguration(
+                SignConfiguration.getInstance(),
+                certificateModel
         );
 
     }

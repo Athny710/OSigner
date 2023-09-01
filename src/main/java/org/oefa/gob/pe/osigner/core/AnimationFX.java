@@ -30,7 +30,7 @@ public class AnimationFX {
     public static void closeApplication(Stage stage){
         KeyValue kv_width = new KeyValue(stage.getScene().getRoot().scaleXProperty(), 0,Interpolator.EASE_BOTH);
         KeyValue kv_height = new KeyValue(stage.getScene().getRoot().scaleYProperty(), 0, Interpolator.EASE_BOTH);
-        KeyFrame kf = new KeyFrame(Duration.millis(Constant.CLOSE_APP_DELAY_TIME), kv_width, kv_height);
+        KeyFrame kf = new KeyFrame(Duration.millis(Constant.EXIT_APP_DELAY_TIME), kv_width, kv_height);
 
         Timeline timeline = new Timeline();
         timeline.getKeyFrames().add(kf);
@@ -61,8 +61,8 @@ public class AnimationFX {
 
     public static void displayNotification(Stage stage){
         stage.getScene().getRoot().setTranslateY(stage.getHeight());
-        stage.setX(Screen.getPrimary().getVisualBounds().getWidth() - stage.getWidth() - 10);
-        stage.setY(Screen.getPrimary().getVisualBounds().getHeight() - stage.getHeight() - 10);
+        stage.setX(Screen.getPrimary().getVisualBounds().getWidth() - stage.getWidth() - 15);
+        stage.setY(Screen.getPrimary().getVisualBounds().getHeight() - stage.getHeight() - 5);
 
         KeyValue kv_height = new KeyValue(stage.getScene().getRoot().translateYProperty(), 0, Interpolator.EASE_BOTH);
         KeyFrame kf = new KeyFrame(Duration.millis(400), kv_height);
@@ -74,7 +74,7 @@ public class AnimationFX {
     }
 
     public static void displayEndView(Parent parentToAnimate){
-        parentToAnimate.setTranslateY(360);
+        parentToAnimate.setTranslateY(340);
 
         KeyValue kv = new KeyValue(parentToAnimate.translateYProperty(), 0, Interpolator.EASE_BOTH);
         KeyFrame kf = new KeyFrame(Duration.seconds(0.7), kv);

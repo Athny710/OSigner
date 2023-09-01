@@ -19,6 +19,7 @@ public class NotificationFX {
     }
 
     public static void updateProgressNotification(String msg){
+        message = msg;
         ProgressService.buildProgressNotification(title, msg, progress);
     }
 

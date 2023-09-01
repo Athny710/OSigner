@@ -57,7 +57,7 @@ public class RestService {
             WSSFD_ADAPTER.completeSimpleSignProcess(grupoFirmado);
 
         }else{
-            File zipFile = new File(FileUtil.getFirmadosFolder() + signConfiguration.getSignProcessConfiguration().getZipUUID() + ".zip");
+            File zipFile = new File(FileUtil.getSignedFolder() + signConfiguration.getSignProcessConfiguration().getZipUUID() + ".zip");
             WSSFD_ADAPTER.completeMassiveSignProcess(signConfiguration, zipFile);
 
         }

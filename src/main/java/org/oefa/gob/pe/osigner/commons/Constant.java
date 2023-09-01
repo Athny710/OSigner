@@ -46,9 +46,14 @@ public class Constant {
 
     public static final ProgressModel PROGRESS_VALUE_DOWNLOAD = new ProgressModel(0.0,0.5);
     public static final ProgressModel PROGRESS_VALUE_UNZIP = new ProgressModel(0.5, 0.1);
-    public static final ProgressModel PROGRESS_VALUE_CONVERT = new ProgressModel(0.6, 0.1);
-    public static final ProgressModel PROGRESS_VALUE_GLOSA = new ProgressModel(0.7, 0.2);
-    public static final ProgressModel PROGRESS_VALUE_SIGNATURE_POS = new ProgressModel(0.9, 0.1);
+    public static final ProgressModel PROGRESS_VALUE_CONVERT = new ProgressModel(0.6, 0.3);
+    public static final ProgressModel PROGRESS_VALUE_GLOSA = new ProgressModel(0.9, 0.05);
+    public static final ProgressModel PROGRESS_VALUE_SIGNATURE_POS = new ProgressModel(0.95, 0.05);
+
+    public static final ProgressModel PROGRESS_VALUE_SIGN = new ProgressModel(0.0, 0.3);
+    public static final ProgressModel PROGRESS_VALUE_ZIP = new ProgressModel(0.3, 0.1);
+    public static final ProgressModel PROGRESS_VALUE_UPLOAD = new ProgressModel(0.4, 0.5);
+    public static final ProgressModel PROGRESS_VALUE_UPDATE = new ProgressModel(0.9, 0.1);
 
     public static final int GLOSA_SSFD_WIDTH = 500;
     public static final int GLOSA_SSFD_HEIGTH = 70;

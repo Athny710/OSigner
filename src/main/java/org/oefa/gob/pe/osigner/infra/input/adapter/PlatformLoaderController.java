@@ -31,7 +31,7 @@ public class PlatformLoaderController extends ControllerFX implements Initializa
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         PlatformLoaderService.platformLoaderModel = new PlatformLoaderModel(this.mainContainer, this.platformLoaderContainer);
-        Image imageOEFA = new Image(LoaderFX.loadImage("Oefa_full_logo.png"), 300 , 81, true, true);
+        Image imageOEFA = new Image(LoaderFX.loadImage("Oefa_small_logo.png"), 103 , 36, true, true);
         Image imageCFD = new Image(LoaderFX.loadImage("CFD_full_logo.png"), 356, 82, true, true);
         imgFullLogoContainer.setImage(imageOEFA);
         imgLogoCFDContainer.setImage(imageCFD);

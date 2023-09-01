@@ -57,8 +57,8 @@ public class GlosaTask extends Task<Void> {
 
                 double progress = (double) count/ total;
                 NotificationFX.updateProgressNotification(
-                        Constant.PROGRESS_VALUE_DOWNLOAD.getInitialValue(),
-                        Constant.PROGRESS_VALUE_DOWNLOAD.getPartialValue()  * progress
+                        Constant.PROGRESS_VALUE_GLOSA.getInitialValue(),
+                        Constant.PROGRESS_VALUE_GLOSA.getPartialValue() * progress
                 );
                 count++;
 
