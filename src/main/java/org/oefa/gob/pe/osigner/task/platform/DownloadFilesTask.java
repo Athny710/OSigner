@@ -29,7 +29,7 @@ public class DownloadFilesTask extends Task<Void> {
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
             FileUtil.saveFileFromUrlWithProgress(
                     SignConfiguration.getInstance().getSignProcessConfiguration().getDownloadRestService(),
-                    SignConfiguration.getInstance().getSignProcessConfiguration().getZipUUID()
+                    SignConfiguration.getInstance().getSignProcessConfiguration().getZipUUID() + ".zip"
             );
             for(FileModel file : SignConfiguration.getInstance().getFilesToSign()){
                 file.setLocation(FileUtil.getTempFolder());

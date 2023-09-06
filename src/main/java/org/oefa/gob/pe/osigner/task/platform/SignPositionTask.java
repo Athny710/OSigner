@@ -36,14 +36,15 @@ public class SignPositionTask extends Task<Void>{
     @Override
     protected void failed() {
         super.failed();
-        String errorMessage = LogUtil.setError(
-                "Error obteniendo la posición de firma en los archivos.",
+        LogUtil.setError(
+                "Error obteniendo la posición de firma.",
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
+
         StepComponent.showStepError(0);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showSignInformationErrorNotification(errorMessage);
+        NotificationFX.showSignaturePositionErrorNotification(super.getException().getMessage());
 
     }
 }

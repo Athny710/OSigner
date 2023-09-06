@@ -65,5 +65,9 @@ public class SignTaskManager {
 
     }
 
+    public static void completeSignPositionTask(){
+        SignPositionTask signPositionTask = new SignPositionTask();
+        signPositionTask.succeeded();
+    }
 
 }

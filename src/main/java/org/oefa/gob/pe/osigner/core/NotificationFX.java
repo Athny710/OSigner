@@ -52,4 +52,9 @@ public class NotificationFX {
         AppFX.showNotificationError();
         NotificationService.buildSignInformationError(errorMessage);
     }
+
+    public static void showSignaturePositionErrorNotification(String errorMessage){
+        AppFX.showNotificationError();
+        NotificationService.buildSignaturePositionError(errorMessage);
+    }
 }

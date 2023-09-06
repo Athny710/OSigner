@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 import org.oefa.gob.pe.osigner.domain.fx.NotificationModel;
 import org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager;
+import org.oefa.gob.pe.osigner.task.platform.SignTaskManager;
 
 public class NotificationService {
 
@@ -22,6 +23,7 @@ public class NotificationService {
         });
 
         NOTIFICATION_MODEL.getCancelButton().setOnAction(e -> {
+            ApplicationModel.NOTIFICATION_STAGE.close();
             PlatformService.showErrorAndClose();
         });
 
@@ -39,6 +41,22 @@ public class NotificationService {
 
         NOTIFICATION_MODEL.getCancelButton().setVisible(false);
 
+    }
+
+    public static void buildSignaturePositionError(String message){
+        NOTIFICATION_MODEL.getTitleLabel().setText("Error");
+        NOTIFICATION_MODEL.getTextLabel().setText(message + "\nSe omitirán dichos archivo en el proceso de firma.\n¿Desea continuar?");
+
+        NOTIFICATION_MODEL.getConfirmButton().setText("Continuar");
+        NOTIFICATION_MODEL.getConfirmButton().setOnAction(e -> {
+            ApplicationModel.NOTIFICATION_STAGE.close();
+            SignTaskManager.completeSignPositionTask();
+        });
+
+        NOTIFICATION_MODEL.getCancelButton().setOnAction(e -> {
+            ApplicationModel.NOTIFICATION_STAGE.close();
+            PlatformService.showErrorAndClose();
+        });
     }
 
     public static void buildMaterialFxError(String message){
