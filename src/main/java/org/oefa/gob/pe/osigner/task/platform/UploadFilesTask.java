@@ -44,7 +44,7 @@ public class UploadFilesTask extends Task<Void> {
                 (Exception) super.getException()
         );
         StepComponent.showStepError(3);
-        NotificationFX.showSignInformationErrorNotification(errorMessage);
+        NotificationFX.showFatalErrorNotification(errorMessage);
 
     }
 }

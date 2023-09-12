@@ -38,6 +38,9 @@ public class StepComponent {
         if(stepNumber >= STEP_LIST.size())
             return;
 
+        String resource = "icon/Loading.gif";
+        Image image = new Image(ResourceFX.load(resource));
+        STEP_LIST.get(stepNumber).getImageView().setImage(image);
         STEP_LIST.get(stepNumber).getLabel().getStyleClass().removeAll("inactive-text");
         STEP_LIST.get(stepNumber).getLabel().getStyleClass().add("active-text");
 

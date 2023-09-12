@@ -79,17 +79,17 @@
                   </ImageView>
                   <ImageView fx:id="imgView_2" fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                      <image>
-                        <Image url="@../icon/Loading.gif" />
+                        <Image url="@../icon/Pending.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imgView_3" fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
                      <image>
-                        <Image url="@../icon/Loading.gif" />
+                        <Image url="@../icon/Pending.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imgView_4" fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
                      <image>
-                        <Image url="@../icon/Loading.gif" />
+                        <Image url="@../icon/Pending.png" />
                      </image>
                   </ImageView>
                </children>

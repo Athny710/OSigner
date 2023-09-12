@@ -4,7 +4,6 @@ import javafx.concurrent.Task;
 import org.oefa.gob.pe.osigner.application.RestService;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
-import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 
 public class SignProcessConfigurationTask extends Task<Void> {
@@ -37,7 +36,7 @@ public class SignProcessConfigurationTask extends Task<Void> {
                 (Exception) super.getException()
         );
 
-        NotificationFX.showSignInformationErrorNotification(errorMessage);
+        NotificationFX.showFatalErrorNotification(errorMessage);
 
     }
 

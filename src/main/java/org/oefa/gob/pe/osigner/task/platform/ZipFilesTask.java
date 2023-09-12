@@ -12,6 +12,7 @@ public class ZipFilesTask extends Task<Void> {
     @Override
     protected Void call() throws Exception {
         FileUtil.zipFiles(
+                FileUtil.getSignedFolder(),
                 SignConfiguration.getInstance().getSignProcessConfiguration().getZipUUID() + ".zip",
                 SignConfiguration.getInstance().getFilesToSign()
         );
@@ -35,9 +36,9 @@ public class ZipFilesTask extends Task<Void> {
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
-        StepComponent.showStepError(4);
+        StepComponent.showStepError(3);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showSignInformationErrorNotification(errorMessage);
+        NotificationFX.showFatalErrorNotification(errorMessage);
 
     }
 }

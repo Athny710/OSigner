@@ -44,7 +44,7 @@ public class SignPositionTask extends Task<Void>{
 
         StepComponent.showStepError(0);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showSignaturePositionErrorNotification(super.getException().getMessage());
+        NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage());
 
     }
 }

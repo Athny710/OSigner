@@ -25,10 +25,14 @@ public class Constant {
     public static final String PDF_EXTENSION = ".pdf";
     public static final String TEMP_EXTENSION = "[TMP].pdf";
 
+    public static final String VERIFICA_PREFIJO = "SSFD";
+
     public static final int GLOSA_SI = 1;
     public static final int FIRMA_POSICION_AUTOMATICA = 1;
     public static final int FIRMA_POSICION_RELATIVA = 2;
     public static final int FIRMA_POSISION_ABSOLUTA = 3;
+    public static final int FIRMA_PAGINA_DEFECTO = 1;
+    public static final int FIRMA_PAGINA_ERROR = -1;
 
     public static final int FIRMA_ESTILO_INVISIBLE = 0;
     public static final int FIRMA_ESTILO_TEXTO = 1;

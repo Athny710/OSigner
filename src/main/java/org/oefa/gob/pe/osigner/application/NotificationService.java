@@ -1,6 +1,5 @@
 package org.oefa.gob.pe.osigner.application;
 
-import javafx.application.Platform;
 import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 import org.oefa.gob.pe.osigner.domain.fx.NotificationModel;
 import org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager;
@@ -29,7 +28,7 @@ public class NotificationService {
 
     }
 
-    public static void buildSignInformationError(String message){
+    public static void buildFatalError(String message){
         NOTIFICATION_MODEL.getTitleLabel().setText("Error");
         NOTIFICATION_MODEL.getTextLabel().setText(message + "\nNo es posible continuar con el proceso de firma.");
 
@@ -43,7 +42,7 @@ public class NotificationService {
 
     }
 
-    public static void buildSignaturePositionError(String message){
+    public static void buildSkippedFilesError(String message){
         NOTIFICATION_MODEL.getTitleLabel().setText("Error");
         NOTIFICATION_MODEL.getTextLabel().setText(message + "\nSe omitirán dichos archivo en el proceso de firma.\n¿Desea continuar?");
 

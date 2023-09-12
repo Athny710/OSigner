@@ -48,13 +48,13 @@ public class NotificationFX {
         NotificationService.buildMaterialFxError(errorMessage);
     }
 
-    public static void showSignInformationErrorNotification(String errorMessage){
+    public static void showFatalErrorNotification(String errorMessage){
         AppFX.showNotificationError();
-        NotificationService.buildSignInformationError(errorMessage);
+        NotificationService.buildFatalError(errorMessage);
     }
 
-    public static void showSignaturePositionErrorNotification(String errorMessage){
+    public static void showSkippedFilesErrorNotification(String errorMessage){
         AppFX.showNotificationError();
-        NotificationService.buildSignaturePositionError(errorMessage);
+        NotificationService.buildSkippedFilesError(errorMessage);
     }
 }

@@ -19,6 +19,6 @@ class FileUtilTest {
         fileModel.setName("200MB PDF File.pdf");
         fileModel2.setName("200MB PDF File - copia.pdf");
 
-        FileUtil.zipFiles(zipName, List.of(fileModel, fileModel2));
+        FileUtil.zipFiles("",zipName, List.of(fileModel, fileModel2));
     }
 }

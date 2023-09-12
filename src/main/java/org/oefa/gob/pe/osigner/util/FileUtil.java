@@ -40,6 +40,12 @@ public class FileUtil {
     }
 
 
+    /**
+     * Función que permite descargar y conocer el progreso de descarga.
+     * @param urlStr URL del archivo que se desea descargar.
+     * @param fileName Nombre con el que se guardará el archivo.
+     * @throws Exception Excepción al descargar el archivo.
+     */
     public static void saveFileFromUrlWithProgress(String urlStr, String fileName) throws Exception{
         String path = getTempFolder() + fileName;
         URL url = new URL(urlStr);
@@ -47,12 +53,14 @@ public class FileUtil {
 
         BufferedInputStream bis = new BufferedInputStream(url.openStream());
         FileOutputStream fis = new FileOutputStream(path);
+
         byte[] buffer = new byte[4096];
         int count;
         long nread = 0L;
         while((count = bis.read(buffer)) != -1) {
             fis.write(buffer, 0, count);
             nread += count;
+
             double progress = (double) nread / fileSize;
             NotificationFX.updateProgressNotification(
                     Constant.PROGRESS_VALUE_DOWNLOAD.getInitialValue(),
@@ -77,14 +85,20 @@ public class FileUtil {
 
     }
 
-
-    public static void zipFiles(String zipName, List<FileModel> filesToZip) throws Exception{
-        FileOutputStream fout = new FileOutputStream(getSignedFolder() + zipName);
+    /**
+     * Función que permite comprimir archivos en un archivo .zip
+     * @param folderPath Ruta del folder donde se encuentran los archivos
+     * @param zipName Nombre del archivo .zip en el que se comprimirán los archivos.
+     * @param filesToZip Lista de archivos que se desea comprimir.
+     * @throws Exception Excepción al momento de comprimir los archivos.
+     */
+    public static void zipFiles(String folderPath, String zipName, List<FileModel> filesToZip) throws Exception{
+        FileOutputStream fout = new FileOutputStream(folderPath + zipName);
         ZipOutputStream zipOut = new ZipOutputStream(fout);
         int index = 1;
 
         for(FileModel file : filesToZip){
-            File f = new File(file.getLocation());
+            File f = new File(file.getLocation() + file.getName());
             FileInputStream fis = new FileInputStream(f);
             ZipEntry zipEntry = new ZipEntry(file.getName());
 
@@ -109,7 +123,12 @@ public class FileUtil {
         fout.close();
     }
 
-    public static String unzipFiles(String zipName) throws Exception{
+    /**
+     * Función que permite descomprimir un archivo tipo .zip
+     * @param zipName Nombre del archivo .zip
+     * @throws Exception Excepción al descomprimir el archivo
+     */
+    public static void unzipFiles(String zipName) throws Exception{
         LogUtil.setInfo("Descomprimeindo zip", FileUtil.class.getName());
         File zipFile = new File(getTempFolder() + zipName);
         ZipFile zip = new ZipFile(zipFile);
@@ -140,8 +159,6 @@ public class FileUtil {
         }
         zip.close();
         deleteFile(getTempFolder() + zipName);
-
-        return getTempFolder();
 
     }
 

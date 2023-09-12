@@ -13,6 +13,7 @@ import org.oefa.gob.pe.osigner.util.LogUtil;
 
 public class DownloadFilesTask extends Task<Void> {
 
+
     @Override
     protected Void call() throws Exception {
         // Tiempo de espera necesario para que se muestre la interfaz de usuario antes de que inicie el proceso
@@ -49,6 +50,7 @@ public class DownloadFilesTask extends Task<Void> {
 
     }
 
+
     @Override
     protected void failed() {
         super.failed();
@@ -59,7 +61,8 @@ public class DownloadFilesTask extends Task<Void> {
         );
         StepComponent.showStepError(0);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showSignInformationErrorNotification(errorMessage);
+        NotificationFX.showFatalErrorNotification(errorMessage);
 
     }
+
 }

@@ -51,7 +51,8 @@ public class SignFilesTask extends Task<Void> {
                 (Exception) super.getException()
         );
         StepComponent.showStepError(2);
-        NotificationFX.showSignInformationErrorNotification(errorMessage);
+        NotificationFX.closeProgressNotification();
+        NotificationFX.showFatalErrorNotification(errorMessage);
 
     }
 }

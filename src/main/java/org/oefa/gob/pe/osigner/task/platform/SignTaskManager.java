@@ -13,7 +13,6 @@ import java.util.List;
 public class SignTaskManager {
 
 
-
     public static void initializeSignProccess(PlatformModel platformModel){
         StepComponent.STEP_LIST = platformModel.getSteps();
         CertificateComponent.CERT_COMBOBOX = platformModel.getCertificateComboBox();

@@ -1,41 +1,24 @@
 package org.oefa.gob.pe.osigner.task.platform;
 
 import javafx.concurrent.Task;
-import org.oefa.gob.pe.Oefa.Pdf;
-import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
-import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
-import org.oefa.gob.pe.osigner.util.FileUtil;
 import org.oefa.gob.pe.osigner.util.LogUtil;
-import org.oefa.gob.pe.osigner.util.StringUtil;
+import org.oefa.gob.pe.osigner.util.OefaUtil;
 
 public class ConvertFilesTask extends Task<Void> {
 
+
     @Override
     protected Void call() throws Exception {
-        Pdf pdf = new Pdf();
-
-        int count = 1;
-        for(FileModel file : SignConfiguration.getInstance().getFilesToSign()){
-
-            if(!StringUtil.isPdfName(file.getName())) {
-                String name = pdf.convertToPdf(file.getLocation(), file.getName());
-                FileUtil.deleteFile(file.getLocation() + file.getName());
-                file.setName(name);
-            }
-
-            double progress = (double) count / SignConfiguration.getInstance().getFilesToSign().size();
-            NotificationFX.updateProgressNotification(
-                    Constant.PROGRESS_VALUE_CONVERT.getInitialValue(),
-                    Constant.PROGRESS_VALUE_CONVERT.getPartialValue()  * progress
-            );
-            count++;
-        }
+        OefaUtil.convertFilesToSignToPDF(
+                SignConfiguration.getInstance().getFilesToSign()
+        );
 
         return null;
     }
+
 
     @Override
     protected void succeeded() {
@@ -45,6 +28,7 @@ public class ConvertFilesTask extends Task<Void> {
 
     }
 
+
     @Override
     protected void failed() {
         super.failed();
@@ -53,9 +37,17 @@ public class ConvertFilesTask extends Task<Void> {
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
+
         StepComponent.showStepError(0);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showSignInformationErrorNotification(errorMessage);
+
+        if (OefaUtil.FILES_WITH_ERRORS.isEmpty()) {
+            NotificationFX.showFatalErrorNotification(errorMessage);
+        } else {
+            NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage());
+        }
 
     }
+
+
 }
