@@ -19,42 +19,33 @@ import java.util.ResourceBundle;
 
 public class PlatformController implements Initializable {
 
+
     @FXML
     private MFXComboBox<String> certificateComboBox;
-
     @FXML
     private ImageView imgLogoContainer;
-
     @FXML
     private MFXButton cancelButton;
-
     @FXML
     private MFXButton confirmButton;
-
     @FXML
     private Button updateButton;
-
+    @FXML
+    private Label errorCertificateLabel;
     @FXML
     private ImageView imgView_1;
-
     @FXML
     private ImageView imgView_2;
-
     @FXML
     private ImageView imgView_3;
-
     @FXML
     private ImageView imgView_4;
-
     @FXML
     private Label stepLabel_1;
-
     @FXML
     private Label stepLabel_2;
-
     @FXML
     private Label stepLabel_3;
-
     @FXML
     private Label stepLabel_4;
 
@@ -70,15 +61,17 @@ public class PlatformController implements Initializable {
         PlatformStepModel stepModel_4 = new PlatformStepModel(this.imgView_4, this.stepLabel_4);
         List<PlatformStepModel> stepList = List.of(stepModel_1, stepModel_2, stepModel_3, stepModel_4);
 
-        PlatformService.PLATFORM_MODEL = new PlatformModel(stepList, this.certificateComboBox, this.confirmButton, this.cancelButton, this.updateButton);
+        PlatformService.PLATFORM_MODEL = new PlatformModel(stepList, this.certificateComboBox,this.errorCertificateLabel, this.confirmButton, this.cancelButton, this.updateButton);
 
     }
+
 
     @FXML
     void onCancel(ActionEvent event) {
-        PlatformService.showErrorAndClose();
+        PlatformService.cancelSignProccess();
 
     }
+
 
     @FXML
     void onConfirm(ActionEvent event) {
@@ -86,10 +79,17 @@ public class PlatformController implements Initializable {
 
     }
 
+
     @FXML
     void onUpdate(ActionEvent event) {
         PlatformService.reloadCertificates();
 
+    }
+
+    @FXML
+    void onChange(ActionEvent event){
+        PlatformService.showErrorCertificateMessage(false);
+        System.out.println("item selected");
     }
 
 }

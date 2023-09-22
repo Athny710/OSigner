@@ -61,7 +61,10 @@ public class IText7Adapter implements SignPort {
                     sap.setLayer2Text(
                             buildSignatureText(signConfiguration.getSignProcessConfiguration(), certificate.getNombre())
                     );
-                    sap.setImage(ImageDataFactory.create(LoaderFX.loadResource("FirmaFondoBlanco.png").readAllBytes()));
+
+                    if(signConfiguration.getSignProcessConfiguration().getSignatureType()== Constant.FIRMA_TIPO_FIRMA)
+                        sap.setImage(ImageDataFactory.create(LoaderFX.loadResource("FirmaFondoBlanco.png").readAllBytes()));
+
                     sap.setPageRect(new Rectangle(
                             fileToSign.getPositionX(),
                             fileToSign.getPositionY(),
@@ -114,15 +117,19 @@ public class IText7Adapter implements SignPort {
     }
 
     private String buildSignatureText(SignProcessModel signProcessModel, String userName){
-        String signatureText = "Firmado digitalmente por: " + userName + "\n";
+        String signatureType = signProcessModel.getSignatureType() == Constant.FIRMA_TIPO_FIRMA ? "Firmado" : "Visado";
+        String signatureText = signatureType + "digitalmente por: " + userName + "\n";
         if(!signProcessModel.getUserRole().equals(""))
             signatureText += "Cargo: " + signProcessModel.getUserRole() + "\n";
 
-        if(!signProcessModel.getLocation().equals(""))
+        if(!signProcessModel.getLocation().equals("") && signProcessModel.getSignatureType() == Constant.FIRMA_TIPO_FIRMA)
             signatureText += "Lugar: " + signProcessModel.getLocation() + "\n";
 
         if(!signProcessModel.getReason().equals(""))
             signatureText += "Motivo: " + signProcessModel.getReason() + "\n";
+
+        if(!signProcessModel.getSignatureOptionalText().equals(""))
+            signatureText += signProcessModel.getSignatureOptionalText() + "\n";
 
         signatureText += "Fecha/Hora: " + signProcessModel.getFechaCreacion();
 

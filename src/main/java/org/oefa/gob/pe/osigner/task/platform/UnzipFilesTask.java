@@ -12,6 +12,7 @@ public class UnzipFilesTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        LogUtil.setInfo("[TASK] Descomprimiendo archivos", this.getClass().getName());
 
         FileUtil.unzipFiles(SignConfiguration.getInstance().getSignProcessConfiguration().getZipUUID() + ".zip");
         SignConfiguration.getInstance()
@@ -26,7 +27,6 @@ public class UnzipFilesTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("Se descomprimieron los archivos.", this.getClass().getName());
         NotificationFX.updateProgressNotification("Convirtiendo archivos a PDF.");
         super.succeeded();
 

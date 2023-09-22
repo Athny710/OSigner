@@ -3,30 +3,28 @@ package org.oefa.gob.pe.osigner.task.platform;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+import org.oefa.gob.pe.osigner.application.PlatformService;
 import org.oefa.gob.pe.osigner.application.RestService;
 import org.oefa.gob.pe.osigner.application.SignService;
 import org.oefa.gob.pe.osigner.commons.AppType;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
-import org.oefa.gob.pe.osigner.domain.CertificateModel;
+import org.oefa.gob.pe.osigner.util.CertificateUtil;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 
-public class SignFilesTask extends Task<Void> {
+public class CertificateTask extends Task<Void> {
 
-    private final CertificateModel certificateModel;
-
-    public SignFilesTask(CertificateModel certificateModel){
-        this.certificateModel = certificateModel;
+    private final String certificateAlias;
+    public CertificateTask(String certificateAlias){
+        this.certificateAlias = certificateAlias;
     }
 
     @Override
     protected Void call() throws Exception {
-        LogUtil.setInfo("[TASK] Firmando archivos", this.getClass().getName());
+        LogUtil.setInfo("[TASK] Obteniendo información del certificado", this.getClass().getName());
 
-        SignService.signFiles(this.certificateModel);
-        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
-            RestService.updateSignProcess(Constant.FIRMA_ESTADO_FIRMADO);
+        SignTaskManager.CERTIFICATE_MODEL = CertificateUtil.getCertificateToSignByAlias(certificateAlias);
 
         return null;
 
@@ -35,9 +33,9 @@ public class SignFilesTask extends Task<Void> {
     @Override
     protected void succeeded() {
         super.succeeded();
-        NotificationFX.updateProgressNotification("Comprimiendo archivos firmados");
         Platform.runLater(() -> {
-            StepComponent.showStepCompleted(2);
+            StepComponent.showStepCompleted(1);
+            PlatformService.disableButtons(true);
         });
 
     }
@@ -47,13 +45,11 @@ public class SignFilesTask extends Task<Void> {
     protected void failed() {
         super.failed();
         String errorMessage = LogUtil.setError(
-                "Error firmando los archivos",
+                "Error obteneniendo información del certificado",
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
-        StepComponent.showStepError(2);
-        NotificationFX.closeProgressNotification();
         NotificationFX.showFatalErrorNotification(errorMessage);
-
+        PlatformService.disableButtons(false);
     }
 }

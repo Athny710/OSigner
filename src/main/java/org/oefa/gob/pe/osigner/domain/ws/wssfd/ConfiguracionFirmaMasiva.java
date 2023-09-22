@@ -9,11 +9,13 @@ public class ConfiguracionFirmaMasiva {
     private String userRole;
     private String location;
     private String reason;
+    private String signatureOptionalText;
     private String optional;
 
     private String downloadRestService;
     private String uploadRestService;
     private String updateRestService;
+    private String cancelRestService;
     private String authorizationTokenService;
 
     private int signatureType; // 1,2
@@ -94,6 +96,14 @@ public class ConfiguracionFirmaMasiva {
         this.reason = reason;
     }
 
+    public String getSignatureOptionalText() {
+        return signatureOptionalText;
+    }
+
+    public void setSignatureOptionalText(String signatureOptionalText) {
+        this.signatureOptionalText = signatureOptionalText;
+    }
+
     public String getOptional() {
         return optional;
     }
@@ -124,6 +134,14 @@ public class ConfiguracionFirmaMasiva {
 
     public void setUpdateRestService(String updateRestService) {
         this.updateRestService = updateRestService;
+    }
+
+    public String getCancelRestService() {
+        return cancelRestService;
+    }
+
+    public void setCancelRestService(String cancelRestService) {
+        this.cancelRestService = cancelRestService;
     }
 
     public String getAuthorizationTokenService() {

@@ -2,6 +2,7 @@
 *{
     -fx-white: #FFFFFF;
     -fx-green: #4CB051;
+    -fx-red: #BA1A1A;
     -fx-blue: #006496;
     -fx-gray: #DEE3EA;
 
@@ -15,6 +16,7 @@
 
     -fx-text-primary: #191C20;
     -fx-text-secondary: #76777A;
+    -fx-text-error: #BA1A1A;
     -fx-shadow: #20252980;
 }
 
@@ -81,7 +83,9 @@
 .inactive-text{
     -fx-text-fill: -fx-text-secondary;
 }
-
+.error-text{
+    -fx-text-fill: -fx-text-error;
+}
 
 /**************************************************
  * INPUT

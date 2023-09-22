@@ -11,6 +11,8 @@ public class ZipFilesTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        LogUtil.setInfo("[TASK] Comprimiendo archivos firmados", this.getClass().getName());
+
         FileUtil.zipFiles(
                 FileUtil.getSignedFolder(),
                 SignConfiguration.getInstance().getSignProcessConfiguration().getZipUUID() + ".zip",
@@ -22,7 +24,6 @@ public class ZipFilesTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("Se comprimieron los archivos.", this.getClass().getName());
         NotificationFX.updateProgressNotification("Subiendo archivos firmados");
         super.succeeded();
 

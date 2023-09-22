@@ -40,6 +40,7 @@ public class RestService {
      */
     public static void uploadFilesSigned(SignConfiguration signConfiguration) throws Exception{
         if(AppConfiguration.APP_TYPE.equals(AppType.SIMPLE_SIGN)){
+            FileUtil.loadFilesBytes(signConfiguration.getFilesToSign());
             ArrayList<byte[]> fileSignedBytes = signConfiguration.getFilesToSign()
                     .stream()
                     .map(FileModel::getBytes)
@@ -80,8 +81,12 @@ public class RestService {
      * Función que se encarga de cancelar el proceso de firma.
      * @throws Exception Excepción al momento de consumir el servicio.
      */
-    public static void cancelSignProcess() throws Exception{
-        WSSFD_ADAPTER.cancelSignProccess();
+    public static void cancelSignProcess(SignConfiguration signConfiguration) throws Exception{
+        if(AppConfiguration.APP_TYPE.equals(AppType.SIMPLE_SIGN)){
+            WSSFD_ADAPTER.cancelSimpleSignProccess();
+        }else{
+            WSSFD_ADAPTER.cancelMassiveSignProccess(signConfiguration);
+        }
 
     }
 

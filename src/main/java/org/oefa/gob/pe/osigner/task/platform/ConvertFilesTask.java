@@ -12,6 +12,8 @@ public class ConvertFilesTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        LogUtil.setInfo("[TASK] Convirtiendo archivos a formato PDF", this.getClass().getName());
+
         OefaUtil.convertFilesToSignToPDF(
                 SignConfiguration.getInstance().getFilesToSign()
         );
@@ -22,7 +24,6 @@ public class ConvertFilesTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("Se convirtieron los archivos a formato PDF.", this.getClass().getName());
         NotificationFX.updateProgressNotification("Agregando glosa de verificación.");
         super.succeeded();
 

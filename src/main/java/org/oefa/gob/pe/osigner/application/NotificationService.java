@@ -23,7 +23,7 @@ public class NotificationService {
 
         NOTIFICATION_MODEL.getCancelButton().setOnAction(e -> {
             ApplicationModel.NOTIFICATION_STAGE.close();
-            PlatformService.showErrorAndClose();
+            PlatformService.cancelSignProccess();
         });
 
     }
@@ -35,7 +35,7 @@ public class NotificationService {
         NOTIFICATION_MODEL.getConfirmButton().setText("Aceptar");
         NOTIFICATION_MODEL.getConfirmButton().setOnAction(e -> {
             ApplicationModel.NOTIFICATION_STAGE.close();
-            PlatformService.showErrorAndClose();
+            PlatformService.cancelSignProccess();
         });
 
         NOTIFICATION_MODEL.getCancelButton().setVisible(false);
@@ -54,8 +54,21 @@ public class NotificationService {
 
         NOTIFICATION_MODEL.getCancelButton().setOnAction(e -> {
             ApplicationModel.NOTIFICATION_STAGE.close();
-            PlatformService.showErrorAndClose();
+            PlatformService.cancelSignProccess();
         });
+    }
+
+
+    public static void buildCertificateError(String messge){
+        NOTIFICATION_MODEL.getTitleLabel().setText("Error");
+        NOTIFICATION_MODEL.getTextLabel().setText(messge + "\nPor favor seleccione otro certificado o intente nuevamente.");
+
+        NOTIFICATION_MODEL.getConfirmButton().setText("Aceptar");
+        NOTIFICATION_MODEL.getConfirmButton().setOnAction(e -> {
+            ApplicationModel.NOTIFICATION_STAGE.close();
+        });
+
+        NOTIFICATION_MODEL.getCancelButton().setVisible(false);
     }
 
     public static void buildMaterialFxError(String message){

@@ -19,7 +19,9 @@ public interface RestPort {
 
     void completeMassiveSignProcess(SignConfiguration signConfiguration, File zipFile) throws Exception;
 
-    void cancelSignProccess() throws Exception;
+    void cancelSimpleSignProccess() throws Exception;
+
+    void cancelMassiveSignProccess(SignConfiguration signConfiguration) throws Exception;
 
     void updateSignProcess(int status) throws Exception;
 

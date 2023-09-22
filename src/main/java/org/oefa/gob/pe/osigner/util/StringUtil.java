@@ -1,6 +1,8 @@
 package org.oefa.gob.pe.osigner.util;
 
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -30,5 +32,11 @@ public class StringUtil {
         String extension = fileName.substring(index);
 
         return extension.toUpperCase().contains("PDF");
+    }
+
+
+    public static String formatString(String string){
+        return new String(string.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+
     }
 }

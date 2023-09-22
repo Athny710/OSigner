@@ -2,21 +2,18 @@ package org.oefa.gob.pe.osigner.task.platform;
 
 import javafx.application.Platform;
 import javafx.concurrent.Task;
-import org.oefa.gob.pe.osigner.application.PlatformService;
 import org.oefa.gob.pe.osigner.application.RestService;
 import org.oefa.gob.pe.osigner.core.AppFX;
-import org.oefa.gob.pe.osigner.core.NotificationFX;
-import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 
-public class UploadFilesTask extends Task<Void> {
+public class CancelTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
-        LogUtil.setInfo("[TASK] Subiendo archivos firmados", this.getClass().getName());
+        LogUtil.setInfo("[TASK] Cancelando el proceso de firma", this.getClass().getName());
 
-        RestService.uploadFilesSigned(
+        RestService.cancelSignProcess(
                 SignConfiguration.getInstance()
         );
 
@@ -24,13 +21,12 @@ public class UploadFilesTask extends Task<Void> {
 
     }
 
+
     @Override
     protected void succeeded() {
         super.succeeded();
-        NotificationFX.closeProgressNotification();
         Platform.runLater(() -> {
-            StepComponent.showStepCompleted(3);
-            AppFX.showMessageAndCloseApplication(true);
+            AppFX.showMessageAndCloseApplication(false);
         });
 
     }
@@ -40,12 +36,11 @@ public class UploadFilesTask extends Task<Void> {
     protected void failed() {
         super.failed();
         String errorMessage = LogUtil.setError(
-                "Error firmando los archivos",
+                "Error cancelando el proceso de firma",
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
-        StepComponent.showStepError(3);
-        NotificationFX.showFatalErrorNotification(errorMessage);
+        AppFX.showMessageAndCloseApplication(false);
 
     }
 }

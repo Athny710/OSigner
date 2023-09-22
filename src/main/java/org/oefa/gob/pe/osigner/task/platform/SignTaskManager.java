@@ -12,10 +12,32 @@ import java.util.List;
 
 public class SignTaskManager {
 
+    public static DownloadFilesTask DOWNLOAD_FILE_TASK;
+    public static UnzipFilesTask UNZIP_FILE_TASK;
+    public static ConvertFilesTask CONVERT_FILE_TASK;
+    public static GlosaTask GLOSA_FILE_TASK;
+    public static SignPositionTask SIGNATURE_POSITION_TASK;
+    public static CertificateTask CERTIFICATE_TASK;
+    public static SignFilesTask SIGN_FILE_TASK;
+    public static ZipFilesTask ZIP_FILE_TASK;
+    public static UploadFilesTask UPLOAD_FILE_TASK;
+    public static CertificateModel CERTIFICATE_MODEL;
 
     public static void initializeSignProccess(PlatformModel platformModel){
         StepComponent.STEP_LIST = platformModel.getSteps();
         CertificateComponent.CERT_COMBOBOX = platformModel.getCertificateComboBox();
+
+        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
+            UNZIP_FILE_TASK = new UnzipFilesTask();
+            CONVERT_FILE_TASK = new ConvertFilesTask();
+            GLOSA_FILE_TASK = new GlosaTask();
+            SIGNATURE_POSITION_TASK = new SignPositionTask();
+            ZIP_FILE_TASK = new ZipFilesTask();
+            UPLOAD_FILE_TASK = new UploadFilesTask();
+        }
+
+        DOWNLOAD_FILE_TASK = new DownloadFilesTask();
+        UPLOAD_FILE_TASK = new UploadFilesTask();
 
         startSignProccess();
 
@@ -23,50 +45,47 @@ public class SignTaskManager {
 
 
     private static void startSignProccess(){
-        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
-            NotificationFX.initializeAndShowProgressNotification(
-                    "Obteniendo archivos",
-                    "Descargando archivos..."
+        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)) {
+            NotificationFX.initializeAndShowProgressNotification("Obteniendo archivos", "Descargando archivos...");
+            TaskUtil.executeTasksOnSerial(
+                    List.of(DOWNLOAD_FILE_TASK, UNZIP_FILE_TASK, CONVERT_FILE_TASK, GLOSA_FILE_TASK, SIGNATURE_POSITION_TASK)
             );
 
-        DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
-
-        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)) {
-            UnzipFilesTask unzipFilesTask = new UnzipFilesTask();
-            ConvertFilesTask convertFilesTask = new ConvertFilesTask();
-            GlosaTask glosaTask = new GlosaTask();
-            SignPositionTask signPositionTask = new SignPositionTask();
-
-            TaskUtil.executeTasksOnSerial(List.of(downloadFilesTask, unzipFilesTask, convertFilesTask, glosaTask, signPositionTask));
-
         }else{
-            TaskUtil.executeTask(downloadFilesTask);
+            TaskUtil.executeTask(DOWNLOAD_FILE_TASK);
         }
 
     }
 
-    public static void completeSignProccess(CertificateModel certificateModel){
-        if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
-            NotificationFX.initializeAndShowProgressNotification(
-                    "Completando proceso",
-                    "Firmando archivos..."
-            );
 
-        SignFilesTask signFilesTask = new SignFilesTask(certificateModel);
-        ZipFilesTask zipFilesTask = new ZipFilesTask();
-        UploadFilesTask uploadFilesTask = new UploadFilesTask();
+    public static void completeSignProccess(String certificateAlias){
+        CERTIFICATE_TASK = new CertificateTask(certificateAlias);
+        SIGN_FILE_TASK = new SignFilesTask(CERTIFICATE_MODEL);
 
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
-            TaskUtil.executeTasksOnSerial(List.of(signFilesTask, zipFilesTask, uploadFilesTask));
+            NotificationFX.initializeAndShowProgressNotification("Completando proceso", "Firmando archivos...");
+            TaskUtil.executeTasksOnSerial(
+                    List.of(CERTIFICATE_TASK, SIGN_FILE_TASK, ZIP_FILE_TASK, UPLOAD_FILE_TASK)
+            );
+
         }else{
-            TaskUtil.executeTasksOnSerial(List.of(signFilesTask, uploadFilesTask));
+            TaskUtil.executeTasksOnSerial(
+                    List.of(CERTIFICATE_TASK, SIGN_FILE_TASK, UPLOAD_FILE_TASK)
+            );
         }
 
     }
 
+
+    public static void cancelSignProccess(){
+        CancelTask cancelTask = new CancelTask();
+        TaskUtil.executeTask(cancelTask);
+
+    }
+
+
     public static void completeSignPositionTask(){
-        SignPositionTask signPositionTask = new SignPositionTask();
-        signPositionTask.succeeded();
+        SIGNATURE_POSITION_TASK.succeeded();
     }
 
 }

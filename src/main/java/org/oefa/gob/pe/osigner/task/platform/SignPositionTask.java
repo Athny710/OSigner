@@ -13,6 +13,8 @@ public class SignPositionTask extends Task<Void>{
 
     @Override
     protected Void call() throws Exception {
+        LogUtil.setInfo("[TASK] Obteniendo posición de firma.", this.getClass().getName());
+
         SignatureUtil.setCoordenadasPosicionFirma(
                 SignConfiguration.getInstance().getFilesToSign(),
                 SignConfiguration.getInstance().getSignProcessConfiguration()
@@ -23,7 +25,8 @@ public class SignPositionTask extends Task<Void>{
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("Se obtuvo la posición de firma de los archivos.", this.getClass().getName());
+        LogUtil.setInfo("[PROCCESS] Proceso de obtención de información completado, esperando confirmación del usuario", this.getClass().getName());
+
         NotificationFX.closeProgressNotification();
         Platform.runLater(()-> {
             StepComponent.showStepCompleted(0);

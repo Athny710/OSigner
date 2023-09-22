@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import org.oefa.gob.pe.osigner.core.AnimationFX;
 import org.oefa.gob.pe.osigner.core.AppFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
-import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
 import org.oefa.gob.pe.osigner.task.platform.SignTaskManager;
@@ -34,20 +33,18 @@ public class PlatformService {
      * @param certificateAlias Alias de certificado seleccionado por el usuario.
      */
     public static void completeSignProccess(String certificateAlias){
-        try {
-            StepComponent.showStepCompleted(1);
-            SignTaskManager.completeSignProccess(
-                    CertificateUtil.getCertificateToSignByAlias(certificateAlias)
-            );
-            disableButtons(true);
-        }catch (Exception e){
-            LogUtil.setError(
-                    "Error obteniendo la información de firma del certificado seleccionado",
-                    PlatformService.class.getName(),
-                    e
-            );
-
+        if(certificateAlias == null) {
+            showErrorCertificateMessage(true);
+            return;
         }
+
+        SignTaskManager.completeSignProccess(certificateAlias);
+
+    }
+
+
+    public static void cancelSignProccess(){
+        SignTaskManager.cancelSignProccess();
 
     }
 
@@ -100,46 +97,9 @@ public class PlatformService {
     }
 
 
-    /**
-     * Función que se encarga de mostrar la vista de Operación exitosa.
-     */
-    public static void showSuccessAndClose(){
-        showEndView("view/PlatformSuccess.fxml");
+    public static void showErrorCertificateMessage(boolean value){
+        PLATFORM_MODEL.getErrorCertificateLabel().setVisible(value);
 
-    }
-
-
-    /**
-     * Función que se encarga de mostrar la vista de Operación Incompleta.
-     */
-    public static void showErrorAndClose(){
-        showEndView("view/PlatformError.fxml");
-
-    }
-
-
-    /**
-     * Función que se encarga de cargar la vista solicitada.
-     * @param resource Archivo FXML que se desea mostrar.
-     */
-    private static void showEndView(String resource){
-        try {
-            Parent platformParent = AppFX.getParent(resource);
-            PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().add(
-                    PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().size(),
-                    platformParent
-            );
-
-            AnimationFX.displayEndView(platformParent);
-            AppFX.closeApplication();
-
-        }catch (Exception e){
-            LogUtil.setError(
-                    "Error cargando interfaz de usuario",
-                    PlatformLoaderService.class.getName(),
-                    e
-            );
-        }
     }
 
 

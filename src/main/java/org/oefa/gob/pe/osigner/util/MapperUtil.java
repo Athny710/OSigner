@@ -115,9 +115,10 @@ public class MapperUtil {
         signProcessModel.setClientUUID(msResponse.getConfiguracionFirma().getClientUUID());
         signProcessModel.setUsernameSSFD(msResponse.getConfiguracionFirma().getUsernameSSFD());
         signProcessModel.setUserDNI(msResponse.getConfiguracionFirma().getUserDNI());
-        signProcessModel.setUserRole(msResponse.getConfiguracionFirma().getUserRole());
-        signProcessModel.setLocation(msResponse.getConfiguracionFirma().getLocation());
-        signProcessModel.setReason(msResponse.getConfiguracionFirma().getReason());
+        signProcessModel.setUserRole(StringUtil.formatString(msResponse.getConfiguracionFirma().getUserRole()));
+        signProcessModel.setLocation(StringUtil.formatString(msResponse.getConfiguracionFirma().getLocation()));
+        signProcessModel.setReason(StringUtil.formatString(msResponse.getConfiguracionFirma().getReason()));
+        signProcessModel.setSignatureOptionalText(StringUtil.formatString(msResponse.getConfiguracionFirma().getSignatureOptionalText()));
         signProcessModel.setOptional(msResponse.getConfiguracionFirma().getOptional());
         signProcessModel.setFechaCreacion(msResponse.getConfiguracionFirma().getFechaCreacion());
         signProcessModel.setZipUUID(msResponse.getConfiguracionFirma().getZipUUID());
@@ -125,6 +126,7 @@ public class MapperUtil {
         signProcessModel.setDownloadRestService(msResponse.getConfiguracionFirma().getDownloadRestService());
         signProcessModel.setUploadRestService(msResponse.getConfiguracionFirma().getUploadRestService());
         signProcessModel.setUpdateRestService(msResponse.getConfiguracionFirma().getUpdateRestService());
+        signProcessModel.setCancelRestService(msResponse.getConfiguracionFirma().getCancelRestService());
         signProcessModel.setAuthorizationTokenService(msResponse.getConfiguracionFirma().getAuthorizationTokenService());
 
         signProcessModel.setUrlTsa(msResponse.getConfiguracionFirma().getServicioFirma().getUrl());

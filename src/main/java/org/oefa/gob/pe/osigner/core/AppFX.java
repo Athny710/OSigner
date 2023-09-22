@@ -41,6 +41,7 @@ public class AppFX {
 
     }
 
+
     /**
      * Función
      * @param resource Archivo FXML de la vista que se va a cargar.
@@ -76,6 +77,7 @@ public class AppFX {
 
     }
 
+
     /**
      * Función que se encarga de mostrar las notificaciones de error.
      */
@@ -83,6 +85,7 @@ public class AppFX {
         showNotification("view/Notification.fxml", ApplicationModel.NOTIFICATION_STAGE);
 
     }
+
 
     /**
      * Función que se encarga de mostrar las notificaciones de progreso de procesos.
@@ -125,23 +128,52 @@ public class AppFX {
 
 
     /**
-     * Función que cierra y termina la aplicación.
+     * Función que permite mostrar la vista de éxito o error al usuario y cerrar la aplicación.
+     * @param isSuccess Indica si se debe mostrar la vista de éxito o de error.
      */
-    public static void closeApplication(){
-        Task<Void> task = new Task<Void>() {
-            @Override
-            protected Void call() throws Exception {
-                // Tiempo que se tomará para mostrar vista/mensaje final.
-                Thread.sleep(Constant.CLOSE_APP_DELAY_TIME);
-                AnimationFX.closeApplication(ApplicationModel.CURRENT_STAGE);
-                // Tiempo que se tomará para la animación cuando se cierra la aplicación.
-                Thread.sleep(Constant.EXIT_APP_DELAY_TIME);
-                System.exit(1);
-
-                return null;
-            }
-        };
-        TaskUtil.executeTask(task);
+    public static void showMessageAndCloseApplication(boolean isSuccess){
+        closeApplication( isSuccess ? "view/PlatformSuccess.fxml": "view/PlatformError.fxml");
 
     }
+
+
+    /**
+     * Función que cierra y termina la aplicación.
+     */
+    private static void closeApplication(String resource){
+        try{
+
+            Parent platformParent = AppFX.getParent(resource);
+            PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().add(
+                    PlatformLoaderService.platformLoaderModel.getMainContainer().getChildren().size(),
+                    platformParent
+            );
+            AnimationFX.displayEndView(platformParent);
+
+            Task<Void> task = new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    // Tiempo que se tomará para mostrar vista/mensaje final.
+                    Thread.sleep(Constant.CLOSE_APP_DELAY_TIME);
+                    AnimationFX.closeApplication(ApplicationModel.CURRENT_STAGE);
+                    // Tiempo que se tomará para la animación cuando se cierra la aplicación.
+                    Thread.sleep(Constant.EXIT_APP_DELAY_TIME);
+                    System.exit(1);
+
+                    return null;
+                }
+            };
+            TaskUtil.executeTask(task);
+
+        }catch (Exception e){
+            LogUtil.setError(
+                    "Error cargando interfaz de usuario",
+                    PlatformLoaderService.class.getName(),
+                    e
+            );
+            System.exit(1);
+        }
+    }
+
+
 }

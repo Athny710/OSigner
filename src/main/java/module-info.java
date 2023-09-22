@@ -17,8 +17,9 @@ module org.oefa.gob.pe.osigner {
     requires org.apache.httpcomponents.httpcore;
     requires org.apache.httpcomponents.httpclient;
     requires org.apache.httpcomponents.httpmime;
-    requires OefaUtils;
+    //requires OefaUtils;
     requires itext;
+    requires OefaUtils;
 
     opens org.oefa.gob.pe.osigner to javafx.fxml;
     exports org.oefa.gob.pe.osigner;

@@ -9,12 +9,14 @@ public class SignProcessModel {
     private String userRole;
     private String location;
     private String reason;
+    private String SignatureOptionalText;
     private String optional;
     private String fechaCreacion;
 
     private String downloadRestService;
     private String uploadRestService;
     private String updateRestService;
+    private String cancelRestService;
     private String authorizationTokenService;
     private String zipUUID;
 
@@ -36,9 +38,7 @@ public class SignProcessModel {
     private String glosaUrl;
 
 
-    public SignProcessModel(){
-
-    }
+    public SignProcessModel(){}
 
     public SignProcessModel(String userDNI, String userRole, String location, String reason, String fechaCreacion, boolean timeStamp, boolean ltv, String urlTsa, String userTsa, String passTsa, int signatureType, int signatureStyle, byte[] singatureImage){
         this.userDNI = userDNI;
@@ -115,6 +115,14 @@ public class SignProcessModel {
         this.reason = reason;
     }
 
+    public String getSignatureOptionalText() {
+        return SignatureOptionalText;
+    }
+
+    public void setSignatureOptionalText(String signatureOptionalText) {
+        SignatureOptionalText = signatureOptionalText;
+    }
+
     public String getOptional() {
         return optional;
     }
@@ -153,6 +161,14 @@ public class SignProcessModel {
 
     public void setUpdateRestService(String updateRestService) {
         this.updateRestService = updateRestService;
+    }
+
+    public String getCancelRestService() {
+        return cancelRestService;
+    }
+
+    public void setCancelRestService(String cancelRestService) {
+        this.cancelRestService = cancelRestService;
     }
 
     public String getAuthorizationTokenService() {

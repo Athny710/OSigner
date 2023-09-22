@@ -10,6 +10,8 @@ import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -26,7 +28,6 @@ public class FileUtil {
 
 
     public static String saveFileBytes(FileModel file) throws Exception{
-        LogUtil.setInfo("Guardando el archivo: " + file.getName(), FileUtil.class.getName());
         String path = getTempFolder();
 
         deleteFile(path + file.getName());
@@ -37,6 +38,16 @@ public class FileUtil {
 
         return path;
 
+    }
+
+
+    public static void loadFilesBytes(List<FileModel> filesList) throws IOException {
+        for(FileModel fileToLoad : filesList){
+            String path = fileToLoad.getLocation() + fileToLoad.getName();
+            fileToLoad.setBytes(
+                    Files.readAllBytes(Path.of(path))
+            );
+        }
     }
 
 
@@ -129,7 +140,6 @@ public class FileUtil {
      * @throws Exception Excepción al descomprimir el archivo
      */
     public static void unzipFiles(String zipName) throws Exception{
-        LogUtil.setInfo("Descomprimeindo zip", FileUtil.class.getName());
         File zipFile = new File(getTempFolder() + zipName);
         ZipFile zip = new ZipFile(zipFile);
         Enumeration<ZipEntry> entries = (Enumeration<ZipEntry>) zip.entries();
