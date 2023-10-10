@@ -14,17 +14,12 @@ import org.oefa.gob.pe.osigner.util.LogUtil;
 
 public class SignFilesTask extends Task<Void> {
 
-    private final CertificateModel certificateModel;
-
-    public SignFilesTask(CertificateModel certificateModel){
-        this.certificateModel = certificateModel;
-    }
 
     @Override
     protected Void call() throws Exception {
         LogUtil.setInfo("[TASK] Firmando archivos", this.getClass().getName());
 
-        SignService.signFiles(this.certificateModel);
+        SignService.signFiles(SignTaskManager.CERTIFICATE_MODEL);
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN))
             RestService.updateSignProcess(Constant.FIRMA_ESTADO_FIRMADO);
 

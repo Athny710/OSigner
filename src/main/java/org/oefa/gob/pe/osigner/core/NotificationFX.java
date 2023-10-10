@@ -87,9 +87,6 @@ public class NotificationFX {
 
 
     public static void showFatalErrorNotification(String errorMessage){
-        if(!isProgressFeatureActive())
-            return;
-
         AppFX.showNotificationError();
         NotificationService.buildFatalError(errorMessage);
 

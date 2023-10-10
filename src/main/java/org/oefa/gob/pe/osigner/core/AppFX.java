@@ -158,7 +158,7 @@ public class AppFX {
                     AnimationFX.closeApplication(ApplicationModel.CURRENT_STAGE);
                     // Tiempo que se tomará para la animación cuando se cierra la aplicación.
                     Thread.sleep(Constant.EXIT_APP_DELAY_TIME);
-                    System.exit(1);
+                    System.exit(0);
 
                     return null;
                 }
@@ -171,7 +171,7 @@ public class AppFX {
                     PlatformLoaderService.class.getName(),
                     e
             );
-            System.exit(1);
+            System.exit(0);
         }
     }
 

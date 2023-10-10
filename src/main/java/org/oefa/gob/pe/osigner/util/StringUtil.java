@@ -5,6 +5,7 @@ import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.regex.Pattern;
 
 public class StringUtil {
 
@@ -14,13 +15,15 @@ public class StringUtil {
      * @return Retorna un arreglo con los parámetros enviados en la URL
      */
     public static ArrayList<String> getParametersFromUrl(String url){
+        LogUtil.setInfo("Parámetros de ejecución obtenidos: " + url, StringUtil.class.getName());
         ArrayList<String> paramsList = new ArrayList<>();
 
-        String concatenatedParams =  url
-                .replaceFirst(AppConfiguration.getKey("CUSTOM_PROTOCOL") +  "://", "")
-                .replaceFirst("/", "");
+        String concatenatedParams = url.split(Pattern.quote("://"))[1].replaceFirst("/", "");
 
         String[] params = concatenatedParams.split("%");
+        for(String p : params){
+            LogUtil.setInfo("Parámetro obtenido: " + p, StringUtil.class.getName());
+        }
         Collections.addAll(paramsList, params);
 
         return paramsList;

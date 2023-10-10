@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<StackPane prefHeight="190.0" prefWidth="300.0" styleClass="background-notification-container" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oefa.gob.pe.osigner.infra.input.adapter.NotificationController">
+<StackPane prefHeight="190.0" prefWidth="300.0" styleClass="background-notification-container" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oefa.gob.pe.osigner.infra.input.adapter.NotificationController">
    <children>
       <AnchorPane prefHeight="180.0" prefWidth="290.0" styleClass="background-white" stylesheets="@../css/MainStyle.css">
          <children>

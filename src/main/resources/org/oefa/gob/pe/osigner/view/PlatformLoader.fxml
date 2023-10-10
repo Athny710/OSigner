@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="320.0" styleClass="background-container" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController">
+<StackPane fx:id="mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="320.0" styleClass="background-container" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oefa.gob.pe.osigner.infra.input.adapter.PlatformLoaderController">
    <children>
       <GridPane fx:id="platformLoaderContainer" styleClass="background-white">
         <columnConstraints>

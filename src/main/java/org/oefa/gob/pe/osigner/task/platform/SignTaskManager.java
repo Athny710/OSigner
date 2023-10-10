@@ -36,6 +36,7 @@ public class SignTaskManager {
             UPLOAD_FILE_TASK = new UploadFilesTask();
         }
 
+        SIGN_FILE_TASK = new SignFilesTask();
         DOWNLOAD_FILE_TASK = new DownloadFilesTask();
         UPLOAD_FILE_TASK = new UploadFilesTask();
 
@@ -60,7 +61,6 @@ public class SignTaskManager {
 
     public static void completeSignProccess(String certificateAlias){
         CERTIFICATE_TASK = new CertificateTask(certificateAlias);
-        SIGN_FILE_TASK = new SignFilesTask(CERTIFICATE_MODEL);
 
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)){
             NotificationFX.initializeAndShowProgressNotification("Completando proceso", "Firmando archivos...");
