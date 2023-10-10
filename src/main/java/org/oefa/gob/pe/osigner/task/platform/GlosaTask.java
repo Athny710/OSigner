@@ -1,6 +1,8 @@
 package org.oefa.gob.pe.osigner.task.platform;
 
+import javafx.application.Platform;
 import javafx.concurrent.Task;
+import org.oefa.gob.pe.osigner.application.PlatformService;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
@@ -16,7 +18,6 @@ public class GlosaTask extends Task<Void> {
         OefaUtil.addGlosaToFilesToSign(
                 SignConfiguration.getInstance().getFilesToSign()
         );
-
         return null;
 
     }
@@ -24,7 +25,13 @@ public class GlosaTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        NotificationFX.updateProgressNotification("Obteniendo posición de firma.");
+        LogUtil.setInfo("[PROCCESS] Proceso de obtención de información completado, esperando confirmación del usuario", this.getClass().getName());
+
+        NotificationFX.closeProgressNotification();
+        Platform.runLater(()-> {
+            StepComponent.showStepCompleted(0);
+            PlatformService.disableButtons(false);
+        });
         super.succeeded();
 
     }
@@ -39,7 +46,7 @@ public class GlosaTask extends Task<Void> {
         );
         StepComponent.showStepError(0);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage());
+        NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage(), 4);
 
     }
 }

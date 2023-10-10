@@ -93,12 +93,12 @@ public class NotificationFX {
     }
 
 
-    public static void showSkippedFilesErrorNotification(String errorMessage){
+    public static void showSkippedFilesErrorNotification(String errorMessage, int stepProcess){
         if(!isProgressFeatureActive())
             return;
 
         AppFX.showNotificationError();
-        NotificationService.buildSkippedFilesError(errorMessage);
+        NotificationService.buildSkippedFilesError(errorMessage, stepProcess);
 
     }
 

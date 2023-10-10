@@ -1,6 +1,7 @@
 package org.oefa.gob.pe.osigner.task.platform;
 
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
+import org.oefa.gob.pe.osigner.application.PlatformService;
 import org.oefa.gob.pe.osigner.commons.AppType;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.CertificateComponent;
@@ -49,7 +50,7 @@ public class SignTaskManager {
         if(AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN)) {
             NotificationFX.initializeAndShowProgressNotification("Obteniendo archivos", "Descargando archivos...");
             TaskUtil.executeTasksOnSerial(
-                    List.of(DOWNLOAD_FILE_TASK, UNZIP_FILE_TASK, CONVERT_FILE_TASK, GLOSA_FILE_TASK, SIGNATURE_POSITION_TASK)
+                    List.of(DOWNLOAD_FILE_TASK, UNZIP_FILE_TASK, CONVERT_FILE_TASK, SIGNATURE_POSITION_TASK, GLOSA_FILE_TASK)
             );
 
         }else{
@@ -85,7 +86,25 @@ public class SignTaskManager {
 
 
     public static void completeSignPositionTask(){
-        SIGNATURE_POSITION_TASK.succeeded();
+        StepComponent.showStepLoading(0);
+        TaskUtil.executeTask(GLOSA_FILE_TASK);
+    }
+
+    public static void completeTask(int stepProcess){
+        StepComponent.showStepLoading(0);
+        switch (stepProcess){
+            case 3 -> {
+                CONVERT_FILE_TASK.succeeded();
+                TaskUtil.executeTasksOnSerial(List.of(SIGNATURE_POSITION_TASK, GLOSA_FILE_TASK));
+            }
+            case 4 -> {
+                SIGNATURE_POSITION_TASK.succeeded();
+                TaskUtil.executeTask(GLOSA_FILE_TASK);
+            }
+            case 5 -> {
+                GLOSA_FILE_TASK.succeeded();
+            }
+        }
     }
 
 }

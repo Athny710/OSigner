@@ -20,18 +20,13 @@ public class SignPositionTask extends Task<Void>{
                 SignConfiguration.getInstance().getSignProcessConfiguration()
         );
         return null;
+
     }
 
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("[PROCCESS] Proceso de obtención de información completado, esperando confirmación del usuario", this.getClass().getName());
-
-        NotificationFX.closeProgressNotification();
-        Platform.runLater(()-> {
-            StepComponent.showStepCompleted(0);
-            PlatformService.disableButtons(false);
-        });
+        NotificationFX.updateProgressNotification("Agregando glosa de verificación.");
         super.succeeded();
 
     }
@@ -47,7 +42,7 @@ public class SignPositionTask extends Task<Void>{
 
         StepComponent.showStepError(0);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage());
+        NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage(), 5);
 
     }
 }

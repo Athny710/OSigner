@@ -42,14 +42,14 @@ public class NotificationService {
 
     }
 
-    public static void buildSkippedFilesError(String message){
+    public static void buildSkippedFilesError(String message, int stepProcess){
         NOTIFICATION_MODEL.getTitleLabel().setText("Error");
         NOTIFICATION_MODEL.getTextLabel().setText(message + "\nSe omitirán dichos archivo en el proceso de firma.\n¿Desea continuar?");
 
         NOTIFICATION_MODEL.getConfirmButton().setText("Continuar");
         NOTIFICATION_MODEL.getConfirmButton().setOnAction(e -> {
             ApplicationModel.NOTIFICATION_STAGE.close();
-            SignTaskManager.completeSignPositionTask();
+            SignTaskManager.completeTask(stepProcess);
         });
 
         NOTIFICATION_MODEL.getCancelButton().setOnAction(e -> {

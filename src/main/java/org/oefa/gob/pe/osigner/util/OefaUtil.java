@@ -61,7 +61,6 @@ public class OefaUtil {
 
         int count = 1;
         for(FileModel file : filesToSign){
-
             try {
                 if (!StringUtil.isPdfName(file.getName())) {
                     String name = pdf.convertToPdf(file.getLocation(), file.getName());
@@ -102,6 +101,9 @@ public class OefaUtil {
         int count = 1;
 
         for(FileModel file : SignConfiguration.getInstance().getFilesToSign()){
+            if(file.getPage() == Constant.FIRMA_PAGINA_ERROR)
+                continue;
+
             if(file.isAddGlosa()){
                 try {
                     GlosaSSFD glosaSSFD = new GlosaSSFD(

@@ -16,7 +16,7 @@ public class StepComponent {
             "Se subieron los archivos"
     );
     enum COMPLETED_TYPE{
-        SUCCESS, ERROR
+        SUCCESS, LOADING, ERROR
     }
 
 
@@ -27,6 +27,10 @@ public class StepComponent {
 
     }
 
+
+    public static void showStepLoading(int stepNumer){
+        updateImg(COMPLETED_TYPE.LOADING, stepNumer);
+    }
 
 
     public static void showStepError(int stepNumber){
@@ -54,7 +58,13 @@ public class StepComponent {
 
 
     private static void updateImg(COMPLETED_TYPE type, int stepNumber){
-        String resource = type == COMPLETED_TYPE.SUCCESS  ? "icon/Success.png" : "icon/Error.png";
+        String resource;
+        switch (type){
+            case SUCCESS -> resource = "icon/Success.png";
+            case LOADING -> resource = "icon/Loading.gif";
+            case ERROR -> resource = "icon/Error.png";
+            default -> resource = "icon/Loading.png";
+        }
         Image image = new Image(ResourceFX.load(resource));
         STEP_LIST.get(stepNumber).getImageView().setImage(image);
 

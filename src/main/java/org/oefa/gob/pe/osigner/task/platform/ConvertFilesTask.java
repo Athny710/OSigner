@@ -24,7 +24,7 @@ public class ConvertFilesTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        NotificationFX.updateProgressNotification("Agregando glosa de verificación.");
+        NotificationFX.updateProgressNotification("Obteniendo posición de firmas.");
         super.succeeded();
 
     }
@@ -45,7 +45,7 @@ public class ConvertFilesTask extends Task<Void> {
         if (OefaUtil.FILES_WITH_ERRORS.isEmpty()) {
             NotificationFX.showFatalErrorNotification(errorMessage);
         } else {
-            NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage());
+            NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage(), 3);
         }
 
     }

@@ -53,6 +53,9 @@ public class SignatureUtil {
     private static void setCoordenadasByPositionRelativa(List<FileModel> filesToSign, int relativePosition){
         int index = 1;
         for(FileModel file : filesToSign){
+            if(file.getPage() == Constant.FIRMA_PAGINA_ERROR)
+                continue;
+
             Optional<SignCoordinates> coordinatesOpt = Constant.UbicacionFirma.relativePosition
                     .stream()
                     .filter(x -> x.getType() == relativePosition)
@@ -88,6 +91,9 @@ public class SignatureUtil {
         int index = 1;
 
         for(FileModel file : filesToSign) {
+            if(file.getPage() == Constant.FIRMA_PAGINA_ERROR)
+                continue;
+
             try {
                 com.lowagie.text.pdf.PdfReader reader = new PdfReader(file.getLocation());
                 int signaturesNumber = reader.getAcroFields().getSignatureNames().size();
@@ -152,6 +158,9 @@ public class SignatureUtil {
         String label = "[" + textLabel + "]";
         int index = 1;
         for (FileModel fileModel : filesToSign) {
+            if(fileModel.getPage() == Constant.FIRMA_PAGINA_ERROR)
+                continue;
+
             try {
                 float[] coordinates = Pdf.getSignaturePosition(label, fileModel.getLocation() + fileModel.getName());
 

@@ -22,8 +22,7 @@ public class TaskUtil {
 
         for(int i=0; i< taskList.size() - 1; i++){
             int nextValue = i + 1;
-            taskList.get(i).addEventHandler(
-                    WorkerStateEvent.WORKER_STATE_SUCCEEDED,
+            taskList.get(i).setOnSucceeded(
                     workerStateEvent -> {
                         executorService.submit(taskList.get(nextValue));
                     }

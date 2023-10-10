@@ -4,7 +4,9 @@ import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class StringUtil {
@@ -40,6 +42,14 @@ public class StringUtil {
 
     public static String formatString(String string){
         return new String(string.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+
+    }
+
+
+    public static boolean isCertificateValidToSign(String alias){
+        String[] parts = alias.split(" ");
+        Optional<String> opt = Arrays.stream(parts).filter(x -> x.equals("AUT") || x.equals("CIF")).findFirst();
+        return opt.isEmpty();
 
     }
 }

@@ -121,7 +121,11 @@ public class CertificateUtil {
         Enumeration<String> certificatesListFromKs = keyStore.aliases();
         while(certificatesListFromKs.hasMoreElements()){
             Optional<CertificateModel> certificate = buildAndValidCertificate(certificatesListFromKs.nextElement(), keyStore, crl);
-            certificate.ifPresent(list::add);
+            if(certificate.isPresent()){
+                if(StringUtil.isCertificateValidToSign(certificate.get().getAlias()))
+                    list.add(certificate.get());
+
+            }
         }
 
         return list;
@@ -173,7 +177,7 @@ public class CertificateUtil {
             return true;
 
         }catch (Exception e){
-            return true;
+            return false;
         }
 
     }
