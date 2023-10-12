@@ -1,12 +1,15 @@
 package org.oefa.gob.pe.osigner.task.platform;
 
+import javafx.concurrent.Task;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.application.PlatformService;
+import org.oefa.gob.pe.osigner.commons.AppProcess;
 import org.oefa.gob.pe.osigner.commons.AppType;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.CertificateComponent;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
+import org.oefa.gob.pe.osigner.domain.SignConfiguration;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
 import org.oefa.gob.pe.osigner.util.TaskUtil;
 import java.util.List;
@@ -85,24 +88,28 @@ public class SignTaskManager {
     }
 
 
-    public static void completeSignPositionTask(){
-        StepComponent.showStepLoading(0);
-        TaskUtil.executeTask(GLOSA_FILE_TASK);
-    }
-
-    public static void completeTask(int stepProcess){
-        StepComponent.showStepLoading(0);
-        switch (stepProcess){
-            case 3 -> {
+    public static void completeTask(AppProcess appProcess){
+        switch (appProcess){
+            case CONVERT_FILE -> {
+                StepComponent.showStepLoading(0);
                 CONVERT_FILE_TASK.succeeded();
                 TaskUtil.executeTasksOnSerial(List.of(SIGNATURE_POSITION_TASK, GLOSA_FILE_TASK));
             }
-            case 4 -> {
+            case SIGNATURE_POSITION -> {
+                StepComponent.showStepLoading(0);
                 SIGNATURE_POSITION_TASK.succeeded();
                 TaskUtil.executeTask(GLOSA_FILE_TASK);
             }
-            case 5 -> {
+            case GLOSA -> {
+                StepComponent.showStepLoading(0);
                 GLOSA_FILE_TASK.succeeded();
+            }
+            case SIGN_FILE -> {
+                StepComponent.showStepLoading(2);
+                SignConfiguration.getInstance().getSignProcessConfiguration().setTimeStamp(false);
+                List<Task<Void>> lista = AppConfiguration.APP_TYPE.equals(AppType.MASSIVE_SIGN) ?
+                        List.of(new SignFilesTask(), ZIP_FILE_TASK, UPLOAD_FILE_TASK) : List.of(new SignFilesTask(), UPLOAD_FILE_TASK);
+                TaskUtil.executeTasksOnSerial(lista);
             }
         }
     }

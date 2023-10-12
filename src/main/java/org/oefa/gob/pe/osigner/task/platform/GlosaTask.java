@@ -3,6 +3,7 @@ package org.oefa.gob.pe.osigner.task.platform;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import org.oefa.gob.pe.osigner.application.PlatformService;
+import org.oefa.gob.pe.osigner.commons.AppProcess;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
@@ -46,7 +47,7 @@ public class GlosaTask extends Task<Void> {
         );
         StepComponent.showStepError(0);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage(), 4);
+        NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage(), AppProcess.GLOSA);
 
     }
 }

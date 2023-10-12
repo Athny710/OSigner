@@ -1,6 +1,7 @@
 package org.oefa.gob.pe.osigner.task.platform;
 
 import javafx.concurrent.Task;
+import org.oefa.gob.pe.osigner.commons.AppProcess;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
@@ -45,7 +46,7 @@ public class ConvertFilesTask extends Task<Void> {
         if (OefaUtil.FILES_WITH_ERRORS.isEmpty()) {
             NotificationFX.showFatalErrorNotification(errorMessage);
         } else {
-            NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage(), 3);
+            NotificationFX.showSkippedFilesErrorNotification(super.getException().getMessage(), AppProcess.CONVERT_FILE);
         }
 
     }

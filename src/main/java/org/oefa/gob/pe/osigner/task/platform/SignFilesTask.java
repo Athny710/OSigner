@@ -12,6 +12,8 @@ import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 
+import java.io.IOException;
+
 public class SignFilesTask extends Task<Void> {
 
 
@@ -48,7 +50,11 @@ public class SignFilesTask extends Task<Void> {
         );
         StepComponent.showStepError(2);
         NotificationFX.closeProgressNotification();
-        NotificationFX.showFatalErrorNotification(errorMessage);
+        if(super.getException().getCause() instanceof IOException){
+            NotificationFX.showTimestampErrorNotification(errorMessage);
+        }else{
+            NotificationFX.showFatalErrorNotification(errorMessage);
+        }
 
     }
 }

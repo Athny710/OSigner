@@ -11,7 +11,7 @@ public class CertificateConfigurationTask extends Task<Void> {
     @Override
     protected Void call() throws Exception {
         Thread.sleep(Constant.INITIALIZATION_APP_DELAY_TIME);
-        CertificateUtil.loadCertificates();
+        CertificateUtil.loadCertificates(true);
 
         return null;
 

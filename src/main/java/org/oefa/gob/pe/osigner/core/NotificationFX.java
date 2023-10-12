@@ -3,6 +3,7 @@ package org.oefa.gob.pe.osigner.core;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.application.NotificationService;
 import org.oefa.gob.pe.osigner.application.ProgressService;
+import org.oefa.gob.pe.osigner.commons.AppProcess;
 import org.oefa.gob.pe.osigner.commons.AppType;
 
 public class NotificationFX {
@@ -86,6 +87,12 @@ public class NotificationFX {
     }
 
 
+    public static void showTimestampErrorNotification(String errorMessage){
+        AppFX.showNotificationError();
+        NotificationService.buildTimestampError(errorMessage);
+    }
+
+
     public static void showFatalErrorNotification(String errorMessage){
         AppFX.showNotificationError();
         NotificationService.buildFatalError(errorMessage);
@@ -93,12 +100,12 @@ public class NotificationFX {
     }
 
 
-    public static void showSkippedFilesErrorNotification(String errorMessage, int stepProcess){
+    public static void showSkippedFilesErrorNotification(String errorMessage, AppProcess appProcess){
         if(!isProgressFeatureActive())
             return;
 
         AppFX.showNotificationError();
-        NotificationService.buildSkippedFilesError(errorMessage, stepProcess);
+        NotificationService.buildSkippedFilesError(errorMessage, appProcess);
 
     }
 

@@ -13,7 +13,7 @@ class CertificateUtilTest {
 
         // WHEN
         LogUtil.setInfo("Iniciando carga de certificados", "[TEST]");
-        CertificateUtil.loadCertificates();
+        CertificateUtil.loadCertificates(true);
         LogUtil.setInfo("Finalizando carga de certificados", "[TEST]");
 
         // THEN

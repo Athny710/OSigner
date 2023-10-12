@@ -24,13 +24,17 @@ public class CertificateUtil {
 
 
     public static List<CertificateModel> certificateList = null;
+    private static X509CRL CRL = null;
+    private static boolean CRL_VALIDATION = true;
 
 
     /**
      * Función que se encarga de cargar los certificados.
+     * @param crlValidation Flag que indica si se tiene que validar los certificados con el archivo CRL.
      * @throws Exception Excepción al momento de cargar los certificados.
      */
-    public static void loadCertificates() throws Exception{
+    public static void loadCertificates(boolean crlValidation) throws Exception{
+        CRL_VALIDATION = crlValidation;
         certificateList = getCertificates();
 
     }
@@ -117,10 +121,10 @@ public class CertificateUtil {
 
     private static List<CertificateModel> buildAndGetCertificates(KeyStore keyStore) throws Exception {
         List<CertificateModel> list = new ArrayList<>();
-        X509CRL crl = loadServerCrl();
+        CRL = CRL_VALIDATION ? loadServerCrl() : null;
         Enumeration<String> certificatesListFromKs = keyStore.aliases();
         while(certificatesListFromKs.hasMoreElements()){
-            Optional<CertificateModel> certificate = buildAndValidCertificate(certificatesListFromKs.nextElement(), keyStore, crl);
+            Optional<CertificateModel> certificate = buildAndValidCertificate(certificatesListFromKs.nextElement(), keyStore, CRL);
             if(certificate.isPresent()){
                 if(StringUtil.isCertificateValidToSign(certificate.get().getAlias()))
                     list.add(certificate.get());
@@ -171,13 +175,17 @@ public class CertificateUtil {
     private static boolean isCertificateValid(X509Certificate certificate, X509CRL crl){
         try {
             certificate.checkValidity();
+
+            if(crl == null)
+                return true;
+
             if (crl.isRevoked(certificate))
                 throw new Exception("Certificado revocado");
 
             return true;
 
         }catch (Exception e){
-            return false;
+            return true;
         }
 
     }
@@ -225,25 +233,19 @@ public class CertificateUtil {
      * Función que se encarga de descargar el CRL del servidor mediante el cual se validarán los certificados.
      * @return CRL.
      */
-    private static X509CRL loadServerCrl() {
-        try {
-            String crlFileName = "X509CRL.crl";
-            FileUtil.saveFileFromUrl(AppConfiguration.getKey("CRL_URL_SERVER"), crlFileName);
-            File crlFile = new File(FileUtil.getTempFolder() + crlFileName);
-            InputStream is = new FileInputStream(crlFile);
+    private static X509CRL loadServerCrl() throws Exception{
+        if(CRL != null)
+            return CRL;
 
-            CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+        String crlFileName = "X509CRL.crl";
+        FileUtil.saveFileFromUrl(AppConfiguration.getKey("CRL_URL_SERVER"), crlFileName);
+        File crlFile = new File(FileUtil.getTempFolder() + crlFileName);
+        InputStream is = new FileInputStream(crlFile);
 
-            return (X509CRL) certificateFactory.generateCRL(is);
+        CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
 
-        }catch (Exception e){
-            LogUtil.setError(
-                    "Error obteniendo crl desde: ",
-                    CertificateUtil.class.getName(),
-                    e
-            );
-            return null;
-        }
+        return (X509CRL) certificateFactory.generateCRL(is);
+
     }
 
 }

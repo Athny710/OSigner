@@ -1,9 +1,11 @@
 package org.oefa.gob.pe.osigner.application;
 
+import org.oefa.gob.pe.osigner.commons.AppProcess;
 import org.oefa.gob.pe.osigner.domain.fx.ApplicationModel;
 import org.oefa.gob.pe.osigner.domain.fx.NotificationModel;
 import org.oefa.gob.pe.osigner.task.configuration.ConfigurationTaskManager;
 import org.oefa.gob.pe.osigner.task.platform.SignTaskManager;
+import org.oefa.gob.pe.osigner.util.CertificateUtil;
 
 public class NotificationService {
 
@@ -17,7 +19,11 @@ public class NotificationService {
         NOTIFICATION_MODEL.getConfirmButton().setText("Continuar");
         NOTIFICATION_MODEL.getConfirmButton().setOnAction(e -> {
             ApplicationModel.NOTIFICATION_STAGE.close();
-            PlatformService.loadAllCertificates();
+            try {
+                CertificateUtil.loadCertificates(false);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
             ConfigurationTaskManager.setConfigurationFinished();
         });
 
@@ -42,14 +48,14 @@ public class NotificationService {
 
     }
 
-    public static void buildSkippedFilesError(String message, int stepProcess){
+    public static void buildSkippedFilesError(String message, AppProcess appProcess){
         NOTIFICATION_MODEL.getTitleLabel().setText("Error");
         NOTIFICATION_MODEL.getTextLabel().setText(message + "\nSe omitirán dichos archivo en el proceso de firma.\n¿Desea continuar?");
 
         NOTIFICATION_MODEL.getConfirmButton().setText("Continuar");
         NOTIFICATION_MODEL.getConfirmButton().setOnAction(e -> {
             ApplicationModel.NOTIFICATION_STAGE.close();
-            SignTaskManager.completeTask(stepProcess);
+            SignTaskManager.completeTask(appProcess);
         });
 
         NOTIFICATION_MODEL.getCancelButton().setOnAction(e -> {
@@ -69,6 +75,24 @@ public class NotificationService {
         });
 
         NOTIFICATION_MODEL.getCancelButton().setVisible(false);
+    }
+
+
+    public static void buildTimestampError(String message){
+        NOTIFICATION_MODEL.getTitleLabel().setText("Error");
+        NOTIFICATION_MODEL.getTextLabel().setText(message + "\nNo se pudo conectar al servicio de sello de tiempo.\n¿Desea firmar de todas formas?");
+
+        NOTIFICATION_MODEL.getConfirmButton().setText("Continuar");
+        NOTIFICATION_MODEL.getConfirmButton().setOnAction(e -> {
+            ApplicationModel.NOTIFICATION_STAGE.close();
+            SignTaskManager.completeTask(AppProcess.SIGN_FILE);
+        });
+
+        NOTIFICATION_MODEL.getCancelButton().setOnAction(e -> {
+            ApplicationModel.NOTIFICATION_STAGE.close();
+            PlatformService.cancelSignProccess();
+        });
+
     }
 
     public static void buildMaterialFxError(String message){
