@@ -51,7 +51,7 @@ public class SignFilesTask extends Task<Void> {
         StepComponent.showStepError(2);
         NotificationFX.closeProgressNotification();
         if(super.getException().getCause() instanceof IOException){
-            NotificationFX.showTimestampErrorNotification(errorMessage);
+            NotificationFX.showTimestampErrorNotification("Error firmando los archivos");
         }else{
             NotificationFX.showFatalErrorNotification(errorMessage);
         }

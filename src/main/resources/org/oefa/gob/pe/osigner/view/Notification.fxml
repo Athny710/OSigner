@@ -27,15 +27,15 @@
                   <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <MFXScrollPane hbarPolicy="NEVER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                  <MFXScrollPane hbarPolicy="NEVER" GridPane.hgrow="NEVER" maxWidth="286.0" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <content>
-                        <Label fx:id="textLabel" maxWidth="280.0" styleClass="active-text" textAlignment="JUSTIFY" wrapText="true" />
+                        <Label fx:id="textLabel" maxWidth="260.0" styleClass="active-text" textAlignment="JUSTIFY" wrapText="true" />
                      </content>
                      <padding>
-                        <Insets left="13.0" right="13.0" top="8.0" />
+                        <Insets left="13.0" top="8.0" />
                      </padding>
                      <GridPane.margin>
-                        <Insets bottom="13.0" />
+                        <Insets bottom="13.0" left="2.0" right="2.0"/>
                      </GridPane.margin>
                   </MFXScrollPane>
                   <Label fx:id="titleLabel" styleClass="active-text" text="Error">

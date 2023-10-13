@@ -6,6 +6,8 @@ import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.util.CertificateUtil;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 
+import java.io.FileNotFoundException;
+
 public class CertificateConfigurationTask extends Task<Void> {
 
     @Override
@@ -35,6 +37,9 @@ public class CertificateConfigurationTask extends Task<Void> {
                 this.getClass().getName(),
                 (Exception) super.getException()
         );
+
+        if(super.getException() instanceof FileNotFoundException)
+            errorMessage = "Error obteniendo archivo CRL para la validación de los certificados";
 
         NotificationFX.showCrlErrorNotification(errorMessage);
 

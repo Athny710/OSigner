@@ -251,7 +251,7 @@ public class WSSFDAdapter implements RestPort {
         headers.add("Content-Type", "application/json");
 
         HttpEntity<FirmaMasivaFinalizadaRequest> request = new HttpEntity<>(body, headers);
-        ResponseEntity<String> response = REST_TEMPLATE.postForEntity(url, request, String.class);
+        ResponseEntity<String> response = REST_TEMPLATE.exchange(url, HttpMethod.POST, request, String.class);
 
         if(!response.getStatusCode().is2xxSuccessful())
             throw new Exception("Error conectando al servicio: " + url);
