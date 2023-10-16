@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.oefa.gob.pe.osigner.application.PlatformService;
-import org.oefa.gob.pe.osigner.core.LoaderFX;
+import org.oefa.gob.pe.osigner.core.ResourceFX;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformModel;
 import org.oefa.gob.pe.osigner.domain.fx.PlatformStepModel;
 import java.net.URL;
@@ -52,7 +52,7 @@ public class PlatformController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Image image= new Image(LoaderFX.loadImage("Oefa_small_logo.png"), 103, 36, true, true);
+        Image image= new Image(ResourceFX.load("img/Oefa_small_logo.png"), 103, 36, true, true);
         imgLogoContainer.setImage(image);
 
         PlatformStepModel stepModel_1 = new PlatformStepModel(this.imgView_1, this.stepLabel_1);

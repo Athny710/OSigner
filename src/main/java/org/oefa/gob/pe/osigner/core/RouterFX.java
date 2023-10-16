@@ -27,8 +27,7 @@ public class RouterFX {
 
             if(moduleKey.equals(AppConfiguration.getKey("FIRMA_MASIVA_KEY"))){
                 AppConfiguration.APP_TYPE = AppType.MASSIVE_SIGN;
-                AppConfiguration.ID_CLIENT = params.get(1);
-                AppConfiguration.ID_GROUP = params.get(2);
+                AppConfiguration.ID_GROUP = params.get(1);
                 initMassiveSignProcessByPlatform();
 
             }else if(moduleKey.equals(AppConfiguration.getKey("VERIFICA_KEY"))){
@@ -67,7 +66,7 @@ public class RouterFX {
 
 
     private static void initFullApp(){
-
+        System.exit(0);
     }
 
 

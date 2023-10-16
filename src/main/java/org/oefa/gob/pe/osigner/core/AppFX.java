@@ -6,6 +6,7 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -30,6 +31,7 @@ public class AppFX {
         Stage stage = ApplicationModel.CURRENT_STAGE;
 
         stage.initStyle(StageStyle.TRANSPARENT);
+        stage.getIcons().add(new Image(ResourceFX.load("img/OSigner_icon.png")));
         stage.setScene(scene);
         stage.setOnShowing(e -> {
             // Una vez mostrada la vista se empieza con la ejecución de la aplicación.

@@ -8,8 +8,8 @@ import com.itextpdf.signatures.*;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.AppType;
 import org.oefa.gob.pe.osigner.commons.Constant;
-import org.oefa.gob.pe.osigner.core.LoaderFX;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
+import org.oefa.gob.pe.osigner.core.ResourceFX;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
@@ -63,7 +63,7 @@ public class IText7Adapter implements SignPort {
                     );
 
                     if(signConfiguration.getSignProcessConfiguration().getSignatureType()== Constant.FIRMA_TIPO_FIRMA)
-                        sap.setImage(ImageDataFactory.create(LoaderFX.loadResource("FirmaFondoBlanco.png").readAllBytes()));
+                        sap.setImage(ImageDataFactory.create(ResourceFX.loadResource("FirmaFondoBlanco.png").readAllBytes()));
 
                     sap.setPageRect(new Rectangle(
                             fileToSign.getPositionX(),

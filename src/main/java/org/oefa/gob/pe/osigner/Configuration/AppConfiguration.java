@@ -1,7 +1,7 @@
 package org.oefa.gob.pe.osigner.Configuration;
 
 import org.oefa.gob.pe.osigner.commons.AppType;
-import org.oefa.gob.pe.osigner.core.LoaderFX;
+import org.oefa.gob.pe.osigner.core.ResourceFX;
 import org.oefa.gob.pe.osigner.util.LogUtil;
 import java.io.InputStream;
 import java.util.Properties;
@@ -17,7 +17,7 @@ public class AppConfiguration {
     public static String getKey(String key){
         Properties properties = new Properties();
         try {
-            InputStream resourceStream = LoaderFX.loadResource("application.properties");
+            InputStream resourceStream = ResourceFX.loadResource("application.properties");
             properties.load(resourceStream);
 
             return properties.getProperty(key);
