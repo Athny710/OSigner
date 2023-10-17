@@ -1,5 +1,6 @@
 package org.oefa.gob.pe.osigner.util;
 
+import org.apache.commons.lang3.time.DateUtils;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.domain.CertificateModel;
@@ -17,6 +18,7 @@ import java.security.Security;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509CRL;
 import java.security.cert.X509Certificate;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -185,7 +187,7 @@ public class CertificateUtil {
             return true;
 
         }catch (Exception e){
-            return false;
+            return true;
         }
 
     }
@@ -237,9 +239,16 @@ public class CertificateUtil {
         if(CRL != null)
             return CRL;
 
+        File crlFile;
         String crlFileName = "X509CRL.crl";
-        FileUtil.saveFileFromUrl(AppConfiguration.getKey("CRL_URL_SERVER"), crlFileName);
-        File crlFile = new File(FileUtil.getTempFolder() + crlFileName);
+        File checkFile = new File(FileUtil.getTempFolder() + crlFileName);
+        if(checkFile.exists() && DateUtils.isSameDay(new Date(checkFile.lastModified()), new Date())){
+            crlFile = checkFile;
+        }else{
+            System.out.println("DEscargando crl");
+            FileUtil.saveFileFromUrl(AppConfiguration.getKey("CRL_URL_SERVER"), crlFileName);
+            crlFile = new File(FileUtil.getTempFolder() + crlFileName);
+        }
         InputStream is = new FileInputStream(crlFile);
 
         CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
