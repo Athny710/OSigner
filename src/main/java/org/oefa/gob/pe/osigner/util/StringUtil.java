@@ -52,4 +52,10 @@ public class StringUtil {
         return opt.isEmpty();
 
     }
+
+
+    public static String generateGlosaText(String text, String url, String claveVerificacion){
+        return text.replaceFirst(Pattern.quote("[urlQR]"), url).replaceFirst(Pattern.quote("[clave]"), claveVerificacion);
+
+    }
 }

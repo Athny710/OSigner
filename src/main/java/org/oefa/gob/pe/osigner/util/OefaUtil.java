@@ -107,7 +107,7 @@ public class OefaUtil {
             if(file.isAddGlosa()){
                 try {
                     GlosaSSFD glosaSSFD = new GlosaSSFD(
-                            SignConfiguration.getInstance().getSignProcessConfiguration().getGlosaText(),
+                            StringUtil.generateGlosaText(SignConfiguration.getInstance().getSignProcessConfiguration().getGlosaText(), SignConfiguration.getInstance().getSignProcessConfiguration().getGlosaUrl(), file.getClaveVerificacion()),
                             SignConfiguration.getInstance().getSignProcessConfiguration().getGlosaUrl(),
                             String.valueOf(file.getCodigoOperacion())
                     );

@@ -185,7 +185,7 @@ public class CertificateUtil {
             return true;
 
         }catch (Exception e){
-            return true;
+            return false;
         }
 
     }
