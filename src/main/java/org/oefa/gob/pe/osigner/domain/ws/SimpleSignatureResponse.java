@@ -19,6 +19,7 @@ public class SimpleSignatureResponse {
     private String dni;
     private Integer tipoFirma;
     private Integer estiloFirma;
+    private Integer tamanio;
     private byte[] imagenFirma;
     private ArrayList<Float> x;
     private ArrayList<Float> y;
@@ -29,7 +30,7 @@ public class SimpleSignatureResponse {
     private ArrayList<byte[]> filesBytes;
 
 
-    public SimpleSignatureResponse(boolean visible, boolean ltv, boolean selloTiempo, String fechaCreacion, String selloTiempoUrl, String selloTiempoUser, String selloTiempoPass, String cargo, String locacion, String razon, String proceso, String usuarioId, String dni, Integer tipoFirma, Integer estiloFirma, ArrayList<byte[]> filesBytes,ArrayList<Float> x, ArrayList<Float> y, ArrayList<Float> width, ArrayList<Float> height, ArrayList<Integer> page, ArrayList<String> filesName) {
+    public SimpleSignatureResponse(boolean visible, boolean ltv, boolean selloTiempo, String fechaCreacion, String selloTiempoUrl, String selloTiempoUser, String selloTiempoPass, String cargo, String locacion, String razon, String proceso, String usuarioId, String dni, Integer tipoFirma, Integer estiloFirma, Integer tamanio, ArrayList<byte[]> filesBytes,ArrayList<Float> x, ArrayList<Float> y, ArrayList<Float> width, ArrayList<Float> height, ArrayList<Integer> page, ArrayList<String> filesName) {
         this.visible = visible;
         this.ltv = ltv;
         this.selloTiempo = selloTiempo;
@@ -45,6 +46,7 @@ public class SimpleSignatureResponse {
         this.dni = dni;
         this.tipoFirma = tipoFirma;
         this.estiloFirma = estiloFirma;
+        this.tamanio = tamanio;
         this.filesBytes = filesBytes;
         this.x = x;
         this.y = y;
@@ -180,6 +182,14 @@ public class SimpleSignatureResponse {
 
     public void setImagenFirma(byte[] imagenFirma) {
         this.imagenFirma = imagenFirma;
+    }
+
+    public Integer getTamanio() {
+        return tamanio;
+    }
+
+    public void setTamanio(Integer tamanio) {
+        this.tamanio = tamanio;
     }
 
     public ArrayList<Float> getX() {

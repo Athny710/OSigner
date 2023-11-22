@@ -89,7 +89,6 @@ public class PlatformController implements Initializable {
     @FXML
     void onChange(ActionEvent event){
         PlatformService.showErrorCertificateMessage(false);
-        System.out.println("item selected");
     }
 
 }

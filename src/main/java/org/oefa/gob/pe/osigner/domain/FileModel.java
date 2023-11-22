@@ -17,12 +17,14 @@ public class FileModel {
     private Float positionY;
     private Float height;
     private Float width;
+
+    private int fontSize;
     private int page;
 
     private boolean addGlosa;
 
 
-    public FileModel(Long id, int idArchivo, String name, int codigoOperacion, int estadoOperacion, String claveVerificacion, Float positionX, Float positionY, Float height, Float width, int page, boolean addGlosa) {
+    public FileModel(Long id, int idArchivo, String name, int codigoOperacion, int estadoOperacion, String claveVerificacion, Float positionX, Float positionY, Float height, Float width, int fontSize, int page, boolean addGlosa) {
         this.id = id;
         this.idArchivo = idArchivo;
         this.name = name;
@@ -33,17 +35,19 @@ public class FileModel {
         this.positionY = positionY;
         this.height = height;
         this.width = width;
+        this.fontSize = fontSize;
         this.page = page;
         this.addGlosa = addGlosa;
     }
 
-    public FileModel(String name, Float positionX, Float positionY, Float height, Float width, int page, byte[] bytes) {
+    public FileModel(String name, Float positionX, Float positionY, Float height, Float width, int fontSize, int page, byte[] bytes) {
         this.name = name;
         this.bytes = bytes;
         this.positionX = positionX;
         this.positionY = positionY;
         this.height = height;
         this.width = width;
+        this.fontSize = fontSize;
         this.page = page;
     }
 
@@ -143,6 +147,14 @@ public class FileModel {
 
     public void setWidth(Float width) {
         this.width = width;
+    }
+
+    public int getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(int fontSize) {
+        this.fontSize = fontSize;
     }
 
     public int getPage() {

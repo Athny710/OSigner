@@ -1,13 +1,13 @@
 package org.oefa.gob.pe.osigner.util;
 
 import com.lowagie.text.Rectangle;
-import com.lowagie.text.pdf.PdfReader;
 import org.oefa.gob.pe.Oefa.Pdf;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.domain.FileModel;
 import org.oefa.gob.pe.osigner.domain.SignCoordinates;
 import org.oefa.gob.pe.osigner.domain.SignProcessModel;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -95,7 +95,7 @@ public class SignatureUtil {
                 continue;
 
             try {
-                com.lowagie.text.pdf.PdfReader reader = new PdfReader(file.getLocation());
+                com.lowagie.text.pdf.PdfReader reader = new com.lowagie.text.pdf.PdfReader(file.getLocation());
                 int signaturesNumber = reader.getAcroFields().getSignatureNames().size();
 
                 Rectangle pageRectangle = reader.getPageSize(1);
@@ -108,7 +108,7 @@ public class SignatureUtil {
                     coordinatesList = Constant.UbicacionFirma.visadoHorizontalPosition;
 
                 } else {
-                    if (signaturesNumber > 12) {
+                    if (signaturesNumber >= 12) {
                         LogUtil.setInfo("Ya se pusieron en el documento el número máximo de vistos buenos permitidos en formato vertical (12)", SignatureUtil.class.getName());
                         FILE_WITH_ERRORS.add(file.getName());
                     }
@@ -119,7 +119,7 @@ public class SignatureUtil {
 
                 Optional<SignCoordinates> coordinatesOpt = coordinatesList.
                         stream()
-                        .filter(x -> x.getType() == signaturesNumber)
+                        .filter(x -> x.getType() == (signaturesNumber + 1))
                         .findFirst();
 
                 if (coordinatesOpt.isPresent()) {

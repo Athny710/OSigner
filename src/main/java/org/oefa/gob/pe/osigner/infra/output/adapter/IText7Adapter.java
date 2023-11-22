@@ -43,7 +43,7 @@ public class IText7Adapter implements SignPort {
         for(FileModel fileToSign : signConfiguration.getFilesToSign()){
             if(fileToSign.getPage() != Constant.FIRMA_PAGINA_ERROR) {
 
-                String pathOut = OSIGNER_DIRECTORY + SIGNED_FOLDER + fileToSign.getName();
+                String pathOut = FileUtil.getSignedFolder() + fileToSign.getName();
                 String pathIn = fileToSign.getLocation() + fileToSign.getName();
                 FileOutputStream fout = new FileOutputStream(pathOut);
                 PdfReader reader = new PdfReader(new File(pathIn));
@@ -61,6 +61,7 @@ public class IText7Adapter implements SignPort {
                     sap.setLayer2Text(
                             buildSignatureText(signConfiguration.getSignProcessConfiguration(), certificate.getNombre())
                     );
+                    sap.setLayer2FontSize(fileToSign.getFontSize());
 
                     if(signConfiguration.getSignProcessConfiguration().getSignatureType()== Constant.FIRMA_TIPO_FIRMA)
                         sap.setImage(ImageDataFactory.create(ResourceFX.loadResource("FirmaFondoBlanco.png").readAllBytes()));
@@ -91,7 +92,7 @@ public class IText7Adapter implements SignPort {
                         PdfSigner.CryptoStandard.CADES
                 );
 
-                fileToSign.setLocation(OSIGNER_DIRECTORY + SIGNED_FOLDER);
+                fileToSign.setLocation(FileUtil.getSignedFolder());
                 fileToSign.setEstadoOperacion(Constant.FIRMA_ESTADO_FIRMADO);
 
                 reader.close();
@@ -118,17 +119,17 @@ public class IText7Adapter implements SignPort {
 
     private String buildSignatureText(SignProcessModel signProcessModel, String userName){
         String signatureType = signProcessModel.getSignatureType() == Constant.FIRMA_TIPO_FIRMA ? "Firmado" : "Visado";
-        String signatureText = signatureType + "digitalmente por: " + userName + "\n";
-        if(!signProcessModel.getUserRole().equals(""))
+        String signatureText = signatureType + " digitalmente por: " + userName + "\n";
+        if(signProcessModel.getUserRole() != null && !signProcessModel.getUserRole().equals(""))
             signatureText += "Cargo: " + signProcessModel.getUserRole() + "\n";
 
-        if(!signProcessModel.getLocation().equals("") && signProcessModel.getSignatureType() == Constant.FIRMA_TIPO_FIRMA)
+        if(signProcessModel.getLocation() != null && !signProcessModel.getLocation().equals("") && signProcessModel.getSignatureType() == Constant.FIRMA_TIPO_FIRMA)
             signatureText += "Lugar: " + signProcessModel.getLocation() + "\n";
 
-        if(!signProcessModel.getReason().equals(""))
+        if(signProcessModel.getReason() != null && !signProcessModel.getReason().equals(""))
             signatureText += "Motivo: " + signProcessModel.getReason() + "\n";
 
-        if(!signProcessModel.getSignatureOptionalText().equals(""))
+        if(signProcessModel.getSignatureOptionalText() != null && !signProcessModel.getSignatureOptionalText().equals(""))
             signatureText += signProcessModel.getSignatureOptionalText() + "\n";
 
         signatureText += "Fecha/Hora: " + signProcessModel.getFechaCreacion();

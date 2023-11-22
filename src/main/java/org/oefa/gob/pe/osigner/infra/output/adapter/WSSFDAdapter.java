@@ -1,6 +1,7 @@
 package org.oefa.gob.pe.osigner.infra.output.adapter;
 
 import com.google.gson.Gson;
+import com.itextpdf.io.codec.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
@@ -9,7 +10,6 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.bouncycastle.util.encoders.Base64;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
@@ -351,7 +351,7 @@ public class WSSFDAdapter implements RestPort {
      * @throws Exception Excepción al desencryptar la contraseña.
      */
     private String decryptTsaPassword(String encryptedPassword) throws Exception{
-        if (encryptedPassword == null || encryptedPassword.length() == 0)
+        if (encryptedPassword == null || encryptedPassword.isEmpty())
             return "";
 
         Key key = new SecretKeySpec(Constant.TSA_PASS_HASH_KEY, "AES");

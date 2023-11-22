@@ -43,10 +43,12 @@ public class SignFilesTask extends Task<Void> {
     @Override
     protected void failed() {
         super.failed();
+        System.out.println(super.getException().getCause());
+
         String errorMessage = LogUtil.setError(
                 "Error firmando los archivos",
                 this.getClass().getName(),
-                (Exception) super.getException()
+                new Exception(super.getException().getMessage())
         );
         StepComponent.showStepError(2);
         NotificationFX.closeProgressNotification();

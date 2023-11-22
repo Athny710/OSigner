@@ -82,12 +82,12 @@ public class Constant {
         );
 
         public static final List<SignCoordinates> visadoVerticalPosition = List.of(
-                new SignCoordinates(1, 10, 682),
-                new SignCoordinates(2, 10, 542),
-                new SignCoordinates(3, 10, 401),
-                new SignCoordinates(4, 10, 261),
-                new SignCoordinates(5, 10, 120),
-                new SignCoordinates(6, 10, 10),
+                new SignCoordinates(1, 5, 682),
+                new SignCoordinates(2, 5, 542),
+                new SignCoordinates(3, 5, 401),
+                new SignCoordinates(4, 5, 261),
+                new SignCoordinates(5, 5, 120),
+                new SignCoordinates(6, 5, 10),
                 new SignCoordinates(7, 520, 682),
                 new SignCoordinates(8, 520, 542),
                 new SignCoordinates(9, 520, 401),

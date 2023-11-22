@@ -36,6 +36,7 @@ public class MapperUtil {
         String proceso = p.getProperty("proceso_id");
         String usuarioId = p.getProperty("usuario_id");
         String dni = p.getProperty("DNI");
+        Integer fontSize = Integer.parseInt(p.getProperty("tamanio"));
         Integer tipoFirma = Integer.parseInt(p.getProperty("firmado.visado"));
         List<Float> listX = Arrays.stream(p.getProperty("x").split(Pattern.quote(">"))).map(Float::parseFloat).toList();
         List<Float> listY = Arrays.stream(p.getProperty("y").split(Pattern.quote(">"))).map(Float::parseFloat).toList();
@@ -63,6 +64,7 @@ public class MapperUtil {
                 dni,
                 tipoFirma,
                 signatureStyle,
+                fontSize,
                 filesBytes,
                 new ArrayList<>(listX),
                 new ArrayList<>(listY),
@@ -99,6 +101,7 @@ public class MapperUtil {
                     ssResponse.getY().get(i),
                     ssResponse.getHeight().get(i),
                     ssResponse.getWidth().get(i),
+                    ssResponse.getTamanio(),
                     ssResponse.getPage().get(i),
                     ssResponse.getFilesBytes().get(i)
             );
@@ -115,10 +118,10 @@ public class MapperUtil {
         signProcessModel.setClientUUID(msResponse.getConfiguracionFirma().getClientUUID());
         signProcessModel.setUsernameSSFD(msResponse.getConfiguracionFirma().getUsernameSSFD());
         signProcessModel.setUserDNI(msResponse.getConfiguracionFirma().getUserDNI());
-        signProcessModel.setUserRole(StringUtil.formatString(msResponse.getConfiguracionFirma().getUserRole()));
-        signProcessModel.setLocation(StringUtil.formatString(msResponse.getConfiguracionFirma().getLocation()));
-        signProcessModel.setReason(StringUtil.formatString(msResponse.getConfiguracionFirma().getReason()));
-        signProcessModel.setSignatureOptionalText(StringUtil.formatString(msResponse.getConfiguracionFirma().getSignatureOptionalText()));
+        signProcessModel.setUserRole(msResponse.getConfiguracionFirma().getUserRole());
+        signProcessModel.setLocation(msResponse.getConfiguracionFirma().getLocation());
+        signProcessModel.setReason(msResponse.getConfiguracionFirma().getReason());
+        signProcessModel.setSignatureOptionalText(msResponse.getConfiguracionFirma().getSignatureOptionalText());
         signProcessModel.setOptional(msResponse.getConfiguracionFirma().getOptional());
         signProcessModel.setFechaCreacion(msResponse.getConfiguracionFirma().getFechaCreacion());
         signProcessModel.setZipUUID(msResponse.getConfiguracionFirma().getZipUUID());
@@ -160,6 +163,7 @@ public class MapperUtil {
                     msResponse.getConfiguracionFirma().getPositionY(),
                     msResponse.getConfiguracionFirma().getHeight(),
                     msResponse.getConfiguracionFirma().getWidth(),
+                    msResponse.getConfiguracionFirma().getFontSize(),
                     msResponse.getConfiguracionFirma().getPage(),
                     archivo.getGlosa() == 1
             );

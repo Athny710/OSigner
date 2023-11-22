@@ -1,12 +1,10 @@
 package org.oefa.gob.pe.osigner.util;
 
-import com.itextpdf.kernel.geom.PageSize;
-import com.itextpdf.kernel.geom.Rectangle;
 import org.oefa.gob.pe.Oefa.Glosa;
 import org.oefa.gob.pe.Oefa.Pdf;
-import org.oefa.gob.pe.Oefa.domain.Dimension;
+import org.oefa.gob.pe.Oefa.domain.GlosaOefa;
 import org.oefa.gob.pe.Oefa.domain.GlosaPeru;
-import org.oefa.gob.pe.Oefa.domain.GlosaSSFD;
+
 import org.oefa.gob.pe.osigner.commons.Constant;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.domain.FileModel;
@@ -88,15 +86,6 @@ public class OefaUtil {
      * @param filesToSign Lista de archivos que se desean firmar.
      */
     private static void addGlosaToFile(List<FileModel> filesToSign) {
-        Rectangle pageSize = PageSize.A4;
-        float x = (pageSize.getWidth() - Constant.GLOSA_SSFD_WIDTH) / 2;
-        float y = (pageSize.getHeight() - Constant.GLOSA_SSFD_HEIGTH);
-        int margin = Constant.GLOSA_MARGIN;
-
-        Dimension containerDimension = new Dimension(x, y - margin, 500, 70, 1);
-        Dimension qrDimension = new Dimension(x + margin, y - margin + 3, 100, 100, 64.0f);
-        Dimension barcodeDimension = new Dimension(x + 100, y - margin + 5, 0, 0, 75.0f);
-
         int total = filesToSign.size();
         int count = 1;
 
@@ -106,7 +95,7 @@ public class OefaUtil {
 
             if(file.isAddGlosa()){
                 try {
-                    GlosaSSFD glosaSSFD = new GlosaSSFD(
+                    GlosaOefa glosaSSFD = new GlosaOefa(
                             StringUtil.generateGlosaText(SignConfiguration.getInstance().getSignProcessConfiguration().getGlosaText(), SignConfiguration.getInstance().getSignProcessConfiguration().getGlosaUrl(), file.getClaveVerificacion()),
                             SignConfiguration.getInstance().getSignProcessConfiguration().getGlosaUrl(),
                             String.valueOf(file.getCodigoOperacion())
@@ -116,11 +105,10 @@ public class OefaUtil {
                             Constant.GLOSA_PERU_TEXT_BOTTOM,
                             Constant.GLOSA_PERU_TEXT_URL
                     );
-                    Glosa.MARGIN = Constant.GLOSA_MARGIN;
 
                     byte[] bytesIn = Files.readAllBytes(Paths.get(file.getLocation() + file.getName()));
-                    byte[] bytesTmp = Glosa.generateGlosa(bytesIn, glosaSSFD, containerDimension, qrDimension, barcodeDimension);
-                    byte[] bytesOut = Glosa.generateGlosaVertical(bytesTmp, glosaPeru);
+                    byte[] bytesTmp = Glosa.generateGlosaOefa(bytesIn, glosaSSFD);
+                    byte[] bytesOut = Glosa.generateGlosaFirmaPeru(bytesTmp, glosaPeru);
 
                     file.setBytes(bytesOut);
                     FileUtil.saveFileBytes(file);

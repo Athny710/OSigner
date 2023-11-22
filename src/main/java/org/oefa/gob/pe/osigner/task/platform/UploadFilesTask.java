@@ -8,7 +8,10 @@ import org.oefa.gob.pe.osigner.core.AppFX;
 import org.oefa.gob.pe.osigner.core.NotificationFX;
 import org.oefa.gob.pe.osigner.core.component.StepComponent;
 import org.oefa.gob.pe.osigner.domain.SignConfiguration;
+import org.oefa.gob.pe.osigner.util.FileUtil;
 import org.oefa.gob.pe.osigner.util.LogUtil;
+
+import java.io.File;
 
 public class UploadFilesTask extends Task<Void> {
 
@@ -19,6 +22,7 @@ public class UploadFilesTask extends Task<Void> {
         RestService.uploadFilesSigned(
                 SignConfiguration.getInstance()
         );
+        FileUtil.deleteFile(FileUtil.getSignedFolder() + SignConfiguration.getInstance().getSignProcessConfiguration().getZipUUID() + ".zip");
 
         return null;
 
