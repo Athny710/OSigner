@@ -245,7 +245,6 @@ public class CertificateUtil {
         if(checkFile.exists() && DateUtils.isSameDay(new Date(checkFile.lastModified()), new Date())){
             crlFile = checkFile;
         }else{
-            System.out.println("DEscargando crl");
             FileUtil.saveFileFromUrl(AppConfiguration.getKey("CRL_URL_SERVER"), crlFileName);
             crlFile = new File(FileUtil.getTempFolder() + crlFileName);
         }
