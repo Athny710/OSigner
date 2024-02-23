@@ -33,6 +33,7 @@ public class ConfigurationTaskManager {
      */
     public static void setConfigurationFinished(){
         configurationTasksNumber -= 1;
+        System.out.println(configurationTasksNumber);
         if(configurationTasksNumber == 0){
             PlatformLoaderService.showUserInterface();
 

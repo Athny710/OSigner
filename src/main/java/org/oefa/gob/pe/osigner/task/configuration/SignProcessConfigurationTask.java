@@ -10,6 +10,7 @@ public class SignProcessConfigurationTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        LogUtil.setInfo("[CONFIGURACION - FIRMA] Iniciando configuración de firma", this.getClass().getName());
         Thread.sleep(Constant.INITIALIZATION_APP_DELAY_TIME);
         RestService.getSignConfiguration();
 
@@ -20,7 +21,7 @@ public class SignProcessConfigurationTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("[CONFIGURACION] Se obtuvo la configuración del proceso de firma", this.getClass().getName());
+        LogUtil.setInfo("[CONFIGURACION - FIRMA] Se obtuvo la configuración del proceso de firma", this.getClass().getName());
         super.succeeded();
         ConfigurationTaskManager.setConfigurationFinished();
 

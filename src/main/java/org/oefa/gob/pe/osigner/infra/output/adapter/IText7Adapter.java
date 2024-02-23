@@ -5,6 +5,7 @@ import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.StampingProperties;
 import com.itextpdf.signatures.*;
+import com.lowagie.text.Paragraph;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
 import org.oefa.gob.pe.osigner.commons.AppType;
 import org.oefa.gob.pe.osigner.commons.Constant;
@@ -63,7 +64,7 @@ public class IText7Adapter implements SignPort {
                     );
                     sap.setLayer2FontSize(fileToSign.getFontSize());
 
-                    if(signConfiguration.getSignProcessConfiguration().getSignatureType()== Constant.FIRMA_TIPO_FIRMA)
+                    if(signConfiguration.getSignProcessConfiguration().getSignatureType()== Constant.FIRMA_TIPO_FIRMA && signConfiguration.getSignProcessConfiguration().getSignaturePositionType() == Constant.FIRMA_POSICION_AUTOMATICA)
                         sap.setImage(ImageDataFactory.create(ResourceFX.loadResource("FirmaFondoBlanco.png").readAllBytes()));
 
                     sap.setPageRect(new Rectangle(

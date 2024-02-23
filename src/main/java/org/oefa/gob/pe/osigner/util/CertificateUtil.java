@@ -123,7 +123,7 @@ public class CertificateUtil {
 
     private static List<CertificateModel> buildAndGetCertificates(KeyStore keyStore) throws Exception {
         List<CertificateModel> list = new ArrayList<>();
-        CRL = CRL_VALIDATION ? loadServerCrl() : null;
+        //CRL = CRL_VALIDATION ? loadServerCrl() : null;
         Enumeration<String> certificatesListFromKs = keyStore.aliases();
         while(certificatesListFromKs.hasMoreElements()){
             Optional<CertificateModel> certificate = buildAndValidCertificate(certificatesListFromKs.nextElement(), keyStore, CRL);

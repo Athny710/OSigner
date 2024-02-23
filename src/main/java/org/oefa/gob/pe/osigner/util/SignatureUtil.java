@@ -95,7 +95,7 @@ public class SignatureUtil {
                 continue;
 
             try {
-                com.lowagie.text.pdf.PdfReader reader = new com.lowagie.text.pdf.PdfReader(file.getLocation());
+                com.lowagie.text.pdf.PdfReader reader = new com.lowagie.text.pdf.PdfReader(file.getLocation()+file.getName());
                 int signaturesNumber = reader.getAcroFields().getSignatureNames().size();
 
                 Rectangle pageRectangle = reader.getPageSize(1);

@@ -12,6 +12,7 @@ public class CertificateConfigurationTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        LogUtil.setInfo("[CONFIGURACION - CERTIFICADOS] Iniciando carga de certificados.", this.getClass().getName());
         Thread.sleep(Constant.INITIALIZATION_APP_DELAY_TIME);
         CertificateUtil.loadCertificates(true);
 
@@ -22,7 +23,7 @@ public class CertificateConfigurationTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("[CONFIGURACION] Se cargaron los certificados del ordenador", this.getClass().getName());
+        LogUtil.setInfo("[CONFIGURACION - CERTIFICADOS] Se cargaron los certificados del ordenador", this.getClass().getName());
         super.succeeded();
         ConfigurationTaskManager.setConfigurationFinished();
 

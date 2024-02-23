@@ -12,6 +12,7 @@ public class MaterialConfigurationTask extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
+        LogUtil.setInfo("[CONFIGURACION - UI] Iniciando configuración UI", this.getClass().getName());
         Thread.sleep(Constant.INITIALIZATION_APP_DELAY_TIME);
         MFXThemeManager.addOn(ApplicationModel.CURRENT_STAGE.getScene(), Themes.DEFAULT, Themes.LEGACY);
 
@@ -22,7 +23,7 @@ public class MaterialConfigurationTask extends Task<Void> {
 
     @Override
     protected void succeeded() {
-        LogUtil.setInfo("[CONFIGURACION] Se configuró la aplicación con MaterialFX", this.getClass().getName());
+        LogUtil.setInfo("[CONFIGURACION - UI] Se configuró la aplicación con MaterialFX", this.getClass().getName());
         super.succeeded();
         ConfigurationTaskManager.setConfigurationFinished();
 

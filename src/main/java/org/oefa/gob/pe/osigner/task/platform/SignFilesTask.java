@@ -1,5 +1,6 @@
 package org.oefa.gob.pe.osigner.task.platform;
 
+import com.itextpdf.kernel.PdfException;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import org.oefa.gob.pe.osigner.Configuration.AppConfiguration;
@@ -43,7 +44,9 @@ public class SignFilesTask extends Task<Void> {
     @Override
     protected void failed() {
         super.failed();
+        System.out.println(super.getException().getMessage());
         System.out.println(super.getException().getCause());
+        super.getException().printStackTrace();
 
         String errorMessage = LogUtil.setError(
                 "Error firmando los archivos",
@@ -52,7 +55,7 @@ public class SignFilesTask extends Task<Void> {
         );
         StepComponent.showStepError(2);
         NotificationFX.closeProgressNotification();
-        if(super.getException().getCause() instanceof IOException){
+        if(super.getException().getCause() instanceof IOException || super.getException().getCause() instanceof PdfException){
             NotificationFX.showTimestampErrorNotification("Error firmando los archivos");
         }else{
             NotificationFX.showFatalErrorNotification(errorMessage);

@@ -41,6 +41,8 @@ public class StringUtil {
 
 
     public static String formatString(String string){
+        if(string == null || string == "")
+            return "";
         return new String(string.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 
     }
